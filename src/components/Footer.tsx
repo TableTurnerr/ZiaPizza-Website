@@ -12,7 +12,9 @@ const Footer = ({
     className="w-full px-[10px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px]"
     style={{ background: "var(--tt-bg-color)" }}
   >
-    <div className="text-h3 sm:text-h2 w-full">Zia Pizza</div>
+    {/* Top divider */}
+    <div className="w-full h-px bg-white/[0.07] mb-[48px]" />
+    <div className="text-white text-h3 sm:text-h2 w-full">Zia Pizza</div>
     <div
       className="mb-[32px] mx-2 text-normal2"
       style={{ color: "var(--tt-color-text-gray)" }}
@@ -219,28 +221,22 @@ const Footer = ({
         </div>
       </div>
     </div>
-    <div className="h-[60px]" />
+    <div className="h-[48px]" />
     {/* Bottom Bar */}
-    <div className="bg-primary-dark rounded-full text-white w-[90%] mx-auto min-h-[37px] py-[10px] sm:px-[50px] md:px-[100px]">
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center text-normal4 gap-[20px]">
-        <p className="hidden sm:block">
-          Zia Pizza 2025 All Rights Reserved
-        </p>
-        <p className="text-nowrap">
-          Made with{" "}
-          <a
-            target="_blank"
-            href="http://tableturnerr.com"
-            className="hover:underline cursor-pointer"
-            rel="noopener noreferrer"
-          >
-            <u>TableTurnerr.com</u>
-          </a>
-        </p>
-      </div>
-    </div>
-    <div className="block sm:hidden w-full text-center text-[10px] mt-2">
-      Zia Pizza 2025 All Rights Reserved
+    <div className="w-full h-px bg-white/[0.07] mb-[20px]" />
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>
+      <p>© Zia Pizza 2025. All Rights Reserved.</p>
+      <p className="text-nowrap">
+        Made with{" "}
+        <a
+          target="_blank"
+          href="http://tableturnerr.com"
+          className="hover:text-white hover:underline cursor-pointer transition-colors"
+          rel="noopener noreferrer"
+        >
+          TableTurnerr.com
+        </a>
+      </p>
     </div>
   </footer>
 );

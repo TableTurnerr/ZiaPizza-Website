@@ -15,7 +15,7 @@ function StarRating({ count }: { count: number }) {
       {[1, 2, 3, 4, 5].map((i) => (
         <svg
           key={i}
-          className={`w-5 h-5 ${i <= count ? "text-yellow-400" : "text-gray-600"}`}
+          className={`w-5 h-5 ${i <= count ? "text-accent" : "text-gray-600"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -30,7 +30,7 @@ function ReviewCard({ name, stars, text, source }: ReviewCardProps) {
   return (
     <div className="bg-white/5 border border-white/10 rounded-[16px] px-[30px] py-[20px] flex flex-col gap-3">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-primary-dark flex items-center justify-center text-white font-bold text-normal3">
+        <div className="w-10 h-10 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center text-accent font-bold text-normal3">
           {name.charAt(0)}
         </div>
         <div>
@@ -72,6 +72,12 @@ const reviews: ReviewCardProps[] = [
 export default function Reviews() {
   return (
     <div className="w-full">
+      <div className="flex items-center justify-center gap-2 mb-3">
+        <span className="w-2 h-2 rounded-full bg-accent" />
+        <span className="text-accent text-normal3 font-semibold tracking-wider uppercase">
+          Guest Reviews
+        </span>
+      </div>
       <h2 className="text-h3 sm:text-h2 font-semibold text-center mb-[30px]">
         What Our Guests Say
       </h2>

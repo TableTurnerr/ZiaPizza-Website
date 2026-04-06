@@ -69,7 +69,7 @@ function FeaturedDishSection({
           {description}
         </p>
         {price && (
-          <p className="text-h5 font-bold text-accent mb-4">
+          <p className="text-normal3 font-semibold text-accent mb-4">
             Starting from {price}
           </p>
         )}
