@@ -2,104 +2,163 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Restaurants", href: "/#pillars" },
-  { name: "Locations", href: "/#locations" },
-  { name: "Menu", href: "/#dishes" },
-];
+// Animated menu button (hamburger → X) - matches GrillShack Menu_Header_btn
+function AnimatedMenuButton({
+  menuItems,
+}: {
+  menuItems: { name: string; onclick: () => void }[];
+}) {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex flex-col gap-[5px] p-2 cursor-pointer"
+        aria-label="Toggle menu"
+      >
+        <span
+          className={`w-6 h-[2px] bg-white transition-all duration-300 ${isOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+        />
+        <span
+          className={`w-6 h-[2px] bg-white transition-all duration-300 ${isOpen ? "opacity-0" : ""}`}
+        />
+        <span
+          className={`w-6 h-[2px] bg-white transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+        />
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl py-2 min-w-[180px] z-50">
+          {menuItems.map((item, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                item.onclick();
+                setIsOpen(false);
+              }}
+              className="w-full text-left px-4 py-3 text-black text-normal3 hover:bg-gray-100 transition-colors cursor-pointer"
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// CTA button group - matches GrillShack CTA_header_btn
+function AnimatedCTAButton({
+  leftLabel,
+  leftHref,
+  rightLabel,
+  rightHref,
+}: {
+  leftLabel: string;
+  leftHref: string;
+  rightLabel: string;
+  rightHref: string;
+}) {
+  return (
+    <div className="flex items-center bg-primary-dark rounded-[10px] overflow-hidden group">
+      <a
+        href={leftHref}
+        className="text-white text-normal4 font-bold px-4 py-2.5 hover:bg-primary transition-colors"
+      >
+        {leftLabel}
+      </a>
+      <div className="w-[1px] h-6 bg-white/20" />
+      <a
+        href={rightHref}
+        className="text-white text-normal4 font-bold px-4 py-2.5 hover:bg-primary transition-colors"
+      >
+        {rightLabel}
+      </a>
+    </div>
+  );
+}
+
+export default function Header({ onClick }: { onClick?: () => void }) {
+  const router = useRouter();
   const pathname = usePathname();
 
-  const handleNavClick = (href: string) => {
-    setMenuOpen(false);
-    if (href.startsWith("/#") && pathname === "/") {
-      const id = href.replace("/#", "");
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scrollToSection = (sectionId: string) => {
+    const attemptScroll = () => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    if (pathname === "/") {
+      attemptScroll();
+    } else {
+      router.push("/");
+      setTimeout(attemptScroll, 100);
+      if (typeof onClick === "function") onClick();
     }
   };
 
   return (
-    <header className="w-full px-4 sm:px-8 lg:px-16 py-4">
-      <div className="flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo/logo.png"
-            alt="Zia Pizza"
-            width={48}
-            height={48}
-            className="rounded-full"
-            priority
+    <div className="p-[20px] w-full">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 items-center">
+        {/* Left Section - Desktop Menu */}
+        <div className="hidden md:flex justify-start">
+          <AnimatedMenuButton
+            menuItems={[
+              { name: "Our Brands", onclick: () => scrollToSection("Pillars") },
+              { name: "Menu", onclick: () => scrollToSection("Menu") },
+              { name: "Locations", onclick: () => scrollToSection("Locations") },
+              { name: "FAQ's", onclick: () => scrollToSection("FAQs") },
+            ]}
           />
-          <span className="text-xl font-semibold text-white hidden sm:block">
-            Zia Pizza
-          </span>
-        </Link>
+        </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => handleNavClick(item.href)}
-              className="text-normal2 text-gray-300 hover:text-white transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTA + Mobile Menu */}
-        <div className="flex items-center gap-3">
-          <Link
-            href="/#cta"
-            className="bg-primary-dark hover:bg-primary text-white text-normal3 font-semibold px-5 py-2.5 rounded-lg transition-colors"
-          >
-            Order Now
-          </Link>
-
-          {/* Hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+        {/* Center Section - Logo */}
+        <div className="flex justify-start md:justify-center">
+          <div
+            className="relative text-white cursor-pointer"
+            onClick={() => router.push("/")}
           >
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+              className="absolute inset-0 rounded-full border-[0.5px]"
+              style={{ borderColor: "rgba(0,0,0,0.15)", pointerEvents: "none" }}
             />
-            <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
+            <Image
+              src="/logo/logo.png"
+              alt="Zia Pizza Logo"
+              width={140}
+              height={140}
+              className="object-cover border-[4px] border-black rounded-[2px]"
+              priority
             />
-            <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+          </div>
+        </div>
+
+        {/* Right Section - CTA */}
+        <div className="flex justify-end items-center gap-3">
+          {/* Mobile hamburger */}
+          <div className="md:hidden">
+            <AnimatedMenuButton
+              menuItems={[
+                { name: "Our Brands", onclick: () => scrollToSection("Pillars") },
+                { name: "Menu", onclick: () => scrollToSection("Menu") },
+                { name: "Locations", onclick: () => scrollToSection("Locations") },
+                { name: "FAQ's", onclick: () => scrollToSection("FAQs") },
+              ]}
             />
-          </button>
+          </div>
+          <AnimatedCTAButton
+            leftLabel="Call us"
+            leftHref="tel:01722433829"
+            rightLabel="Order"
+            rightHref="https://ziapizza.food-order.net/en?code=RENMV0lX"
+          />
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <nav className="md:hidden mt-4 pb-4 border-t border-navy-border pt-4 flex flex-col gap-3 animate-fade-in">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => handleNavClick(item.href)}
-              className="text-normal1 text-gray-300 hover:text-white transition-colors py-2"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-      )}
-    </header>
+    </div>
   );
 }
