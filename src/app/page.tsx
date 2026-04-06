@@ -23,10 +23,8 @@ const Home = React.memo(function Home() {
   };
 
   return (
-    <div className="p-[10px]">
+    <div className="p-[10px] pt-[80px]">
       <Header onClick={() => {}} />
-
-      <div className="sm:h-[20px]" />
 
       {/* Hero section */}
       <Hero />
@@ -42,7 +40,13 @@ const Home = React.memo(function Home() {
 
       {/* Featuring / Menu section */}
       <div id="Menu" className="w-full flex items-center justify-center text-center flex-col">
-        <div className="text-h3 sm:text-h2 w-full">
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <span className="w-2 h-2 rounded-full bg-accent" />
+          <span className="text-accent text-normal3 font-semibold tracking-wider uppercase">
+            Our Menu
+          </span>
+        </div>
+        <div className="text-white text-h3 sm:text-h2 w-full">
           Try our most popular items
         </div>
 

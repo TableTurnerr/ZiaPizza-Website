@@ -6,44 +6,77 @@ export default function Hero() {
   return (
     <div
       id="Home"
-      className="h-[500px] sm:h-[500px] w-full relative flex flex-row items-center"
+      className="min-h-[600px] lg:min-h-[680px] w-full relative flex items-center rounded-[20px] overflow-hidden"
     >
-      {/* Hero background image - Mobile */}
-      <div className="absolute inset-0 w-full h-full -z-10 sm:hidden">
-        <Image
-          src="/photos/JOE00760.jpeg"
-          alt="Home Page Image Mobile"
-          fill
-          className="object-cover rounded-[24px]"
-        />
-      </div>
-      {/* Hero background image - Desktop */}
-      <div className="hidden sm:block absolute pt-4 mr-[-10px] right-0 h-[125%] w-1/2 -z-10">
-        <Image
-          src="/photos/JOE00760.jpeg"
-          alt="Home Page Image"
-          fill
-          className="object-contain object-right"
-        />
-      </div>
-      <div className="text-left pl-2 sm:pl-[60px] pb-8 flex flex-col items-start justify-center gap-2.5 relative z-10">
-        <div className="text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
-          Authentic Italian &middot; Made Fresh Daily
+      {/* Full-bleed background image */}
+      <Image
+        src="/photos/JOE01050.jpeg"
+        alt="Zia Pizza - Stone baked pizza"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[38%_center]"
+      />
+
+      {/* Left dark gradient — keeps text readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/75 to-[#0F172A]/10" />
+      {/* Top + bottom vignette for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/30 via-transparent to-[#0F172A]/70" />
+
+      {/* Text Content */}
+      <div className="relative z-10 pl-6 sm:pl-12 lg:pl-20 pr-4 py-20 flex flex-col items-start gap-4 max-w-[560px]">
+
+        {/* Eyebrow */}
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-accent" />
+          <span
+            className="text-[12px] sm:text-[13px] font-semibold tracking-[0.12em] uppercase"
+            style={{ color: "var(--tt-color-text-gray)" }}
+          >
+            Authentic Italian &middot; Made Fresh Daily
+          </span>
         </div>
-        <div className="text-[32px] sm:text-h2 lg:text-h1 sm:font-medium leading-[1.2]">
+
+        {/* Headline */}
+        <h1 className="text-white text-[40px] sm:text-h2 lg:text-h1 font-bold leading-[1.08] -mt-1">
           A Slice Above
           <br />
-          The Rest
-        </div>
+          <span className="text-primary">The Rest</span>
+        </h1>
+
+        {/* Subtext */}
         <p
-          className="text-normal3 max-w-md mt-2"
+          className="text-[14px] sm:text-normal3 leading-[1.7] max-w-[400px]"
           style={{ color: "var(--tt-color-text-gray)" }}
         >
           Stone-baked pizzas crafted with love in Salisbury, Westbury &amp;
-          Trowbridge. Serving the finest Italian flavours in Wiltshire since
-          2009.
+          Trowbridge. Serving the finest Italian flavours in Wiltshire since 2009.
         </p>
-        <div className="mt-[20px] gap-[20px] flex flex-col sm:flex-row items-center justify-center">
+
+        {/* Stats row */}
+        <div className="flex items-center gap-7 py-1">
+          {[
+            { value: "14+", label: "Years" },
+            { value: "3", label: "Locations" },
+            { value: "500+", label: "Reviews" },
+          ].map(({ value, label }, i) => (
+            <React.Fragment key={label}>
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-[22px] leading-none">{value}</span>
+                <span
+                  className="text-[11px] tracking-widest uppercase mt-[5px]"
+                  style={{ color: "var(--tt-color-text-gray)" }}
+                >
+                  {label}
+                </span>
+              </div>
+              {i < 2 && <div className="w-px h-8 bg-white/10" />}
+            </React.Fragment>
+          ))}
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-start gap-[14px] mt-1">
           <ThemeButton
             text="Order Online"
             href="https://ziapizza.food-order.net/en?code=RENMV0lX"
