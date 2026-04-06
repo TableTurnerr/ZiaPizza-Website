@@ -1,0 +1,182 @@
+/* ===== WATERMARK ===== */
+.watermark-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzUuMDgyOCA0Ny41MzMyTDQzLjA0NjkgNTUuNTA1M0g2MC4xNjkySDc3LjI5MDZMODUuMjI1NSA0Ny41MzMyTDkzLjE2MDQgMzkuNTYxMUg2MC4xMzkxSDI3LjExODdMMzUuMDgyOCA0Ny41MzMyWk05Ni41MDk2IDU0Ljg0OThMODEuMjM5NCA3MC4xMzk0TDgxLjI3OTMgMTA2Ljg5TDgxLjMxOTIgMTQzLjY0MUw5Mi44NTA0IDE1NS41NEwxMDQuMzgxIDE2Ny40MzlMMTE1Ljg1MiAxNTUuOTY3TDEyNy4zMjMgMTQ0LjQ5NkwxMjcuMDkxIDExMi44MjVMMTI2Ljg1OCA4MS4xNTMzTDExNi42NzEgODkuNjk1OEMxMTEuMDY4IDk0LjM5NDEgMTA2LjI4NSA5OC40NDQ4IDEwNi4wNDIgOTguNjk4MUMxMDUuNjIxIDk5LjEzNTcgMTA5LjEyOSA5OC40Njk2IDExMi40NjQgOTcuNDc4NEMxMTMuOTA2IDk3LjA0OTcgMTE0LjAxNCA5OC4zMjUyIDExNC4wMTQgMTE1Ljc1OFYxMzQuNDk2TDEwOS4yMTYgMTM5LjQ4OUwxMDQuNDIgMTQ0LjQ4TDEwMC44MzggMTQwLjUxOEw5Ny4yNTYzIDEzNi41NTVMOTcuMjIgMTA2LjQyNEw5Ny4xODM2IDc2LjI5MzlMMTA3LjYwNSA2NS44OTkxTDExOC4wMjYgNTUuNTA1M0gxMzcuNTE5SDE1Ny4wMTJMMTY0Ljk0NiA0Ny41MzMyTDE3Mi44ODEgMzkuNTYxMUgxNDIuMzMxSDExMS43ODFMOTYuNTA5NiA1NC44NDk4WiIgZmlsbD0iIzBEMEQwRCIvPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 420px 420px;
+  opacity: 0.04;
+}
+
+/* ===== BRANDING BANNER ===== */
+.branding-banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 8px 0 20px 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0D0D0D;
+}
+
+.branding-logo {
+  width: 28px;
+  height: 28px;
+  opacity: 0.85;
+}
+
+.branding-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0D0D0D;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+.branding-text:hover {
+  text-decoration: underline;
+}
+
+/* ===== BASE TYPOGRAPHY ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+/* Title */
+h1:first-of-type {
+  font-size: 22px;
+  border-bottom: 3px solid #0D0D0D;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+/* Section headings */
+h2 {
+  font-size: 16px;
+  color: #0D0D0D;
+  border-bottom: 1.5px solid #ddd;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 13px;
+  color: #333;
+  margin-top: 16px;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 12px;
+  color: #444;
+  margin-top: 12px;
+  page-break-after: avoid;
+}
+
+/* ===== TABLES ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 16px 0;
+  font-size: 10px;
+  page-break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+th {
+  background-color: #0D0D0D;
+  color: #ffffff;
+  padding: 6px 8px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background-color: #f8f8f8;
+}
+
+/* ===== TEXT STYLES ===== */
+strong {
+  color: #0D0D0D;
+}
+
+code {
+  background-color: #f4f4f4;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 3px solid #0D0D0D;
+  font-size: 9px;
+  overflow-x: auto;
+  page-break-inside: avoid;
+}
+
+a {
+  color: #0D0D0D;
+  text-decoration: underline;
+}
+
+blockquote {
+  border-left: 3px solid #0D0D0D;
+  padding-left: 12px;
+  color: #555;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+ul, ol {
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+li {
+  margin-bottom: 3px;
+}
+
+hr {
+  border: none;
+  border-top: 1.5px solid #ddd;
+  margin: 20px 0;
+}
+
+/* ===== PRINT / PAGE CONTROL ===== */
+h2, h3, h4 {
+  page-break-after: avoid;
+}
+
+p, li {
+  orphans: 3;
+  widows: 3;
+}
