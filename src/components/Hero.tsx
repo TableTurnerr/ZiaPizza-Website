@@ -1,67 +1,66 @@
 import React from "react";
 import Image from "next/image";
-import ThemeBtn from "./ThemeBtn";
+import ThemeButton from "@/components/ThemeBtn";
 
 export default function Hero() {
   return (
-    <section
+    <div
       id="Home"
-      className="relative w-full min-h-[500px] sm:min-h-[600px] flex items-center overflow-hidden"
+      className="h-[500px] sm:h-[500px] w-full relative flex flex-row items-center"
     >
-      {/* Background image */}
-      <div className="absolute inset-0 -z-10">
+      {/* Hero background image - Mobile */}
+      <div className="absolute inset-0 w-full h-full -z-10 sm:hidden">
         <Image
           src="/photos/JOE00760.jpeg"
-          alt="Zia Pizza hero"
+          alt="Home Page Image Mobile"
           fill
-          className="object-cover brightness-[0.3]"
-          priority
+          className="object-cover rounded-[24px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-transparent" />
       </div>
-
-      <div className="w-full px-4 sm:px-8 lg:px-16 py-16">
-        <div className="max-w-2xl">
-          <p className="text-accent text-normal2 font-semibold tracking-wider uppercase mb-4">
-            Authentic Italian &middot; Made Fresh Daily
-          </p>
-          <h1 className="text-[36px] sm:text-h2 lg:text-h1 font-bold leading-[1.1] mb-6">
-            A Slice Above
-            <br />
-            The Rest
-          </h1>
-          <p className="text-gray-300 text-normal1 max-w-lg mb-2">
-            Stone-baked pizzas crafted with love in Salisbury, Westbury &amp;
-            Trowbridge. Hand-stretched dough, homemade sauce, premium toppings.
-          </p>
-          <p className="text-gray-500 text-normal3 mb-8">
-            Serving the finest pizzas and Italian flavours in Wiltshire since
-            2009.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <ThemeBtn
-              text="Order Online"
-              href="/#cta"
-              className="bg-primary-dark border-primary-dark hover:bg-primary hover:border-primary"
-              textClassName="text-white pr-2 pl-4"
-            />
-            <ThemeBtn
-              text="View Menu"
-              href="/#dishes"
-              className="bg-transparent border-white/10 hover:bg-white/5"
-              textClassName="text-gray-300 pr-2 pl-4"
-            />
-            <ThemeBtn
-              text="Find Your Nearest Zia"
-              href="/#locations"
-              className="bg-transparent border-white/10 hover:bg-white/5"
-              textClassName="text-gray-300 pr-2 pl-4"
-              showArrow={false}
-            />
-          </div>
+      {/* Hero background image - Desktop */}
+      <div className="hidden sm:block absolute pt-4 mr-[-10px] right-0 h-[125%] w-1/2 -z-10">
+        <Image
+          src="/photos/JOE00760.jpeg"
+          alt="Home Page Image"
+          fill
+          className="object-contain object-right"
+        />
+      </div>
+      <div className="text-left pl-2 sm:pl-[60px] pb-8 flex flex-col items-start justify-center gap-2.5 relative z-10">
+        <div className="text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-primary-dark pl-[20px]">
+          Authentic Italian &middot; Made Fresh Daily
+        </div>
+        <div className="text-[32px] sm:text-h2 lg:text-h1 sm:font-medium leading-[1.2]">
+          A Slice Above
+          <br />
+          The Rest
+        </div>
+        <p
+          className="text-normal3 max-w-md mt-2"
+          style={{ color: "var(--tt-color-text-gray)" }}
+        >
+          Stone-baked pizzas crafted with love in Salisbury, Westbury &amp;
+          Trowbridge. Serving the finest Italian flavours in Wiltshire since
+          2009.
+        </p>
+        <div className="mt-[20px] gap-[20px] flex flex-col sm:flex-row items-center justify-center">
+          <ThemeButton
+            text="Order Online"
+            href="https://ziapizza.food-order.net/en?code=RENMV0lX"
+            textClassname="pr-[8px] pl-[14px] text-white"
+            className="bg-primary-dark border-2 hover:bg-primary-dark/90 border-primary-dark hover:border-primary-dark/90 transition-colors"
+          />
+          <ThemeButton
+            text="View Menu"
+            textClassname="pr-[8px] pl-[14px]"
+            textColor="text-[var(--tt-color-text-gray)]"
+            className="bg-transparent border-2 transition-all duration-200 hover:bg-primary-dark hover:text-white border-white/10 hover:border-primary-dark"
+            iconBgColor="bg-white/10"
+            iconColor="text-white"
+            href="#Menu"
+          />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
