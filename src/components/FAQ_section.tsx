@@ -5,7 +5,7 @@ const faqItems = [
   {
     question: "What are your opening hours?",
     answer:
-      "Our Salisbury and Westbury locations are open daily from 12:30 PM to 10:30 PM. The Lamb on the Strand in Trowbridge is open Tuesday to Sunday from 11:30 AM to 11:00 PM (closed Mondays).",
+      "Our Salisbury and Westbury locations are open daily from 12:30 PM to 10:30 PM.",
   },
   {
     question: "Do you offer delivery?",
@@ -35,12 +35,7 @@ const faqItems = [
   {
     question: "Do you cater for large groups or events?",
     answer:
-      "Yes! We can accommodate large groups and private events at our Salisbury and Trowbridge locations. Please call ahead to arrange group bookings.",
-  },
-  {
-    question: "Is The Lamb on the Strand a pub or a restaurant?",
-    answer:
-      "It's both! The Lamb on the Strand is a traditional community pub serving Zia Pizza's Italian menu alongside a full drinks selection, including cocktails, beers, and wines.",
+      "Yes! We can accommodate large groups and private events at our Salisbury location. Please call ahead to arrange group bookings.",
   },
   {
     question: "Where do you source your ingredients?",

@@ -21,10 +21,9 @@ const Footer = ({
     >
       More than a restaurant &mdash; it&rsquo;s a legacy of love, stone, and
       flavour. Born in a sunlit kitchen in Naples and reborn in the heart of
-      Wiltshire, we exist to revive community pubs and fill them with Italian
-      warmth, great food, and honest value. Whether you&rsquo;re grabbing a
-      quick slice, sitting down for a family meal, or enjoying a pint at the
-      pub, Zia Pizza has you covered. Come hungry, leave happy.
+      Wiltshire, we bring Italian warmth, great food, and honest value to every
+      table. Whether you&rsquo;re grabbing a quick slice or sitting down for a
+      family meal, Zia Pizza has you covered. Come hungry, leave happy.
     </div>
     <div className="container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 min-h-[100px] lg:grid-cols-3 gap-[10px] lg:gap-8">

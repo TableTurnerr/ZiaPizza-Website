@@ -61,7 +61,7 @@ export default function Header({ onClick }: { onClick?: () => void }) {
               alt="Zia Pizza Logo"
               width={50}
               height={50}
-              className="object-contain rounded-sm flex-shrink-0"
+              className="object-contain rounded-sm flex-shrink-0 h-auto w-auto"
               priority
             />
             <div className="flex flex-col leading-tight text-left">

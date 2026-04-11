@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 interface ThemeButtonProps {
   text?: string;
@@ -39,9 +41,13 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
   target,
   rel = "noopener noreferrer",
 }) => {
+  const [hovered, setHovered] = useState(false);
+
   const buttonContent = (
     <div
       className={`group ${className} border ${borderColor} hover:scale-105 shadow-lg hover:shadow-xl rounded-[9px] min-w-[157px] min-h-[41px] w-fit overflow-hidden flex transition-all duration-200 items-center ${borderHoverColor}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <div
         className={`text-nowrap text-normal2 font-bold ${textColor} ${textClassname} mx-auto h-full flex items-center justify-center`}
@@ -51,10 +57,10 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
       {showArrow && (
         <div className="flex justify-end m-[5px]">
           <div
-            className={`w-[31px] h-[31px] ${iconBgColor} group-hover:${iconBgHoverColor} rounded-[7px] transition-all duration-300 flex items-center justify-center`}
+            className={`w-[31px] h-[31px] ${hovered ? iconBgHoverColor : iconBgColor} rounded-[7px] transition-all duration-300 flex items-center justify-center`}
           >
             <svg
-              className={`w-6 h-6 ${iconColor} group-hover:${iconHoverColor}`}
+              className={`w-6 h-6 ${hovered ? iconHoverColor : iconColor}`}
               style={{ transform: `rotate(${arrowRotation}deg)` }}
               fill="none"
               stroke="currentColor"

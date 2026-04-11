@@ -36,7 +36,7 @@ export default function BrandPillars() {
       </div>
       <h2 className="text-white text-h3 sm:text-h2 w-full mb-[44px]">Brand Pillars</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] w-full max-w-4xl">
         {locationTypes.map((type, index) => (
           <Link
             key={type.slug}

@@ -32,7 +32,7 @@ export default function OurLocation() {
             <div
               key={loc.slug}
               className="backdrop-blur-[14px] rounded-[16px] px-5 py-4 flex-1"
-              style={{ background: "rgba(255,255,255,0.12)" }}
+              style={{ background: "rgba(0,0,0,0.65)" }}
             >
               <h3 className="text-normal2 font-bold text-white mb-1">
                 {loc.name}

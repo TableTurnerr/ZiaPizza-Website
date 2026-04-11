@@ -49,15 +49,15 @@ export default function Hero() {
           className="text-[14px] sm:text-normal3 leading-[1.7] max-w-[400px]"
           style={{ color: "var(--tt-color-text-gray)" }}
         >
-          Stone-baked pizzas crafted with love in Salisbury, Westbury &amp;
-          Trowbridge. Serving the finest Italian flavours in Wiltshire since 2009.
+          Stone-baked pizzas crafted with love in Salisbury &amp; Westbury.
+          Serving the finest Italian flavours in Wiltshire since 2009.
         </p>
 
         {/* Stats row */}
         <div className="flex items-center gap-7 py-1">
           {[
             { value: "14+", label: "Years" },
-            { value: "3", label: "Locations" },
+            { value: "2", label: "Locations" },
             { value: "500+", label: "Reviews" },
           ].map(({ value, label }, i) => (
             <React.Fragment key={label}>

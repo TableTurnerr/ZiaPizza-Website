@@ -58,7 +58,7 @@ const reviews: ReviewCardProps[] = [
   {
     name: "James T.",
     stars: 5,
-    text: "Took the family to The Lamb on the Strand — great pub atmosphere with genuinely excellent Italian food. The Wednesday buffet is unbeatable value.",
+    text: "Ordered from Westbury Express for the first time and was blown away. Fresh, hot, and the dough was perfect. The BOGO deal made it even better — we'll be regulars!",
     source: "Google Review",
   },
   {

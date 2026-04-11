@@ -37,7 +37,7 @@ export default function LocationFinder() {
       </div>
 
       {/* Location cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] max-w-4xl mx-auto">
         {filtered.map((location) => (
           <Link
             key={location.slug}
@@ -55,9 +55,7 @@ export default function LocationFinder() {
                 <span className="bg-primary-dark/80 text-white text-normal4 font-semibold px-3 py-1 rounded-full">
                   {location.type === "zia-pizza"
                     ? "Zia Pizza"
-                    : location.type === "zia-pizza-express"
-                      ? "Express"
-                      : "Country Pub"}
+                    : "Express"}
                 </span>
               </div>
             </div>
