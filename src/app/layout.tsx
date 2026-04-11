@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ziapizza.co.uk"),
   title: "Zia Pizza | A Slice Above The Rest",
   description:
-    "Authentic Italian pizza made fresh daily. Stone-baked with love in Salisbury, Westbury, and Trowbridge. Dine in, takeaway, or delivery.",
+    "Authentic Italian pizza made fresh daily. Stone-baked with love in Salisbury and Westbury. Dine in, takeaway, or delivery.",
   keywords: [
-    "Zia Pizza", "Italian Pizza", "Salisbury", "Westbury", "Trowbridge",
+    "Zia Pizza", "Italian Pizza", "Salisbury", "Westbury",
     "Stone Baked Pizza", "Italian Restaurant", "Wiltshire", "Pizza Delivery",
   ],
   robots: { index: true, follow: true },
