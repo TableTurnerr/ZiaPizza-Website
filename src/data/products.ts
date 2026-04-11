@@ -71,7 +71,7 @@ export const products: Product[] = [
     price: "\u00A38.95",
     image: "/photos/JOE01015.jpeg",
     tags: ["vegetarian", "classic"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "pepperoni",
@@ -82,7 +82,7 @@ export const products: Product[] = [
     price: "\u00A310.95",
     image: "/photos/JOE01020.jpeg",
     tags: ["popular", "spicy"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "bbq-chicken",
@@ -93,7 +93,7 @@ export const products: Product[] = [
     price: "\u00A311.95",
     image: "/photos/JOE01024.jpeg",
     tags: ["popular"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "meat-feast",
@@ -104,7 +104,7 @@ export const products: Product[] = [
     price: "\u00A312.95",
     image: "/photos/JOE01044.jpeg",
     tags: ["popular"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "vegetarian-supreme",
@@ -115,7 +115,7 @@ export const products: Product[] = [
     price: "\u00A310.95",
     image: "/photos/JOE01048.jpeg",
     tags: ["vegetarian"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "calzone",
@@ -126,7 +126,7 @@ export const products: Product[] = [
     price: "\u00A311.95",
     image: "/photos/JOE01050.jpeg",
     tags: ["signature"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
   {
     slug: "truffle-pizza",
@@ -137,7 +137,7 @@ export const products: Product[] = [
     price: "\u00A313.95",
     image: "/photos/JOE01090.jpeg",
     tags: ["gourmet", "vegetarian"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
   {
     slug: "half-roast-chicken",
@@ -148,7 +148,7 @@ export const products: Product[] = [
     price: "\u00A312.95",
     image: "/photos/JOE00788.jpeg",
     tags: ["signature"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
 
   // Pastas
@@ -161,7 +161,7 @@ export const products: Product[] = [
     price: "\u00A310.95",
     image: "/products/pastas/Bolognese.jpg",
     tags: ["classic"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "carbonara",
@@ -172,7 +172,7 @@ export const products: Product[] = [
     price: "\u00A311.95",
     image: "/products/pastas/carbonara.jpg",
     tags: ["classic", "popular"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "chicken-alfredo",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     price: "\u00A311.95",
     image: "/products/pastas/Chicken Alfredo.jpg",
     tags: ["popular"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "lasagne",
@@ -194,7 +194,7 @@ export const products: Product[] = [
     price: "\u00A311.95",
     image: "/products/pastas/Lasagne Al Forno.jpg",
     tags: ["classic"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
   {
     slug: "truffle-pasta",
@@ -205,7 +205,7 @@ export const products: Product[] = [
     price: "\u00A313.95",
     image: "/products/pastas/truffle.jpg",
     tags: ["gourmet"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
 
   // Starters
@@ -218,7 +218,7 @@ export const products: Product[] = [
     price: "\u00A35.95",
     image: "/products/starters/Garlic Dough Balls.jpg",
     tags: ["vegetarian", "popular"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "hot-honey-dough-balls",
@@ -229,7 +229,7 @@ export const products: Product[] = [
     price: "\u00A36.95",
     image: "/products/starters/hot honey Dough Balls.jpg",
     tags: ["spicy", "signature"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "classic-fries",
@@ -240,7 +240,7 @@ export const products: Product[] = [
     price: "\u00A33.95",
     image: "/products/starters/Classic Fries.jpg",
     tags: ["vegetarian", "vegan"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
 
   // Desserts
@@ -253,7 +253,7 @@ export const products: Product[] = [
     price: "\u00A34.50",
     image: "/products/desserts/gelato-chocolate.jpg",
     tags: ["vegetarian"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "gelato-strawberry",
@@ -264,7 +264,7 @@ export const products: Product[] = [
     price: "\u00A34.50",
     image: "/products/desserts/gelato-strawberry.jpg",
     tags: ["vegetarian"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "gelato-tiramisu",
@@ -275,7 +275,7 @@ export const products: Product[] = [
     price: "\u00A34.50",
     image: "/products/desserts/gelato-thiramisu.jpg",
     tags: ["signature"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "gelato-vanilla",
@@ -286,7 +286,7 @@ export const products: Product[] = [
     price: "\u00A34.50",
     image: "/products/desserts/gelato-vanilla.jpg",
     tags: ["vegetarian"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "profiteroles-chocolate",
@@ -297,7 +297,7 @@ export const products: Product[] = [
     price: "\u00A35.95",
     image: "/products/desserts/profiteroles-chocolate.jpg",
     tags: ["popular"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
   {
     slug: "profiteroles-lemon",
@@ -308,7 +308,7 @@ export const products: Product[] = [
     price: "\u00A35.95",
     image: "/products/desserts/profiteroles-lemon.jpg",
     tags: [],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
   {
     slug: "profiteroles-pistachio",
@@ -319,7 +319,7 @@ export const products: Product[] = [
     price: "\u00A35.95",
     image: "/products/desserts/profiteroles-pistachio.jpg",
     tags: ["gourmet"],
-    locationSlugs: ["salisbury", "trowbridge"],
+    locationSlugs: ["salisbury"],
   },
 
   // Drinks
@@ -331,7 +331,7 @@ export const products: Product[] = [
     price: "\u00A32.50",
     image: "/products/drinks/Coca cola.jpg",
     tags: [],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "diet-coke",
@@ -341,7 +341,7 @@ export const products: Product[] = [
     price: "\u00A32.50",
     image: "/products/drinks/Diet coke.jpg",
     tags: [],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "fanta",
@@ -351,7 +351,7 @@ export const products: Product[] = [
     price: "\u00A32.50",
     image: "/products/drinks/Fanta.jpg",
     tags: [],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "sprite",
@@ -361,7 +361,7 @@ export const products: Product[] = [
     price: "\u00A32.50",
     image: "/products/drinks/Sprite.jpg",
     tags: [],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
 
   // Dips
@@ -374,7 +374,7 @@ export const products: Product[] = [
     price: "\u00A30.75",
     image: "/products/dips/Garlic mayo.jpg",
     tags: ["vegetarian"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "bbq-dip",
@@ -384,7 +384,7 @@ export const products: Product[] = [
     price: "\u00A30.75",
     image: "/products/dips/bbq.jpg",
     tags: ["vegan"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "truffle-mayo",
@@ -395,7 +395,7 @@ export const products: Product[] = [
     price: "\u00A31.25",
     image: "/products/dips/Truffle mayo.jpg",
     tags: ["gourmet"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
   {
     slug: "hot-chilli",
@@ -405,7 +405,7 @@ export const products: Product[] = [
     price: "\u00A30.75",
     image: "/products/dips/Hot chilli.jpg",
     tags: ["spicy", "vegan"],
-    locationSlugs: ["salisbury", "westbury", "trowbridge"],
+    locationSlugs: ["salisbury", "westbury"],
   },
 ];
 

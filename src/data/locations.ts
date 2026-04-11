@@ -25,7 +25,7 @@ export interface Deal {
   price?: string;
 }
 
-export type LocationType = "zia-pizza" | "zia-pizza-express" | "country-pubs";
+export type LocationType = "zia-pizza" | "zia-pizza-express";
 
 export interface LocationTypeInfo {
   slug: LocationType;
@@ -51,14 +51,6 @@ export const locationTypes: LocationTypeInfo[] = [
     description:
       "Fast-casual pizza outlets built for speed without compromising on quality. The same stone-baked goodness, optimised for takeaway and delivery.",
     icon: "bolt",
-  },
-  {
-    slug: "country-pubs",
-    name: "Zia Country Pubs",
-    tagline: "Italian warmth meets British pub charm",
-    description:
-      "Community pubs revived with Italian heart. Great food, cold pints, and a warm atmosphere where every guest feels like family.",
-    icon: "pub",
   },
 ];
 
@@ -152,52 +144,6 @@ export const locations: Location[] = [
         day: "Every Day",
         name: "50% Off 2nd Pizza",
         description: "Buy one pizza, get the second at half price",
-      },
-    ],
-  },
-  {
-    slug: "trowbridge",
-    name: "The Lamb on the Strand",
-    type: "country-pubs",
-    address: "99 The Strand, Trowbridge, BA14 6LL",
-    phone: "+44 13805 03525",
-    email: "semington@ziapizza.com",
-    hours: "Closed Monday | Tue-Sun: 11:30 AM - 11:00 PM",
-    description:
-      "Welcome to The Lamb on the Strand by Zia Pizza, where great food, refreshing drinks, and a friendly atmosphere come together. A lively pub-style dining experience that locals love, complete with cosy seating and tasty meals.",
-    image: "/photos/JOE00706.jpeg",
-    instagram: "https://instagram.com/thelambonthestrand.trowbridge",
-    facebook: "https://www.facebook.com/share/16K5gAssg7/",
-    orderUrl: "https://ziapizza.food-order.net/en?code=SUhBQkJW",
-    justEat:
-      "https://www.just-eat.co.uk/restaurants-zia-pizza---trowbridge-trowbridge/menu",
-    uberEats:
-      "https://www.ubereats.com/gb/store/zia-pizza-the-lamb-on-the-strand/fiPax3kyUwyzKU9OFob5YA",
-    mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.5!2d-2.2180!3d51.3198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDE5JzExLjMiTiAywrAxMycwNC44Ilc!5e0!3m2!1sen!2suk!4v1",
-    deals: [
-      {
-        day: "Every Evening",
-        name: "Double the Drinks",
-        description: "2 cocktails for \u00A313.95 from 5 PM",
-      },
-      {
-        day: "Wednesday",
-        name: "Italian Buffet",
-        description: "Unlimited pizza & pasta buffet, 6-9 PM",
-        price: "\u00A316.90",
-      },
-      {
-        day: "Thursday",
-        name: "Steak Night",
-        description: "Sirloin steak with chips & salad",
-        price: "\u00A319.95",
-      },
-      {
-        day: "Sunday",
-        name: "Sunday Roast",
-        description: "Traditional Sunday roast",
-        price: "from \u00A314.95",
       },
     ],
   },
