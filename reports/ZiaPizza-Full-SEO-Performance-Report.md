@@ -28,7 +28,7 @@
 
 ## 1. Executive Summary
 
-Zia Pizza operates a React-based single-page application (SPA) website serving three locations in Wiltshire, England -- Westbury, Salisbury, and Trowbridge. While the brand has a solid product offering with authentic Italian pizza and positive customer reviews (96% recommendation rate at Westbury), the website suffers from **critical technical SEO deficiencies** that severely limit its search visibility and organic traffic potential.
+Zia Pizza operates a React-based single-page application (SPA) website serving two locations in Wiltshire, England -- Westbury and Salisbury. While the brand has a solid product offering with authentic Italian pizza and positive customer reviews (96% recommendation rate at Westbury), the website suffers from **critical technical SEO deficiencies** that severely limit its search visibility and organic traffic potential.
 
 ### Key Findings at a Glance
 
@@ -65,8 +65,8 @@ Zia Pizza operates a React-based single-page application (SPA) website serving t
 | **Companies House #** | 07485174 |
 | **Founded** | 2011 (under Chef Vittorio Capetti) |
 | **Current Ownership** | Nidhin Sajeev & Aleena (acquired 2024) |
-| **Locations** | 3 (Westbury, Salisbury, Trowbridge) |
-| **Cuisine** | Authentic Italian pizza, pasta, and pub food |
+| **Locations** | 2 (Westbury, Salisbury) |
+| **Cuisine** | Authentic Italian pizza and pasta |
 | **USP** | 24-hour cold-fermented dough, imported Italian ingredients |
 
 ### Location Details
@@ -75,10 +75,9 @@ Zia Pizza operates a React-based single-page application (SPA) website serving t
 |----------|------|---------|-------|-------|
 | **Salisbury** | Express Restaurant | 46 Silver St, Salisbury, SP1 2NE | 01722 433829 | salisbury@ziapizza.com |
 | **Westbury** | Express Restaurant | 15 Palomino Pl, Westbury, BA13 3SD | +44 1373 865271 | westbury@ziapizza.com |
-| **Trowbridge** | Country Pub (The Lamb on the Strand) | 99 The Strand, Trowbridge, BA14 6LL | +44 13805 03525 | semington@ziapizza.com |
 
 ### Service Channels
-- Dine-in at all 3 locations
+- Dine-in at both locations
 - Online ordering via food-order.net (EPOS Hybrid)
 - Delivery via Just Eat, Uber Eats, and Deliveroo
 - Table booking via eposhybrid.uk
@@ -102,7 +101,7 @@ The site uses client-side rendering (CSR) exclusively. Every URL -- including `/
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Zia Pizza - Premium Italian Pizza & Dining | Westbury, Salisbury & Trowbridge</title>
+  <title>Zia Pizza - Premium Italian Pizza & Dining | Westbury & Salisbury</title>
   <!-- static meta tags -->
 </head>
 <body>
@@ -122,7 +121,7 @@ The site uses client-side rendering (CSR) exclusively. Every URL -- including `/
 
 | Element | Status | Issue |
 |---------|--------|-------|
-| **Indexed Pages** | ~6 pages | Extremely thin for a 3-location business |
+| **Indexed Pages** | ~6 pages | Extremely thin for a 2-location business |
 | **robots.txt** | Present, allows all | Missing `Sitemap:` directive |
 | **sitemap.xml** | Does not exist | Returns SPA HTML shell instead of XML |
 | **Canonical Tags** | Missing | No `<link rel="canonical">` on any page |
@@ -169,7 +168,6 @@ The site uses client-side rendering (CSR) exclusively. Every URL -- including `/
        <url><loc>https://ziapizza.co.uk/menu</loc><priority>0.9</priority></url>
        <url><loc>https://ziapizza.co.uk/location/salisbury</loc><priority>0.8</priority></url>
        <url><loc>https://ziapizza.co.uk/location/westbury</loc><priority>0.8</priority></url>
-       <url><loc>https://ziapizza.co.uk/location/trowbridge</loc><priority>0.8</priority></url>
        <!-- etc -->
      </urlset>
      ```
@@ -234,19 +232,17 @@ The site uses client-side rendering (CSR) exclusively. Every URL -- including `/
 
 | Page | Current Title | Issues |
 |------|--------------|--------|
-| All pages (HTML) | "Zia Pizza - Premium Italian Pizza & Dining \| Westbury, Salisbury & Trowbridge" | Same title for every URL (76 chars, slightly over 60 char ideal) |
+| All pages (HTML) | "Zia Pizza - Premium Italian Pizza & Dining \| Westbury & Salisbury" | Same title for every URL (slightly over 60 char ideal) |
 | Salisbury (JS) | "Pizza Delivery in Salisbury \| Best Pizza in Salisbury" | Only visible after JS execution |
 | Westbury (JS) | "Best Pizza in Westbury \| Pizza Delivery in Westbury" | Only visible after JS execution |
-| Trowbridge (JS) | "Pubs in Trowbridge \| Best Pubs in Trowbridge -- Zia Pizza" | Only visible after JS execution |
 
 ### 4.2 Meta Descriptions
 
 | Page | Current Meta Description | Issues |
 |------|------------------------|--------|
-| All pages (HTML) | "Experience authentic Italian pizza at Zia Pizza. Three premium locations..." (205 chars) | Too long (max 155 chars), same for every URL |
+| All pages (HTML) | "Experience authentic Italian pizza at Zia Pizza. Two premium locations..." (205 chars) | Too long (max 155 chars), same for every URL |
 | Salisbury (JS) | "Enjoy fast Pizza Delivery in Salisbury..." | Client-side only |
 | Westbury (JS) | "Enjoy the best pizza in Westbury..." | Client-side only |
-| Trowbridge (JS) | "Discover the best pubs in Trowbridge..." | Client-side only |
 
 ### 4.3 Heading Hierarchy
 
@@ -272,7 +268,6 @@ The site uses client-side rendering (CSR) exclusively. Every URL -- including `/
 | Images with srcset/responsive | 0 | Critical |
 
 **Filename issues found:**
-- `resturant_image_lamb_on_the_strand` (typo: "resturant")
 - `resturant_image_salisbury` (typo: "resturant")
 - `resturant_imgae_westbury` (double typo: "resturant", "imgae")
 - `100004.jpg`, `100006.jpg`, `image1.jpg` (non-descriptive)
@@ -308,13 +303,13 @@ The site has a reasonable internal link structure:
 ### 4.7 Solutions: On-Page SEO
 
 1. **Unique title tags per page** (with SSR):
-   - Homepage: "Zia Pizza | Authentic Italian Pizza in Westbury, Salisbury & Trowbridge"
+   - Homepage: "Zia Pizza | Authentic Italian Pizza in Westbury & Salisbury"
    - Menu: "Our Menu | Zia Pizza - Italian Pizza, Pasta & More"
    - Salisbury: "Zia Pizza Salisbury | Pizza Delivery & Dine-In on Silver Street"
    - Keep all titles under 60 characters
 
 2. **Unique meta descriptions per page** (under 155 characters):
-   - Homepage: "Award-winning Italian pizza in Wiltshire. Order online for delivery, book a table, or visit us in Westbury, Salisbury & Trowbridge."
+   - Homepage: "Award-winning Italian pizza in Wiltshire. Order online for delivery, book a table, or visit us in Westbury & Salisbury."
    - Location pages: Focus on local keywords and CTAs
 
 3. **Fix heading hierarchy:**
@@ -641,7 +636,7 @@ Home | Locations | Menu | Deals | About | Blog | Contact
 | Just Eat Reviews | 1,400+ | 610+ |
 | Instagram Followers | 9,000+ | ~189 |
 | Website | Professional, own ordering | SPA with external ordering |
-| Stores (national) | 119 | 3 |
+| Stores (national) | 119 | 2 |
 | SEO Advantage | Chain authority, local pages | -- |
 
 #### Nole Pizza -- Salisbury
@@ -673,7 +668,7 @@ Home | Locations | Menu | Deals | About | Blog | Contact
 | **Papa John's** | 400+ | High | Early online ordering pioneer |
 | **PizzaExpress** | 350+ | High | Premium dining brand, loyalty program |
 | **Franco Manca** | 70+ | Growing | Artisan positioning, strong content |
-| **Zia Pizza** | 3 | <1K (est.) | Authentic product, but minimal digital presence |
+| **Zia Pizza** | 2 | <1K (est.) | Authentic product, but minimal digital presence |
 
 ### 7.3 Competitive SEO Gap Analysis
 
@@ -699,11 +694,8 @@ Home | Locations | Menu | Deals | About | Blog | Contact
 | "pizza delivery Westbury" | Transactional | 50-200 | Low |
 | "best pizza Salisbury" | Commercial | 50-200 | Medium |
 | "Italian restaurant Salisbury" | Commercial | 100-300 | Medium |
-| "restaurants Trowbridge" | Commercial | 200-500 | Medium |
-| "pubs Trowbridge" | Commercial | 100-300 | Medium |
 | "pizza near me" (local pack) | Transactional | 10,000+ | Very High |
 | "Italian restaurant Westbury" | Commercial | 20-100 | Low |
-| "Sunday roast Trowbridge" | Commercial | 20-100 | Low |
 | "pizza delivery BA13" | Transactional | 10-50 | Very Low |
 | "halal pizza Salisbury" | Commercial | 10-50 | Very Low |
 | "vegan pizza Wiltshire" | Commercial | 10-50 | Low |
@@ -715,14 +707,12 @@ Home | Locations | Menu | Deals | About | Blog | Contact
 2. **Create dedicated, content-rich location pages:**
    - `/location/salisbury` -- 500+ words of unique content about the Salisbury restaurant, its neighborhood (Silver Street), parking, nearby attractions, and what makes it special
    - `/location/westbury` -- Focus on "best pizza in Westbury", the Express concept, the refurbishment story
-   - `/location/trowbridge` -- Focus on the pub experience, "best pubs in Trowbridge", Sunday roast, family dining
    - Include customer testimonials, unique photos, and embedded Google Maps
 
 3. **Content marketing strategy:**
    - Publish 2-4 blog posts per month targeting long-tail keywords:
      - "What Makes Neapolitan Pizza Different? Our 24-Hour Dough Process"
      - "Best Family Restaurants in Westbury: A Local Guide"
-     - "Sunday Roast at The Lamb on the Strand: A Trowbridge Tradition"
      - "Pizza Delivery in Salisbury: How We Keep It Fresh"
    - Each post should be 800-1,500 words with internal links to relevant location/menu pages
 
@@ -742,7 +732,6 @@ Home | Locations | Menu | Deals | About | Blog | Contact
 |----------|-----|---------------|---------------|
 | Westbury | Exists | 4.5/5 | 79 reviews |
 | Salisbury | Exists | Unknown | Very few |
-| Trowbridge | Exists | Unknown | Unknown |
 
 ### 8.2 NAP Consistency Issues
 
@@ -750,16 +739,15 @@ Home | Locations | Menu | Deals | About | Blog | Contact
 |----------|----------------|-------|
 | Website | 01722 433829 | -- |
 | Website (generic) | +44 123 456 7890 | **PLACEHOLDER -- appears in codebase** |
-| Email (Trowbridge) | semington@ziapizza.com | Uses "semington" not "trowbridge" |
 
 Inconsistent NAP (Name, Address, Phone) across platforms confuses search engines and reduces local ranking potential.
 
 ### 8.3 Citation Profile
 
 **Known citations/directory listings:**
-- TripAdvisor (all 3 locations)
-- Facebook (all 3)
-- Instagram (2-3 accounts)
+- TripAdvisor (both locations)
+- Facebook (both locations)
+- Instagram (2 accounts)
 - Just Eat, Deliveroo, Uber Eats
 - Google Business Profile
 - Restaurant Guru
@@ -777,7 +765,7 @@ Inconsistent NAP (Name, Address, Phone) across platforms confuses search engines
 
 #### CRITICAL
 
-1. **Fully optimize all 3 Google Business Profiles:**
+1. **Fully optimize both Google Business Profiles:**
    - Complete every attribute (hours, services, amenities, payment methods, accessibility features)
    - Upload 20+ high-quality photos per location (interior, exterior, food, staff, menu)
    - Write a compelling business description with target keywords
@@ -790,7 +778,6 @@ Inconsistent NAP (Name, Address, Phone) across platforms confuses search engines
    - Create a master NAP document for each location
    - Audit and update every citation to match exactly
    - Remove the placeholder phone number from the codebase
-   - Decide on "Trowbridge" vs "Semington" naming and be consistent
 
 3. **Implement review generation strategy:**
    - Train staff to ask satisfied customers for Google reviews
@@ -824,7 +811,6 @@ Inconsistent NAP (Name, Address, Phone) across platforms confuses search engines
 | About | 500-700 | Strong storytelling, good keyword usage |
 | Location/Salisbury | 300-500 | Good local content with FAQs |
 | Location/Westbury | 300-500 | Good local content with FAQs |
-| Location/Trowbridge | 200-300 | Thinner content, fewer FAQs |
 | Menu | 0 (images only) | No indexable content |
 | Deals | 200-300 | Basic offer listings |
 | Blog | 0 | Empty page |
@@ -856,12 +842,10 @@ Inconsistent NAP (Name, Address, Phone) across platforms confuses search engines
    - "The Story Behind Zia Pizza: From Naples to Wiltshire" (brand story, targets "Italian restaurant Wiltshire")
    - "Our 24-Hour Cold-Fermented Dough: Why It Makes the Best Pizza" (targets "best pizza" queries)
    - "A Guide to Dining Out in Salisbury: Top Restaurants & Hidden Gems" (targets "restaurants Salisbury", positions as local authority)
-   - "What's On at The Lamb on the Strand: Your Weekly Guide to Trowbridge" (targets "pubs Trowbridge")
 
    **Month 2 (Local SEO):**
    - "Pizza Delivery in Salisbury: How We Keep It Fresh from Oven to Door"
    - "Best Family Restaurants in Westbury: Where to Take the Kids"
-   - "Sunday Roast in Trowbridge: A British Tradition with an Italian Twist"
    - "Vegetarian & Vegan Pizza Options at Zia Pizza"
 
    **Ongoing (2-4 posts/month):**
@@ -889,16 +873,14 @@ Inconsistent NAP (Name, Address, Phone) across platforms confuses search engines
 |----------|---------|-----------|----------|
 | Facebook (Westbury) | @ZiaPizza | 934 likes | Active |
 | Facebook (Salisbury) | @ziapizzasalisbury | Unknown | Active |
-| Facebook (Trowbridge) | @ziapizzasemington | Unknown | Active |
 | Instagram (Westbury) | @ziapizza_westbury | Unknown | Unknown |
 | Instagram (Salisbury) | @ziapizza.salisbury | 189 | Active |
-| Instagram (Trowbridge) | @thelambonthestrand.trowbridge | Unknown | Unknown |
 | Twitter/X | @ziapizza | Unknown | Unknown |
 | TikTok | Not found | N/A | N/A |
 
 ### 10.2 Social Media Issues
 
-- **Fragmented presence:** 6+ separate accounts across 2 platforms for 3 locations
+- **Fragmented presence:** Multiple separate accounts across 2 platforms for 2 locations
 - **Low follower counts:** 189 Instagram followers vs Caprinos Pizza's 9,000+
 - **Inconsistent branding:** Different naming conventions per location account
 - **No TikTok presence** -- missing the fastest-growing platform for food content
@@ -954,13 +936,6 @@ Since July 2025, Google indexes Instagram posts from professional accounts. This
 | TripAdvisor | 4.4/5 | 8 |
 | TripAdvisor Rank | #70 of 164 restaurants | -- |
 
-#### Trowbridge
-
-| Platform | Rating | Reviews |
-|----------|--------|---------|
-| TripAdvisor | 4.2/5 | 21 |
-| TripAdvisor Rank | #26 of 77 restaurants | -- |
-
 ### 11.2 Review Sentiment Analysis
 
 **Positive themes:**
@@ -968,13 +943,11 @@ Since July 2025, Google indexes Instagram posts from professional accounts. This
 - Fresh, quality ingredients
 - Friendly and attentive service
 - Good value (especially Wednesday buffet and deals)
-- Dog-friendly at Trowbridge
 - 96% recommendation rate (Westbury TripAdvisor)
 
 **Negative themes:**
 - Occasional complaints about bland flavors
 - Pre-grated cheese reported at times
-- Inconsistent quality at Trowbridge location
 - Some delivery timing issues
 
 ### 11.3 Review Gap Analysis
@@ -983,7 +956,6 @@ Since July 2025, Google indexes Instagram posts from professional accounts. This
 |----------|---------------|-------------------|-----|
 | Westbury | 79 | 200 | 121 |
 | Salisbury | ~5-10 | 75 | ~65 |
-| Trowbridge | ~10-20 | 75 | ~55 |
 
 **Why this matters:** Google's 2026 local algorithm weighs "popularity signals" including review interactions more heavily than before. Review volume directly impacts local pack rankings.
 
@@ -1108,7 +1080,7 @@ All of the following fire **immediately on page load without any consent mechani
 |---|------|--------|--------|
 | 22 | Build interactive HTML menu (replace scan images) | SEO, UX, accessibility | High |
 | 23 | Enrich location pages to 500+ unique words each | Local SEO | Medium |
-| 24 | Fully optimize all 3 Google Business Profiles | Local pack rankings | Medium |
+| 24 | Fully optimize both Google Business Profiles | Local pack rankings | Medium |
 | 25 | Launch blog with 4 foundation articles | Content authority | Medium |
 | 26 | Implement review generation strategy | Review volume, local SEO | Low |
 | 27 | Audit and fix NAP consistency across all citations | Local SEO | Medium |
@@ -1133,7 +1105,7 @@ All of the following fire **immediately on page load without any consent mechani
 | **1 month** | Legal compliance achieved; duplicate content eliminated; sitemap indexed |
 | **3 months** | SSR live; indexed pages increase from ~6 to 20+; rich results appearing; CWV scores improve from ~30 to 70+ |
 | **6 months** | Ranking on page 1 for "pizza delivery Westbury" and "Italian restaurant Westbury"; Google reviews double; blog generating organic traffic |
-| **12 months** | Ranking on page 1 for Salisbury and Trowbridge keywords; domain authority 25+; 50% increase in organic traffic; strong local pack presence for all 3 locations |
+| **12 months** | Ranking on page 1 for Salisbury keywords; domain authority 25+; 50% increase in organic traffic; strong local pack presence for both locations |
 
 ---
 
@@ -1148,7 +1120,6 @@ All of the following fire **immediately on page load without any consent mechani
 - [Zia Pizza Official Website](https://ziapizza.co.uk/)
 - [Zia Pizza Westbury -- TripAdvisor](https://www.tripadvisor.co.uk/Restaurant_Review-g950934-d1027223-Reviews-Zia_Pizza-Westbury_Wiltshire_England.html)
 - [Zia Pizza Salisbury -- TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g186414-d33056231-Reviews-Zia_Pizza_Salisbury-Salisbury_Wiltshire_England.html)
-- [The Lamb on the Strand -- TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g735762-d33059048-Reviews-The_Lamb_on_the_Strand_by_Zia_Pizza-Trowbridge_Wiltshire_England.html)
 - [Zia Pizza Ltd -- Companies House](https://find-and-update.company-information.service.gov.uk/company/07485174)
 - [Westbury Pizza Restaurant Thriving After Major Refurbishment -- White Horse News](https://whitehorsenews.co.uk/westbury-pizza-restaurant-thriving-after-major-refurbishment/)
 - [Zia Pizza -- Experience Salisbury](https://www.experiencesalisbury.co.uk/listing/zia-pizza/)

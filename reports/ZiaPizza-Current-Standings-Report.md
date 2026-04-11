@@ -49,7 +49,7 @@ stylesheet: pdf-styles.css
 
 ## 1. Executive Summary
 
-Zia Pizza operates a React-based single-page application (SPA) website serving three locations in Wiltshire, England -- Westbury, Salisbury, and Trowbridge. While the brand has a solid product offering with authentic Italian pizza and strong customer reviews (96% recommendation rate at Westbury), the website suffers from **critical technical SEO deficiencies** that severely limit its search visibility and organic traffic potential.
+Zia Pizza operates a React-based single-page application (SPA) website serving two locations in Wiltshire, England -- Westbury and Salisbury. While the brand has a solid product offering with authentic Italian pizza and strong customer reviews (96% recommendation rate at Westbury), the website suffers from **critical technical SEO deficiencies** that severely limit its search visibility and organic traffic potential.
 
 ### Health Scorecard at a Glance
 
@@ -87,8 +87,8 @@ Zia Pizza operates a React-based single-page application (SPA) website serving t
 | **Companies House #** | 07485174 |
 | **Founded** | 2011 (under Chef Vittorio Capetti) |
 | **Current Ownership** | Nidhin Sajeev & Aleena (acquired 2024) |
-| **Locations** | 3 (Westbury, Salisbury, Trowbridge) |
-| **Cuisine** | Authentic Italian pizza, pasta, and pub food |
+| **Locations** | 2 (Westbury, Salisbury) |
+| **Cuisine** | Authentic Italian pizza and pasta |
 | **USP** | 24-hour cold-fermented dough, imported Italian ingredients |
 
 ### Location Details
@@ -97,10 +97,9 @@ Zia Pizza operates a React-based single-page application (SPA) website serving t
 |----------|------|---------|-------|
 | **Salisbury** | Express Restaurant | 46 Silver St, Salisbury, SP1 2NE | 01722 433829 |
 | **Westbury** | Express Restaurant | 15 Palomino Pl, Westbury, BA13 3SD | +44 1373 865271 |
-| **Trowbridge** | Country Pub (The Lamb on the Strand) | 99 The Strand, Trowbridge, BA14 6LL | +44 13805 03525 |
 
 ### Service Channels
-- Dine-in at all 3 locations
+- Dine-in at both locations
 - Online ordering via food-order.net (EPOS Hybrid)
 - Delivery via Just Eat, Uber Eats, and Deliveroo
 - Table booking via eposhybrid.uk
@@ -127,7 +126,7 @@ Zia Pizza operates a React-based single-page application (SPA) website serving t
 
 | Element | Status | Assessment |
 |---------|--------|------------|
-| **Indexed Pages** | ~6 pages | Extremely thin for a 3-location business |
+| **Indexed Pages** | ~6 pages | Extremely thin for a 2-location business |
 | **robots.txt** | Present, allows all crawlers | Missing `Sitemap:` directive |
 | **sitemap.xml** | Does not exist | Returns SPA HTML shell instead of XML |
 | **Canonical Tags** | Missing entirely | No `<link rel="canonical">` on any page |
@@ -175,16 +174,15 @@ All tracking is well-implemented from a technical standpoint, but fires without 
 
 | Page | Current Title | Length | Assessment |
 |------|--------------|--------|------------|
-| All pages (HTML) | "Zia Pizza - Premium Italian Pizza & Dining \| Westbury, Salisbury & Trowbridge" | 76 chars | Same title for every URL (over 60 char ideal) |
+| All pages (HTML) | "Zia Pizza - Premium Italian Pizza & Dining \| Westbury & Salisbury" | 67 chars | Same title for every URL (over 60 char ideal) |
 | Salisbury (JS only) | "Pizza Delivery in Salisbury \| Best Pizza in Salisbury" | 55 chars | Good, but invisible to non-JS crawlers |
 | Westbury (JS only) | "Best Pizza in Westbury \| Pizza Delivery in Westbury" | 53 chars | Good, but invisible to non-JS crawlers |
-| Trowbridge (JS only) | "Pubs in Trowbridge \| Best Pubs in Trowbridge -- Zia Pizza" | 59 chars | Good, but invisible to non-JS crawlers |
 
 ### 4.2 Meta Descriptions
 
 | Page | Current Description | Length | Assessment |
 |------|-------------------|--------|------------|
-| All pages (HTML) | "Experience authentic Italian pizza at Zia Pizza. Three premium locations in Westbury, Salisbury & Trowbridge..." | 205 chars | Too long (max 155), identical for all URLs |
+| All pages (HTML) | "Experience authentic Italian pizza at Zia Pizza. Two premium locations in Westbury & Salisbury..." | 193 chars | Too long (max 155), identical for all URLs |
 | Location pages (JS only) | Unique per location | Appropriate | Invisible to non-JS crawlers |
 
 ### 4.3 Heading Hierarchy
@@ -208,7 +206,6 @@ All tracking is well-implemented from a technical standpoint, but fires without 
 | Images with srcset/responsive | 0 | No responsive images |
 
 **Notable filename issues:**
-- `resturant_image_lamb_on_the_strand` (typo: "resturant")
 - `resturant_imgae_westbury` (double typo: "resturant", "imgae")
 - `100004.jpg`, `100006.jpg`, `image1.jpg` (non-descriptive names)
 
@@ -262,7 +259,6 @@ All tracking is well-implemented from a technical standpoint, but fires without 
 | Menu scan page 1 | 635 KB | JPEG |
 | Menu scan page 4 | 615 KB | JPEG |
 | Offer - Tuesday BOGO | 609 KB | JPEG |
-| lamb_on_the_strand | 519 KB | JPEG |
 | westbury restaurant | 500 KB | JPEG |
 | logo1.png | 394 KB | PNG |
 | logo.png | 277 KB | PNG |
@@ -373,7 +369,6 @@ Homepage -> "Book a Table" -> Choose location -> Exits to eposhybrid.uk (externa
 The menu page displays **scanned photographs of physical menus** as JPEG images:
 - Salisbury: 6 pages of scanned menus
 - Westbury: 4 pages of scanned menus
-- Trowbridge: 6 pages of scanned menus
 
 **Problems:**
 - Text is small and unreadable on mobile devices
@@ -451,7 +446,7 @@ The menu page displays **scanned photographs of physical menus** as JPEG images:
 | **Papa John's** | 400+ | Established online ordering |
 | **PizzaExpress** | 350+ | Strongest high-street brand |
 | **Franco Manca** | 70+ | Artisan/Neapolitan positioning |
-| **Zia Pizza** | 3 | Authentic product, but minimal digital presence |
+| **Zia Pizza** | 2 | Authentic product, but minimal digital presence |
 
 ### 7.4 Keyword Landscape
 
@@ -463,11 +458,8 @@ The menu page displays **scanned photographs of physical menus** as JPEG images:
 | "pizza delivery Westbury" | 50-200 | Low | Unknown |
 | "best pizza Salisbury" | 50-200 | Medium | Not ranking |
 | "Italian restaurant Salisbury" | 100-300 | Medium | Not ranking |
-| "restaurants Trowbridge" | 200-500 | Medium | Not ranking |
-| "pubs Trowbridge" | 100-300 | Medium | Not ranking |
 | "pizza near me" (local pack) | 10,000+ | Very High | Not in local pack |
 | "Italian restaurant Westbury" | 20-100 | Low | Unknown |
-| "Sunday roast Trowbridge" | 20-100 | Low | Not ranking |
 
 ### 7.5 Estimated Domain Authority
 
@@ -483,24 +475,22 @@ Based on analysis of indexed pages (~6), domain fragmentation, limited backlink 
 |----------|-----------|---------------|---------------|------------|
 | Westbury | Yes | 4.5/5 | 79 | Moderate presence |
 | Salisbury | Yes | Unknown | Very few | Needs development |
-| Trowbridge | Yes | Unknown | Unknown | Needs development |
 
 ### 8.2 NAP (Name, Address, Phone) Consistency
 
 | Issue Found | Details |
 |-------------|---------|
 | Placeholder phone in codebase | `+44 123 456 7890` appears in site code |
-| Email inconsistency | Trowbridge uses `semington@ziapizza.com` (location is in Trowbridge, not Semington) |
-| Name variations | "Zia Pizza", "Zia Pizza Express", "The Lamb on the Strand by Zia Pizza" -- different branding per location |
+| Name variations | "Zia Pizza", "Zia Pizza Express" -- different branding per location |
 
 ### 8.3 Citation Profile
 
 **Confirmed directory listings:**
-TripAdvisor (3), Facebook (3), Instagram (2-3), Just Eat, Deliveroo, Uber Eats, Google Business Profile, Restaurant Guru, Quandoo, Experience Salisbury, Yably, Gourmet Society, Sluurpy, Food Hygiene Ratings (food.gov.uk), Companies House, White Horse News (press)
+TripAdvisor (2), Facebook (2), Instagram (2), Just Eat, Deliveroo, Uber Eats, Google Business Profile, Restaurant Guru, Quandoo, Experience Salisbury, Yably, Gourmet Society, Sluurpy, Food Hygiene Ratings (food.gov.uk), Companies House, White Horse News (press)
 
 ### 8.4 Local Pack Visibility
 
-Based on research, Zia Pizza does **not appear consistently in the Google Local Pack** (map results) for high-value queries like "pizza delivery [city]" or "Italian restaurant [city]" for any of its three locations.
+Based on research, Zia Pizza does **not appear consistently in the Google Local Pack** (map results) for high-value queries like "pizza delivery [city]" or "Italian restaurant [city]" for either of its two locations.
 
 ---
 
@@ -514,7 +504,6 @@ Based on research, Zia Pizza does **not appear consistently in the Google Local 
 | About | 500-700 | Strong storytelling, good keywords | Only with JS |
 | Location/Salisbury | 300-500 | Good local content with 7 FAQs | Only with JS |
 | Location/Westbury | 300-500 | Good local content with 7 FAQs | Only with JS |
-| Location/Trowbridge | 200-300 | Thinner content, 4 FAQs | Only with JS |
 | Menu | 0 (images only) | No text content | Not indexable |
 | Deals | 200-300 | Basic offer listings | Only with JS |
 | Blog | 0 | Completely empty | Nothing to index |
@@ -563,10 +552,8 @@ Based on research, Zia Pizza does **not appear consistently in the Google Local 
 |----------|---------|-----------|--------|
 | Facebook (Westbury) | @ZiaPizza | 934 likes | Active |
 | Facebook (Salisbury) | @ziapizzasalisbury | Unknown | Active |
-| Facebook (Trowbridge) | @ziapizzasemington | Unknown | Active |
 | Instagram (Westbury) | @ziapizza_westbury | Unknown | Unknown |
 | Instagram (Salisbury) | @ziapizza.salisbury | 189 | Active |
-| Instagram (Trowbridge) | @thelambonthestrand.trowbridge | Unknown | Unknown |
 | Twitter/X | @ziapizza | Unknown | Unknown |
 | TikTok | Not found | N/A | Not present |
 
@@ -574,7 +561,7 @@ Based on research, Zia Pizza does **not appear consistently in the Google Local 
 
 | Aspect | Assessment |
 |--------|------------|
-| **Account Fragmentation** | 6+ separate accounts across 2 platforms for 3 locations |
+| **Account Fragmentation** | 4+ separate accounts across 2 platforms for 2 locations |
 | **Follower Counts** | Very low (189 Instagram vs competitor's 9,000+) |
 | **Branding Consistency** | Different naming conventions per location |
 | **TikTok Presence** | None -- missing fastest-growing food content platform |
@@ -588,8 +575,8 @@ Based on research, Zia Pizza does **not appear consistently in the Google Local 
 | Just Eat | Active -- Westbury has 610+ reviews, 4.77/5 rating |
 | Uber Eats | Active across locations |
 | Deliveroo | Active (Westbury confirmed, 32-min delivery estimate) |
-| food-order.net | Direct ordering -- all 3 locations |
-| eposhybrid.uk | Table booking -- all 3 locations |
+| food-order.net | Direct ordering -- both locations |
+| eposhybrid.uk | Table booking -- both locations |
 
 ---
 
@@ -615,13 +602,6 @@ Based on research, Zia Pizza does **not appear consistently in the Google Local 
 | TripAdvisor | 4.4/5 | 8 |
 | TripAdvisor Ranking | #70 of 164 restaurants | -- |
 
-#### Trowbridge (The Lamb on the Strand)
-
-| Platform | Rating | Review Count |
-|----------|--------|-------------|
-| TripAdvisor | 4.2/5 | 21 |
-| TripAdvisor Ranking | #26 of 77 restaurants | -- |
-
 ### 11.2 Review Sentiment Summary
 
 | Theme | Sentiment | Frequency |
@@ -630,10 +610,8 @@ Based on research, Zia Pizza does **not appear consistently in the Google Local 
 | Fresh ingredients | Positive | High |
 | Friendly service | Positive | High |
 | Good value (especially deals) | Positive | Medium |
-| Dog-friendly (Trowbridge) | Positive | Medium |
 | Bland flavors | Negative | Low |
 | Pre-grated cheese | Negative | Low |
-| Inconsistent quality (Trowbridge) | Negative | Low |
 | Delivery timing | Negative | Low |
 
 ### 11.3 Review Volume Gap vs Competitors
@@ -742,7 +720,6 @@ This represents the **highest-risk finding** in this audit. Under UK GDPR and PE
 - [Zia Pizza Official Website](https://ziapizza.co.uk/)
 - [Zia Pizza Westbury -- TripAdvisor](https://www.tripadvisor.co.uk/Restaurant_Review-g950934-d1027223-Reviews-Zia_Pizza-Westbury_Wiltshire_England.html)
 - [Zia Pizza Salisbury -- TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g186414-d33056231-Reviews-Zia_Pizza_Salisbury-Salisbury_Wiltshire_England.html)
-- [The Lamb on the Strand -- TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g735762-d33059048-Reviews-The_Lamb_on_the_Strand_by_Zia_Pizza-Trowbridge_Wiltshire_England.html)
 - [Zia Pizza Ltd -- Companies House](https://find-and-update.company-information.service.gov.uk/company/07485174)
 - [Westbury Pizza Restaurant Thriving -- White Horse News](https://whitehorsenews.co.uk/westbury-pizza-restaurant-thriving-after-major-refurbishment/)
 - [Zia Pizza -- Experience Salisbury](https://www.experiencesalisbury.co.uk/listing/zia-pizza/)
