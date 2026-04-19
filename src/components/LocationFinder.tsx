@@ -15,10 +15,13 @@ export default function LocationFinder() {
 
   return (
     <div className="w-full px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]">
-      <div className="text-accent text-normal3 font-semibold tracking-wider uppercase text-center mb-2">
-        Locations
+      <div
+        className="text-accent text-[20px] sm:text-[22px] text-center mb-2"
+        style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+      >
+        Le Nostre Sedi
       </div>
-      <h2 className="text-h3 sm:text-h2 text-center mb-[30px]">
+      <h2 className="text-h3 sm:text-h2 text-center mb-[30px] italic">
         Find Your Nearest Zia
       </h2>
 

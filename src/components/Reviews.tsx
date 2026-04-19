@@ -74,11 +74,14 @@ export default function Reviews() {
     <div className="w-full">
       <div className="flex items-center justify-center gap-2 mb-3">
         <span className="w-2 h-2 rounded-full bg-accent" />
-        <span className="text-accent text-normal3 font-semibold tracking-wider uppercase">
-          Guest Reviews
+        <span
+          className="text-accent text-[20px] sm:text-[22px]"
+          style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+        >
+          Recensioni
         </span>
       </div>
-      <h2 className="text-h3 sm:text-h2 font-semibold text-center mb-[30px]">
+      <h2 className="text-h3 sm:text-h2 font-semibold text-center mb-[30px] italic">
         What Our Guests Say
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]">

@@ -19,9 +19,9 @@ export default function Hero() {
       />
 
       {/* Left dark gradient — keeps text readable */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/75 to-[#0F172A]/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/75 to-[#0D0D0D]/10" />
       {/* Top + bottom vignette for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/30 via-transparent to-[#0F172A]/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/30 via-transparent to-[#0D0D0D]/70" />
 
       {/* Text Content */}
       <div className="relative z-10 pl-6 sm:pl-12 lg:pl-20 pr-4 py-20 flex flex-col items-start gap-4 max-w-[560px]">
@@ -30,10 +30,13 @@ export default function Hero() {
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
-            className="text-[12px] sm:text-[13px] font-semibold tracking-[0.12em] uppercase"
-            style={{ color: "var(--tt-color-text-gray)" }}
+            className="text-[18px] sm:text-[20px] font-script"
+            style={{
+              color: "var(--tt-color-text-orange)",
+              fontFamily: "var(--font-script), 'Dancing Script', cursive",
+            }}
           >
-            Authentic Italian &middot; Made Fresh Daily
+            Autentica Italiana &middot; Made Fresh Daily
           </span>
         </div>
 
@@ -41,7 +44,7 @@ export default function Hero() {
         <h1 className="text-white text-[40px] sm:text-h2 lg:text-h1 font-bold leading-[1.08] -mt-1">
           A Slice Above
           <br />
-          <span className="text-primary">The Rest</span>
+          <span className="text-primary italic">The Rest</span>
         </h1>
 
         {/* Subtext */}

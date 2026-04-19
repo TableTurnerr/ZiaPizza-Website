@@ -14,7 +14,7 @@ const Footer = ({
   >
     {/* Top divider */}
     <div className="w-full h-px bg-white/[0.07] mb-[48px]" />
-    <div className="text-white text-h3 sm:text-h2 w-full">Zia Pizza</div>
+    <h2 className="text-white text-h3 sm:text-h2 w-full italic">Zia Pizza</h2>
     <div
       className="mb-[32px] mx-2 text-normal2"
       style={{ color: "var(--tt-color-text-gray)" }}

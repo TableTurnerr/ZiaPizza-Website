@@ -13,6 +13,7 @@ const Reviews = dynamic(() => import("@/components/Reviews"), { ssr: true });
 const FAQSection = dynamic(() => import("@/components/FAQ_section"), { ssr: true });
 const LocationComponent = dynamic(() => import("@/components/OurLocation"), { ssr: true });
 const SignatureDishes = dynamic(() => import("@/components/SignatureDishes"), { ssr: true });
+const InstagramFeed = dynamic(() => import("@/components/InstagramFeed"), { ssr: true });
 
 const Home = React.memo(function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -42,13 +43,16 @@ const Home = React.memo(function Home() {
       <div id="Menu" className="w-full flex items-center justify-center text-center flex-col">
         <div className="flex items-center justify-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-accent" />
-          <span className="text-accent text-normal3 font-semibold tracking-wider uppercase">
-            Our Menu
+          <span
+            className="text-accent text-[20px] sm:text-[22px]"
+            style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+          >
+            Il Nostro Menu
           </span>
         </div>
-        <div className="text-white text-h3 sm:text-h2 w-full">
+        <h2 className="text-white text-h3 sm:text-h2 w-full italic">
           Try our most popular items
-        </div>
+        </h2>
 
         <div id="Featuring">
           <Featuring />
@@ -86,6 +90,13 @@ const Home = React.memo(function Home() {
       {/* Signature Dishes */}
       <div id="Dishes">
         <SignatureDishes />
+      </div>
+
+      <div className="h-[100px]" />
+
+      {/* Instagram */}
+      <div id="Instagram">
+        <InstagramFeed />
       </div>
 
       <div className="h-[100px]" />

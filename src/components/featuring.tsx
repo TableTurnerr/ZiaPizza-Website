@@ -59,7 +59,7 @@ function FeaturedDishSection({
 
       {/* Text content */}
       <div className="flex flex-col justify-center max-w-[560px] px-4 md:px-8 text-center md:text-left">
-        <h3 className="text-h4 sm:text-h3 font-semibold text-white mb-3">
+        <h3 className="text-h4 sm:text-h3 font-semibold text-white mb-3 italic">
           {title}
         </h3>
         <p

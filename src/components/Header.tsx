@@ -43,7 +43,7 @@ export default function Header({ onClick }: { onClick?: () => void }) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0A1020]/90 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/40"
+          ? "bg-[#0D0D0D]/95 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/40"
           : "bg-transparent"
       }`}
     >
@@ -53,11 +53,11 @@ export default function Header({ onClick }: { onClick?: () => void }) {
           {/* Logo + Brand Name */}
           <button
             onClick={() => router.push("/")}
-            className="flex items-center gap-3 cursor-pointer flex-shrink-0"
+            className="flex items-center gap-3 cursor-pointer flex-shrink-0 hover:opacity-75 transition-opacity duration-200"
             aria-label="Zia Pizza Home"
           >
             <Image
-              src="/logo/logo.png"
+              src="/logo.png"
               alt="Zia Pizza Logo"
               width={50}
               height={50}
@@ -116,7 +116,7 @@ export default function Header({ onClick }: { onClick?: () => void }) {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden flex flex-col gap-[5px] p-2 cursor-pointer"
+              className="md:hidden flex flex-col gap-[5px] p-2 cursor-pointer rounded-md hover:bg-white/[0.08] transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <span
@@ -145,7 +145,7 @@ export default function Header({ onClick }: { onClick?: () => void }) {
           mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         }`}
         style={{
-          background: "rgba(10, 16, 32, 0.97)",
+          background: "rgba(13, 13, 13, 0.97)",
           backdropFilter: "blur(16px)",
         }}
       >

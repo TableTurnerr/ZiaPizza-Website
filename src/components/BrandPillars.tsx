@@ -30,11 +30,14 @@ export default function BrandPillars() {
       {/* Section label */}
       <div className="flex items-center gap-2 mb-3">
         <span className="w-2 h-2 rounded-full bg-accent" />
-        <span className="text-accent text-normal3 font-semibold tracking-wider uppercase">
-          Our Brands
+        <span
+          className="text-accent text-[20px] sm:text-[22px]"
+          style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+        >
+          I Nostri Brand
         </span>
       </div>
-      <h2 className="text-white text-h3 sm:text-h2 w-full mb-[44px]">Brand Pillars</h2>
+      <h2 className="text-white text-h3 sm:text-h2 w-full mb-[44px] italic">Brand Pillars</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] w-full max-w-4xl">
         {locationTypes.map((type, index) => (
