@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Dancing_Script } from "next/font/google";
 import "./globals.css";
+import BookingProvider from "@/components/BookingProvider";
+import StickyOrderBar from "@/components/StickyOrderBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -92,7 +94,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
         style={{ background: "var(--tt-bg-color)" }}
       >
-        {children}
+        <BookingProvider>
+          {children}
+          <StickyOrderBar />
+        </BookingProvider>
       </body>
     </html>
   );

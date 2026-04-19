@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "eyebrow": "Autentica Italiana · Made Fresh Daily",
+    "headline": "A Slice Above",
+    "headlineAccent": "The Rest",
+    "subtext": "Premium Italian dining and fast takeaway across Wiltshire. Stone-baked pizzas, handmade pasta, and Italian warmth since 2009.",
+    "image": "/photos/JOE01050.jpeg"
+  },
+  "loyalty": {
+    "heading": "Earn Rewards Every Time You Order",
+    "body": "Every order in-store, online or via our app earns you points. Redeem them for free sides, pizzas and exclusive rewards. The more you enjoy, the more you get back.",
+    "perks": [
+      "1 point for every £1 spent",
+      "Free dough balls on your birthday",
+      "Early access to new menu items",
+      "Member-only weekly offers"
+    ],
+    "appStoreUrl": "#",
+    "playStoreUrl": "#"
+  },
+  "crossBrand": {
+    "heading": "Explore More from Zia",
+    "body": "Zia Pizza is part of the ZIA Hospitality Group — a family of restaurants and gastro pubs across the South West. Discover our sister venues for relaxed lunches, weekend roasts and local craft beer.",
+    "ctaLabel": "Explore Our Pubs",
+    "ctaUrl": "#"
+  },
+  "about": {
+    "headline": "A Family Recipe, Rooted in Wiltshire",
+    "body": "Zia Pizza began in a sunlit Naples kitchen and found its home in the heart of Wiltshire. Every pizza is hand-stretched, slow-proofed and stone-baked — the way Zia Maria taught us. What started as a single restaurant in Salisbury is now a small family of venues, each run with the same obsession over dough, ingredients and hospitality."
+  },
+  "footer": {
+    "legal": "Zia Pizza is part of ZIA Hospitality Group Ltd.",
+    "tagline": "More than a restaurant — it's a legacy of love, stone, and flavour."
+  }
+}

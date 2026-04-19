@@ -99,6 +99,63 @@
   }
 }
 
+/* Blog post typography */
+.prose-zia h2 {
+  color: #fff;
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-style: italic;
+  margin-top: 40px;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.prose-zia h3 {
+  color: #fff;
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  font-style: italic;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+.prose-zia p {
+  margin-bottom: 18px;
+}
+.prose-zia ul, .prose-zia ol {
+  margin: 0 0 20px 1.25em;
+  padding-left: 0.5em;
+}
+.prose-zia li {
+  margin-bottom: 6px;
+  list-style: disc;
+}
+.prose-zia ol li {
+  list-style: decimal;
+}
+.prose-zia a {
+  color: #D4A853;
+  text-decoration: underline;
+}
+.prose-zia a:hover {
+  color: #fff;
+}
+.prose-zia strong {
+  color: #fff;
+  font-weight: 700;
+}
+.prose-zia blockquote {
+  border-left: 3px solid #D4A853;
+  padding-left: 16px;
+  color: #fff;
+  margin: 20px 0;
+  font-style: italic;
+}
+.prose-zia code {
+  background: rgba(255,255,255,0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
 /* Signature dish card hover */
 .dish-card {
   transition: transform 300ms ease-out, box-shadow 300ms ease-out, border-color 300ms ease-out;
