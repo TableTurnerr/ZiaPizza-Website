@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Playfair_Display, Dancing_Script } from "next/font/g
 import "./globals.css";
 import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,6 +95,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
         style={{ background: "var(--tt-bg-color)" }}
       >
+        <SmoothScroll />
         <BookingProvider>
           {children}
           <StickyOrderBar />
