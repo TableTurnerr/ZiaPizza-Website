@@ -89,13 +89,14 @@ const Footer = () => (
               >
                 <span className="block text-white font-semibold">{loc.name}</span>
                 <span className="block text-normal4">{loc.address}</span>
-                <a
-                  href={`tel:${loc.phone.replace(/\s/g, "")}`}
-                  className="block text-normal4 mt-0.5 hover:text-primary transition-colors"
-                >
-                  {loc.phone}
-                </a>
               </Link>
+              <a
+                href={`tel:${loc.phone.replace(/\s/g, "")}`}
+                className="block text-normal4 mt-0.5 hover:text-primary transition-colors"
+                style={{ color: "var(--tt-color-text-gray)" }}
+              >
+                {loc.phone}
+              </a>
             </li>
           ))}
         </ul>
