@@ -24,12 +24,10 @@
     "deliveroo": "https://deliveroo.co.uk/menu/Salisbury/salisbury/zia-pizza-salisbury-46-silver-street",
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.5!2d-1.7946!3d51.0693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA0JzA5LjUiTiAxwrA0NycyMy4yIlc!5e0!3m2!1sen!2suk!4v1",
     "deals": [
-      { "day": "Monday", "name": "Monday Funday", "description": "Carlsberg & Thatchers Gold at just £2.95/pint" },
-      { "day": "Tuesday", "name": "Burger & Drink", "description": "Any burger with one drink", "price": "£14.95" },
-      { "day": "Wednesday", "name": "Italian Buffet", "description": "Unlimited pizza & pasta buffet, 6-9 PM", "price": "£16.90" },
-      { "day": "Thursday", "name": "Steak Night", "description": "Sirloin steak with chips & salad, 5:30-9:30 PM", "price": "£19.95" },
-      { "day": "Friday", "name": "Kids Eat for £1", "description": "Kids dine for just £1 with a full-price adult main" },
-      { "day": "Sunday", "name": "Sunday Roast", "description": "Traditional Sunday roast served until sold out", "price": "from £14.95" }
+      { "day": "Daily", "name": "Kids Eat for £1", "description": "Kids dine for just £1 with a full-price adult main (under 12).", "price": "£1.00" },
+      { "day": "Tuesday", "name": "Half Price Pizza", "description": "Buy one pizza and get the second pizza at half price. Dine-in, takeaway, delivery (web & phone).", "price": "50% OFF 2nd Pizza" },
+      { "day": "Thursday", "name": "Half Price Pasta", "description": "Buy one pasta and get the second pasta at half price.", "price": "50% OFF 2nd Pasta" },
+      { "day": "Daily", "name": "Double the Drinks", "description": "2 cocktails for £13.95, 5 PM–Close. Available daily.", "price": "£13.95" }
     ]
   },
   {
@@ -57,9 +55,7 @@
     "deliveroo": "https://deliveroo.co.uk/menu/Bath/westbury-leigh/zia-pizza-westbury-15-palomino-pl",
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.5!2d-2.1813!3d51.2601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDE1JzM2LjQiTiAywrAxMCc1Mi43Ilc!5e0!3m2!1sen!2suk!4v1",
     "deals": [
-      { "day": "Every Day", "name": "BOGO Pizza", "description": "Buy 1, Get 1 Free on all pizzas (equal or lesser value)" },
-      { "day": "Every Day", "name": "50% Off 2nd Pizza", "description": "Buy one pizza, get the second at half price" },
-      { "day": "Lunch", "name": "Lunch Combo", "description": "Any 9\" pizza + drink, 12-3 PM Mon-Fri", "price": "£8.95" }
+      { "day": "Tuesday", "name": "BOGO Pizza", "description": "Buy 1, Get 1 Free (equal or lesser value). Dine-in, takeaway, delivery (web & phone).", "price": "50% OFF" }
     ]
   }
 ]
