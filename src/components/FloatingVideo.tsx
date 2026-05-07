@@ -9,16 +9,43 @@ export default function FloatingVideo() {
   const [muted, setMuted] = React.useState(true);
   const [expanded, setExpanded] = React.useState(false);
   const [closed, setClosed] = React.useState(false);
+  const [videoSrc, setVideoSrc] = React.useState<string | null>(null);
+  const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {
+    const start = () => setVideoSrc("/review-video.mp4");
+    if (document.readyState === "complete") {
+      start();
+    } else {
+      window.addEventListener("load", start, { once: true });
+      return () => window.removeEventListener("load", start);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (!videoSrc) return;
     const v = videoRef.current;
     if (!v) return;
     v.muted = true;
-    const tryPlay = () => v.play().catch(() => {});
-    tryPlay();
-  }, []);
+    v.play().catch(() => {});
+  }, [videoSrc]);
 
-  if (pathname?.startsWith("/admin") || closed) return null;
+  if (pathname?.startsWith("/admin") || closed || !ready) {
+    return videoSrc && !ready ? (
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        onCanPlay={() => setReady(true)}
+        style={{ position: "fixed", width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
+        aria-hidden="true"
+      />
+    ) : null;
+  }
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -58,16 +85,18 @@ export default function FloatingVideo() {
         style={{
           border: "2px solid rgba(255,255,255,0.15)",
           transition: "all 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+          animation: "floatingVideoIn 480ms cubic-bezier(0.16, 1, 0.3, 1)",
         }}
         onClick={() => !expanded && setExpanded(true)}
       >
         <video
           ref={videoRef}
-          src="/review-video.mp4"
+          src={videoSrc ?? undefined}
           autoPlay
           loop
           muted={muted}
           playsInline
+          preload="auto"
           className="w-full h-full object-cover bg-black"
         />
 
@@ -141,6 +170,19 @@ export default function FloatingVideo() {
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+        @keyframes floatingVideoIn {
+          0% {
+            opacity: 0;
+            transform: translateY(24px) scale(0.85);
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
         }
       `}</style>
     </>
