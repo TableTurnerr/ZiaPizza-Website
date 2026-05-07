@@ -38,6 +38,52 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes skeletonShimmer {
+  0% { background-position: -150% 0; }
+  100% { background-position: 250% 0; }
+}
+
+@keyframes skeletonPulse {
+  0%, 100% { background-color: rgba(255, 255, 255, 0.05); }
+  50% { background-color: rgba(255, 255, 255, 0.10); }
+}
+
+.skeleton {
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  animation: skeletonPulse 2s ease-in-out infinite;
+}
+
+.skeleton:not(.absolute):not(.fixed):not(.sticky) {
+  position: relative;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.10) 48%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.10) 52%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  animation: skeletonShimmer 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .skeleton::after { animation: none; }
+}
+
 /* Styles for interactive menu items (featuring section) */
 .interactive-item {
   position: relative;
