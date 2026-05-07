@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import SmartImage from "@/components/SmartImage";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ThemeButton from "@/components/ThemeBtn";
@@ -13,6 +13,22 @@ export default function HeroSection() {
   const router = useRouter();
   const [postcode, setPostcode] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [videoReady, setVideoReady] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const start = () => setVideoSrc("/hero-video.mp4");
+    if (document.readyState === "complete") {
+      start();
+    } else {
+      window.addEventListener("load", start, { once: true });
+      return () => window.removeEventListener("load", start);
+    }
+  }, []);
 
   function findMyZia(e: React.FormEvent) {
     e.preventDefault();
@@ -32,14 +48,31 @@ export default function HeroSection() {
       id="Home"
       className="min-h-[640px] lg:min-h-[720px] w-full relative flex items-center rounded-[20px] overflow-hidden"
     >
-      <Image
+      <SmartImage
         src={site.hero.image}
         alt="Zia Pizza - stone baked pizza"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[38%_center]"
+        className={`object-cover object-[38%_center] transition-opacity duration-700 ${videoReady ? "opacity-0" : "opacity-100"}`}
       />
+      {videoSrc && (
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          onCanPlay={() => {
+            videoRef.current?.play().catch(() => {});
+            setVideoReady(true);
+          }}
+          aria-hidden="true"
+          className={`absolute inset-0 w-full h-full object-cover object-[38%_center] transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+        />
+      )}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/75 to-[#0D0D0D]/10" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/30 via-transparent to-[#0D0D0D]/70" />
 
