@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import SmartImage from "@/components/SmartImage";
 import ThemeButton from "@/components/ThemeBtn";
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
       className="min-h-[600px] lg:min-h-[680px] w-full relative flex items-center rounded-[20px] overflow-hidden"
     >
       {/* Full-bleed background image */}
-      <Image
+      <SmartImage
         src="/photos/JOE01050.jpeg"
         alt="Zia Pizza - Stone baked pizza"
         fill

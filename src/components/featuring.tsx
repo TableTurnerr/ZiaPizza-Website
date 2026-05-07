@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import SmartImage from "@/components/SmartImage";
 
 interface FeaturedDishSectionProps {
   title: string;
@@ -46,7 +46,7 @@ function FeaturedDishSection({
               transform: i === currentIndex ? "translateX(0)" : "translateX(20px)",
             }}
           >
-            <Image
+            <SmartImage
               src={img}
               alt={`${title} ${i + 1}`}
               fill

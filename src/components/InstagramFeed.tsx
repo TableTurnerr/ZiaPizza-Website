@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import SmartImage from "@/components/SmartImage";
 
 interface InstagramPost {
   id: string;
@@ -88,7 +88,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
       onMouseLeave={() => setHovered(false)}
       className="group relative block rounded-[16px] overflow-hidden border border-white/10 hover:border-accent/40 shadow-lg transition-all duration-300 h-[320px] sm:h-[360px]"
     >
-      <Image
+      <SmartImage
         src={post.image}
         alt={post.title}
         fill
