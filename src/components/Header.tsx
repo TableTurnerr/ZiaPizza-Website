@@ -29,36 +29,33 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/95 backdrop-blur-xl transition-all duration-300 ${
         scrolled
-          ? "bg-[#0D0D0D]/95 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/40"
-          : "bg-transparent"
+          ? "border-b border-white/[0.06] shadow-lg shadow-black/40"
+          : "border-b border-transparent"
       }`}
     >
       <div className="px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-[68px]">
           <button
             onClick={() => router.push("/")}
-            className="flex items-center gap-3 cursor-pointer flex-shrink-0 hover:opacity-75 transition-opacity duration-200"
+            className="flex flex-col items-start gap-1 cursor-pointer flex-shrink-0 hover:opacity-75 transition-opacity duration-200"
             aria-label="Zia Pizza Home"
           >
             <Image
               src="/logo.png"
               alt="Zia Pizza Logo"
-              width={50}
-              height={50}
+              width={78}
+              height={78}
               className="object-contain rounded-sm flex-shrink-0 h-auto w-auto"
               priority
             />
-            <div className="flex flex-col leading-tight text-left">
-              <span className="text-white font-bold text-[15px] tracking-wide leading-none">Zia Pizza</span>
-              <span
-                className="text-[10px] tracking-[0.14em] uppercase mt-[3px] leading-none"
-                style={{ color: "var(--tt-color-text-gray)" }}
-              >
-                A Slice Above The Rest
-              </span>
-            </div>
+            <span
+              className="text-[9px] tracking-[0.14em] uppercase leading-none"
+              style={{ color: "var(--tt-color-text-gray)" }}
+            >
+              A Slice Above The Rest
+            </span>
           </button>
 
           <nav className="hidden lg:flex items-center gap-0.5">
@@ -66,7 +63,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[13px] font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/[0.06]"
+                className="text-[14.5px] font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/[0.06]"
                 style={{ color: "var(--tt-color-text-gray)" }}
               >
                 {link.label}
@@ -78,13 +75,13 @@ export default function Header() {
             <button
               type="button"
               onClick={() => openBooking()}
-              className="hidden sm:inline-flex bg-transparent border border-white/15 hover:border-white/40 text-white text-[13px] font-bold px-4 py-[9px] rounded-lg transition-colors"
+              className="hidden sm:inline-flex bg-transparent border border-white/15 hover:border-white/40 text-white text-[14.5px] font-bold px-4 py-[9px] rounded-lg transition-colors"
             >
               Book Table
             </button>
             <Link
               href="/order"
-              className="bg-primary hover:bg-primary-dark text-white text-[13px] font-bold px-5 py-[9px] rounded-lg transition-colors leading-none whitespace-nowrap"
+              className="bg-primary hover:bg-primary-dark text-white text-[14.5px] font-bold px-5 py-[9px] rounded-lg transition-colors leading-none whitespace-nowrap"
             >
               Order Now
             </Link>
