@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeButton from "@/components/ThemeBtn";
+import PlatformButton from "@/components/PlatformButton";
 import { locations, getLocation, getLocationType } from "@/data/locations";
 import { getProductsByLocation, categories } from "@/data/products";
 
@@ -72,21 +73,9 @@ export default async function LocationPage({
                 textClassname="pr-[8px] pl-[14px] text-white"
                 className="bg-primary-dark border-2 hover:bg-primary-dark/90 border-primary-dark hover:border-primary-dark/90 transition-colors"
               />
-              {location.justEat && (
-                <ThemeButton text="Just Eat" href={location.justEat} showArrow={false}
-                  textClassname="pr-[14px] pl-[14px]" textColor="text-[var(--tt-color-text-gray)]"
-                  className="bg-transparent border-2 border-white/10 hover:border-primary-dark transition-all" />
-              )}
-              {location.uberEats && (
-                <ThemeButton text="Uber Eats" href={location.uberEats} showArrow={false}
-                  textClassname="pr-[14px] pl-[14px]" textColor="text-[var(--tt-color-text-gray)]"
-                  className="bg-transparent border-2 border-white/10 hover:border-primary-dark transition-all" />
-              )}
-              {location.deliveroo && (
-                <ThemeButton text="Deliveroo" href={location.deliveroo} showArrow={false}
-                  textClassname="pr-[14px] pl-[14px]" textColor="text-[var(--tt-color-text-gray)]"
-                  className="bg-transparent border-2 border-white/10 hover:border-primary-dark transition-all" />
-              )}
+              {location.justEat && <PlatformButton platform="justEat" href={location.justEat} />}
+              {location.uberEats && <PlatformButton platform="uberEats" href={location.uberEats} />}
+              {location.deliveroo && <PlatformButton platform="deliveroo" href={location.deliveroo} />}
             </div>
           </div>
 

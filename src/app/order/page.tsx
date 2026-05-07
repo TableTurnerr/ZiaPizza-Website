@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PlatformButton from "@/components/PlatformButton";
 import { locations, findLocationByPostcode, Location } from "@/data/locations";
 
 type Step = "postcode" | "pick" | "redirect";
 
 export default function OrderPage() {
-  const [step, setStep] = useState<Step>("postcode");
+  const [step, setStep] = useState<Step>("pick");
   const [postcode, setPostcode] = useState("");
   const [selected, setSelected] = useState<Location | null>(null);
 
@@ -111,25 +112,13 @@ export default function OrderPage() {
               Open order page
             </a>
             <div className="mt-5 flex justify-center gap-2 flex-wrap">
-              {selected.justEat && (
-                <a href={selected.justEat} target="_blank" rel="noopener noreferrer" className="text-normal4 underline" style={{ color: "var(--tt-color-text-gray)" }}>
-                  Just Eat
-                </a>
-              )}
-              {selected.uberEats && (
-                <a href={selected.uberEats} target="_blank" rel="noopener noreferrer" className="text-normal4 underline" style={{ color: "var(--tt-color-text-gray)" }}>
-                  Uber Eats
-                </a>
-              )}
-              {selected.deliveroo && (
-                <a href={selected.deliveroo} target="_blank" rel="noopener noreferrer" className="text-normal4 underline" style={{ color: "var(--tt-color-text-gray)" }}>
-                  Deliveroo
-                </a>
-              )}
+              {selected.justEat && <PlatformButton platform="justEat" href={selected.justEat} size="sm" />}
+              {selected.uberEats && <PlatformButton platform="uberEats" href={selected.uberEats} size="sm" />}
+              {selected.deliveroo && <PlatformButton platform="deliveroo" href={selected.deliveroo} size="sm" />}
             </div>
             <button
               type="button"
-              onClick={() => { setStep("postcode"); setSelected(null); setPostcode(""); }}
+              onClick={() => { setStep("pick"); setSelected(null); setPostcode(""); }}
               className="mt-6 text-normal4 underline"
               style={{ color: "var(--tt-color-text-gray)" }}
             >
