@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { site } from "@/data/site";
+import AppStoreButtons from "@/components/AppStoreButtons";
 
 export default function LoyaltySection() {
   return (
@@ -31,20 +32,7 @@ export default function LoyaltySection() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={site.loyalty.appStoreUrl}
-              className="bg-black border border-white/20 hover:border-white/40 text-white text-normal3 font-semibold px-5 py-3 rounded-lg transition-colors"
-            >
-              Download on iOS
-            </a>
-            <a
-              href={site.loyalty.playStoreUrl}
-              className="bg-black border border-white/20 hover:border-white/40 text-white text-normal3 font-semibold px-5 py-3 rounded-lg transition-colors"
-            >
-              Get it on Android
-            </a>
-          </div>
+          <AppStoreButtons />
         </div>
 
         <div className="w-full max-w-[280px] rounded-[28px] bg-gradient-to-br from-primary/30 to-primary-dark/60 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden p-6 gap-4">

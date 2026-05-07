@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoyaltySection from "@/components/sections/Loyalty";
-import { site } from "@/data/site";
+import AppStoreButtons from "@/components/AppStoreButtons";
 
 export const metadata: Metadata = {
   title: "Loyalty & Rewards | Zia Pizza",
@@ -52,20 +52,7 @@ export default function LoyaltyPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="flex flex-wrap gap-3 justify-center">
-            <a
-              href={site.loyalty.appStoreUrl}
-              className="bg-black border border-white/20 hover:border-white/40 text-white text-normal3 font-semibold px-5 py-3 rounded-lg transition-colors"
-            >
-              Download on iOS
-            </a>
-            <a
-              href={site.loyalty.playStoreUrl}
-              className="bg-black border border-white/20 hover:border-white/40 text-white text-normal3 font-semibold px-5 py-3 rounded-lg transition-colors"
-            >
-              Get it on Android
-            </a>
-          </div>
+          <AppStoreButtons className="justify-center" />
         </div>
       </div>
 
