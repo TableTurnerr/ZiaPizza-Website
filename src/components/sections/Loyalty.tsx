@@ -48,12 +48,13 @@ export default function LoyaltySection() {
         </div>
 
         <div className="w-full max-w-[280px] rounded-[28px] bg-gradient-to-br from-primary/30 to-primary-dark/60 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden p-6 gap-4">
-          <div className="bg-white rounded-2xl p-3">
+          <div className="bg-white rounded-2xl p-0.5">
             <Image
-              src="/rewards-qr.png"
+              src="/rewards-qr.svg"
               alt="Scan to download the Zia Rewards app"
               width={220}
               height={220}
+              unoptimized
               className="w-[220px] h-[220px]"
             />
           </div>
