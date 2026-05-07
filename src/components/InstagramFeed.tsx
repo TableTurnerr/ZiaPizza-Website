@@ -15,7 +15,7 @@ const POSTS: InstagramPost[] = [
   {
     id: "1",
     title: "ziapizza.salisbury",
-    image: "/photos/JOE01015.jpeg",
+    image: "/photos/JOE01015.webp",
     url: "https://instagram.com/ziapizza.salisbury",
     description:
       "Stone-baked, slow-proofed, straight from our oven. Authentic Italian pizza made the Zia way.",
@@ -23,7 +23,7 @@ const POSTS: InstagramPost[] = [
   {
     id: "2",
     title: "ziapizza.salisbury",
-    image: "/photos/JOE01044.jpeg",
+    image: "/photos/JOE01044.webp",
     url: "https://instagram.com/ziapizza.salisbury",
     description:
       "Fresh dough, San Marzano tomatoes, fior di latte — simple ingredients done right.",
@@ -31,7 +31,7 @@ const POSTS: InstagramPost[] = [
   {
     id: "3",
     title: "ziapizza.salisbury",
-    image: "/photos/JOE00706.jpeg",
+    image: "/photos/JOE00706.webp",
     url: "https://instagram.com/ziapizza.salisbury",
     description:
       "Pasta the way Zia Maria made it. Creamy, comforting, unforgettable.",
@@ -39,7 +39,7 @@ const POSTS: InstagramPost[] = [
   {
     id: "4",
     title: "ziapizza.salisbury",
-    image: "/photos/JOE00788.jpeg",
+    image: "/photos/JOE00788.webp",
     url: "https://instagram.com/ziapizza.salisbury",
     description:
       "Golden, pillowy, impossible to stop at one — our famous dough balls.",
@@ -47,7 +47,7 @@ const POSTS: InstagramPost[] = [
   {
     id: "5",
     title: "ziapizza.salisbury",
-    image: "/photos/JOE01048.jpeg",
+    image: "/photos/JOE01048.webp",
     url: "https://instagram.com/ziapizza.salisbury",
     description:
       "Gourmet truffle & mushroom — a slice of Italian luxury in Wiltshire.",
@@ -55,7 +55,7 @@ const POSTS: InstagramPost[] = [
   {
     id: "6",
     title: "ziapizza.salisbury",
-    image: "/photos/JOE01090.jpeg",
+    image: "/photos/JOE01090.webp",
     url: "https://instagram.com/ziapizza.salisbury",
     description:
       "Follow @ziapizza.salisbury for daily specials, behind-the-scenes, and everything Italian.",

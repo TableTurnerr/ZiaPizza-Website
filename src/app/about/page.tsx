@@ -30,7 +30,7 @@ export default function AboutPage() {
         </p>
 
         <div className="relative w-full h-[320px] sm:h-[440px] rounded-[20px] overflow-hidden mb-10">
-          <SmartImage src="/photos/JOE01050.jpeg" alt="Zia Pizza kitchen" fill className="object-cover" sizes="100vw" />
+          <SmartImage src="/photos/JOE01050.webp" alt="Zia Pizza kitchen" fill className="object-cover" sizes="100vw" />
         </div>
 
         <h2 className="text-h3 italic text-white mb-3">What we stand for</h2>

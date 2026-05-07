@@ -3,7 +3,7 @@ title: "Welcome to Zia Pizza"
 slug: "welcome-to-zia-pizza"
 excerpt: "A little about who we are, where the dough comes from, and why we do this."
 date: "2025-02-14"
-cover: "/photos/JOE01050.jpeg"
+cover: "/photos/JOE01050.webp"
 author: "The Zia Family"
 tags: ["story", "team"]
 ---

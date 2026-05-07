@@ -87,11 +87,11 @@ export default function Featuring() {
         description="Hand-stretched, slow-proofed dough baked on stone with our homemade sauce and premium toppings. From classic Margherita to gourmet truffle & mushroom — every pizza tells our story."
         price="£8.95"
         images={[
-          "/photos/JOE01015.jpeg",
-          "/photos/JOE01020.jpeg",
-          "/photos/JOE01024.jpeg",
-          "/photos/JOE01044.jpeg",
-          "/photos/JOE01048.jpeg",
+          "/photos/JOE01015.webp",
+          "/photos/JOE01020.webp",
+          "/photos/JOE01024.webp",
+          "/photos/JOE01044.webp",
+          "/photos/JOE01048.webp",
         ]}
       />
 
@@ -100,11 +100,11 @@ export default function Featuring() {
         description="Classic Italian pasta dishes made with fresh ingredients and rich, authentic sauces. From creamy Carbonara to luxurious Truffle Tagliatelle — pasta the way Zia Maria made it."
         price="£10.95"
         images={[
-          "/products/pastas/carbonara.jpg",
-          "/products/pastas/Bolognese.jpg",
-          "/products/pastas/Chicken Alfredo.jpg",
-          "/products/pastas/Lasagne Al Forno.jpg",
-          "/products/pastas/truffle.jpg",
+          "/products/pastas/carbonara.webp",
+          "/products/pastas/Bolognese.webp",
+          "/products/pastas/Chicken Alfredo.webp",
+          "/products/pastas/Lasagne Al Forno.webp",
+          "/products/pastas/truffle.webp",
         ]}
         reverse
       />
@@ -114,9 +114,9 @@ export default function Featuring() {
         description="Perfectly prepared starters to kick off your meal. Our garlic dough balls and hot honey dough balls are crowd favourites — golden, pillowy, and impossible to stop at one."
         price="£3.95"
         images={[
-          "/products/starters/Garlic Dough Balls.jpg",
-          "/products/starters/hot honey Dough Balls.jpg",
-          "/products/starters/Classic Fries.jpg",
+          "/products/starters/Garlic Dough Balls.webp",
+          "/products/starters/hot honey Dough Balls.webp",
+          "/products/starters/Classic Fries.webp",
         ]}
       />
 
@@ -125,11 +125,11 @@ export default function Featuring() {
         description="Finish your meal on a sweet note with our Italian gelato and handmade profiteroles. Rich chocolate, zesty lemon, nutty pistachio — something for every sweet tooth."
         price="£4.50"
         images={[
-          "/products/desserts/gelato-chocolate.jpg",
-          "/products/desserts/gelato-strawberry.jpg",
-          "/products/desserts/gelato-thiramisu.jpg",
-          "/products/desserts/profiteroles-chocolate.jpg",
-          "/products/desserts/profiteroles-pistachio.jpg",
+          "/products/desserts/gelato-chocolate.webp",
+          "/products/desserts/gelato-strawberry.webp",
+          "/products/desserts/gelato-thiramisu.webp",
+          "/products/desserts/profiteroles-chocolate.webp",
+          "/products/desserts/profiteroles-pistachio.webp",
         ]}
         reverse
       />

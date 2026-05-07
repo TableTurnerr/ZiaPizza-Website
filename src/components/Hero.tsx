@@ -10,7 +10,7 @@ export default function Hero() {
     >
       {/* Full-bleed background image */}
       <SmartImage
-        src="/photos/JOE01050.jpeg"
+        src="/photos/JOE01050.webp"
         alt="Zia Pizza - Stone baked pizza"
         fill
         priority

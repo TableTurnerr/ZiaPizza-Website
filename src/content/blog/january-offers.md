@@ -3,7 +3,7 @@ title: "January Offers You Shouldn't Miss"
 slug: "january-offers"
 excerpt: "BOGO pizza at Westbury Express, Steak Night at Salisbury, and a new lunch combo we're pretty proud of."
 date: "2025-01-10"
-cover: "/photos/JOE01044.jpeg"
+cover: "/photos/JOE01044.webp"
 author: "The Zia Family"
 tags: ["offers", "deals"]
 ---

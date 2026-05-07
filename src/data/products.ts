@@ -31,37 +31,37 @@ export const categories: CategoryInfo[] = [
     slug: "pizzas",
     name: "Stone-Baked Pizzas",
     description: "Hand-stretched, slow-proofed dough baked on stone with homemade sauce and premium toppings.",
-    image: "/photos/JOE01015.jpeg",
+    image: "/photos/JOE01015.webp",
   },
   {
     slug: "starters",
     name: "Starters & Sides",
     description: "Perfectly prepared starters and sides to kick off your meal.",
-    image: "/products/starters/Garlic Dough Balls.jpg",
+    image: "/products/starters/Garlic Dough Balls.webp",
   },
   {
     slug: "pastas",
     name: "Signature Pastas",
     description: "Classic Italian pasta dishes made with fresh ingredients and rich, authentic sauces.",
-    image: "/products/pastas/carbonara.jpg",
+    image: "/products/pastas/carbonara.webp",
   },
   {
     slug: "desserts",
     name: "Desserts",
     description: "Finish your meal on a sweet note with our gelato and Italian treats.",
-    image: "/products/desserts/gelato-thiramisu.jpg",
+    image: "/products/desserts/gelato-thiramisu.webp",
   },
   {
     slug: "drinks",
     name: "Drinks",
     description: "Soft drinks and refreshments to complement your meal.",
-    image: "/products/drinks/Coca cola.jpg",
+    image: "/products/drinks/Coca cola.webp",
   },
   {
     slug: "dips",
     name: "Dips & Sauces",
     description: "The perfect accompaniment for every bite.",
-    image: "/products/dips/Garlic mayo.jpg",
+    image: "/products/dips/Garlic mayo.webp",
   },
 ];
 

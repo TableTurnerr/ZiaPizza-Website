@@ -43,7 +43,7 @@ export default function Header() {
             aria-label="Zia Pizza Home"
           >
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Zia Pizza Logo"
               width={78}
               height={78}

@@ -3,7 +3,7 @@ title: "The Art of Stone-Baking"
 slug: "the-art-of-stone-baking"
 excerpt: "Why we slow-proof our dough for 48 hours and bake on stone at 400°C — and why it matters."
 date: "2025-03-02"
-cover: "/photos/JOE01015.jpeg"
+cover: "/photos/JOE01015.webp"
 author: "Head Chef"
 tags: ["craft", "pizza"]
 ---
