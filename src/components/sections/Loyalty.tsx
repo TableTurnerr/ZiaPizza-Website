@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { site } from "@/data/site";
 
 export default function LoyaltySection() {
@@ -46,11 +47,19 @@ export default function LoyaltySection() {
           </div>
         </div>
 
-        <div className="w-full max-w-[280px] aspect-[9/16] rounded-[28px] bg-gradient-to-br from-primary/30 to-primary-dark/60 border border-white/10 flex items-center justify-center relative overflow-hidden">
-          <div className="text-center px-6">
-            <div className="text-[72px] font-black text-white leading-none">Zia</div>
-            <div className="text-[14px] tracking-[0.3em] uppercase text-white/70 mt-2">Rewards App</div>
-            <div className="mt-6 text-h5 text-white">Coming soon</div>
+        <div className="w-full max-w-[280px] rounded-[28px] bg-gradient-to-br from-primary/30 to-primary-dark/60 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden p-6 gap-4">
+          <div className="bg-white rounded-2xl p-3">
+            <Image
+              src="/rewards-qr.png"
+              alt="Scan to download the Zia Rewards app"
+              width={220}
+              height={220}
+              className="w-[220px] h-[220px]"
+            />
+          </div>
+          <div className="text-center">
+            <div className="text-[14px] tracking-[0.3em] uppercase text-white/70">Scan to download</div>
+            <div className="mt-1 text-h6 text-white">Zia Rewards App</div>
           </div>
         </div>
       </div>

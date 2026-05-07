@@ -9,14 +9,9 @@
   "loyalty": {
     "heading": "Earn Rewards Every Time You Order",
     "body": "Every order in-store, online or via our app earns you points. Redeem them for free sides, pizzas and exclusive rewards. The more you enjoy, the more you get back.",
-    "perks": [
-      "1 point for every £1 spent",
-      "Free dough balls on your birthday",
-      "Early access to new menu items",
-      "Member-only weekly offers"
-    ],
-    "appStoreUrl": "#",
-    "playStoreUrl": "#"
+    "perks": [],
+    "appStoreUrl": "https://apps.apple.com/us/app/zia-pizza-italian-restaurant/id6742225334",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.eposhybrid.ziapizza"
   },
   "crossBrand": {
     "heading": "Explore More from Zia",
