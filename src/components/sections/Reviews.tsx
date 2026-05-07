@@ -7,27 +7,27 @@ type Review = {
   source: string;
 };
 
-const GOOGLE_RATING = 4.8;
-const GOOGLE_REVIEW_COUNT = 520;
+const GOOGLE_RATING = 4.4;
+const GOOGLE_REVIEW_COUNT = 165;
 
 const reviews: Review[] = [
   {
-    name: "Sarah M.",
+    name: "Sebastian Stellus",
     stars: 5,
-    text: "Best pizza in Salisbury, hands down. The stone-baked base is incredible and the truffle mushroom pizza is to die for. We come here every week now.",
+    text: "Zia Pizza Shop offers great service and tasty food. The staff is friendly and quick to take orders. The pizza is fresh, with a perfect crust and a wide range of toppings to choose from. A great place to visit if you love good pizza and friendly service!",
     source: "Google Review",
   },
   {
-    name: "James T.",
+    name: "Guy Lucas",
     stars: 5,
-    text: "Ordered from Westbury Express for the first time and was blown away. Fresh, hot, and the dough was perfect. The BOGO deal made it even better.",
+    text: "First time ordering from Zia tonight. Will definitely be using them again — friendly and helpful staff, food arrived timely and was really nice. Can definitely recommend these guys over the usual local pizza alternatives!",
     source: "Google Review",
   },
   {
-    name: "Emily K.",
-    stars: 4,
-    text: "Quick delivery from Westbury Express and the pizza arrived hot and fresh. BOGO is amazing value. Will definitely order again!",
-    source: "Just Eat Review",
+    name: "Graham Ireland",
+    stars: 5,
+    text: "Great selection from Belly Pork, Chicken, Beef or vegetarian. Roast potatoes, peas, cabbage, carrots, cauliflower and unlimited gravy. Seriously, great prices, service, and fantastic food. You MUST visit. You will NOT be disappointed.",
+    source: "Google Review",
   },
 ];
 
