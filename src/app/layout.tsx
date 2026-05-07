@@ -4,6 +4,7 @@ import "./globals.css";
 import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
 import SmoothScroll from "@/components/SmoothScroll";
+import FloatingVideo from "@/components/FloatingVideo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -99,6 +100,7 @@ export default function RootLayout({
         <BookingProvider>
           {children}
           <StickyOrderBar />
+          <FloatingVideo />
         </BookingProvider>
       </body>
     </html>
