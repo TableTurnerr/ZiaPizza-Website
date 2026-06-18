@@ -81,7 +81,7 @@ export default function Header() {
             </button>
             <Link
               href="/order"
-              className="bg-primary hover:bg-primary-dark text-white text-[14.5px] font-bold px-5 py-[9px] rounded-lg transition-colors leading-none whitespace-nowrap"
+              className="hidden sm:inline-flex bg-primary hover:bg-primary-dark text-white text-[14.5px] font-bold px-5 py-[9px] rounded-lg transition-colors leading-none whitespace-nowrap"
             >
               Order Now
             </Link>
@@ -120,22 +120,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-3 mt-2 border-t border-white/[0.06] flex gap-2">
-            <button
-              type="button"
-              onClick={() => { setMobileOpen(false); openBooking(); }}
-              className="flex-1 bg-white/5 border border-white/10 text-white text-normal3 font-bold py-2.5 rounded-lg"
-            >
-              Book Table
-            </button>
-            <Link
-              href="/order"
-              onClick={() => setMobileOpen(false)}
-              className="flex-1 bg-primary text-white text-normal3 font-bold py-2.5 rounded-lg text-center"
-            >
-              Order Now
-            </Link>
-          </div>
         </div>
       </div>
     </header>
