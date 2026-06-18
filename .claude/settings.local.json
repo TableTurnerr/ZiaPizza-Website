@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(curl *)",
+      "Bash(netstat -ano)",
+      "Bash(npx next *)",
+      "Bash(ADMIN_PASSWORD=dev ADMIN_SECRET=1234567890abcdef1234567890abcdef npx next build)"
+    ]
+  }
+}
