@@ -5,22 +5,6 @@
 @import "./../styles/_variables.css";
 @import "./../styles/_keyframe-animations.css";
 
-@font-face {
-  font-family: "CretoDispay";
-  src: url("/Fonts/CreatoDisplay-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "CretoDispay Black";
-  src: url("/Fonts/CreatoDisplay-Black.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @utility no-scrollbar {
   @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
@@ -52,8 +36,7 @@
   --font-extra-bold: 800;
 
   --font-*: initial;
-  --default-font-family: "CretoDispay", sans-serif;
-  --font-creato-black: "CretoDispay Black";
+  --default-font-family: sans-serif;
   --font-display: var(--font-display), "Playfair Display", Georgia, serif;
   --font-script: var(--font-script), "Dancing Script", cursive;
   --leading-normal: 1.2;
