@@ -28,7 +28,9 @@ export default function BookingProvider({ children }: { children: React.ReactNod
 
   return (
     <BookingContext.Provider value={{ openBooking }}>
-      {children}
+      <div inert={open || undefined} aria-hidden={open || undefined}>
+        {children}
+      </div>
       <BookingModal
         open={open}
         onClose={() => setOpen(false)}
