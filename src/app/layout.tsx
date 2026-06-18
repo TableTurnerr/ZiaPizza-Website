@@ -5,6 +5,7 @@ import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
 import SmoothScroll from "@/components/SmoothScroll";
 import FloatingVideo from "@/components/FloatingVideo";
+import SplashScreen from "@/components/SplashScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,6 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="preload" as="image" href="/logo.webp" fetchPriority="high" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -92,13 +94,14 @@ export default function RootLayout({
           }}
         />
         <noscript>
-          <style>{`.reveal{opacity:1!important;transform:none!important;filter:none!important}`}</style>
+          <style>{`.reveal{opacity:1!important;transform:none!important;filter:none!important}.splash{display:none!important}`}</style>
         </noscript>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
         style={{ background: "var(--tt-bg-color)" }}
       >
+        <SplashScreen />
         <SmoothScroll />
         <BookingProvider>
           {children}

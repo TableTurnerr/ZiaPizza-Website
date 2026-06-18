@@ -118,6 +118,143 @@
   }
 }
 
+/* ============================================================
+   Site splash / preloader  (see components/SplashScreen.tsx)
+   ============================================================ */
+@keyframes splashLogoIn {
+  0%   { opacity: 0; transform: translateY(16px) scale(0.9); filter: blur(16px); }
+  55%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+@keyframes splashShine {
+  0%        { transform: translateX(-160%) skewX(-14deg); }
+  38%, 100% { transform: translateX(360%) skewX(-14deg); }
+}
+@keyframes splashBar {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@keyframes splashGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 0.72; transform: scale(1.07); }
+}
+@keyframes splashOut {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.04); }
+}
+
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  background: var(--tt-bg-color, #0d0d0d);
+  overflow: hidden;
+  will-change: opacity, transform;
+}
+
+/* soft brand glow pulsing behind the mark */
+.splash__glow {
+  position: absolute;
+  width: 72vmax;
+  height: 72vmax;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgba(227, 30, 36, 0.3),
+    rgba(227, 30, 36, 0) 70%
+  );
+  filter: blur(18px);
+  animation: splashGlow 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* vignette so the edges sink into black */
+.splash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 50% 45%, transparent 52%, rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+
+.splash__logo {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 6px;
+  animation: splashLogoIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.splash__logo-img {
+  width: min(76vw, 440px);
+  height: auto;
+  display: block;
+}
+
+/* glossy light sweep across the logo */
+.splash__shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: translateX(-160%) skewX(-14deg);
+  mix-blend-mode: screen;
+  animation: splashShine 2.8s ease-in-out 0.7s infinite;
+  pointer-events: none;
+}
+
+/* loading bar with the brand red -> gold gradient */
+.splash__bar {
+  position: relative;
+  z-index: 2;
+  width: min(58vw, 220px);
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.splash__bar-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary, #e31e24),
+    var(--color-accent, #d4a853)
+  );
+  animation: splashBar 1.9s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+}
+
+/* exit */
+.splash--exit {
+  animation: splashOut 0.64s cubic-bezier(0.7, 0, 0.84, 0) both;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash__logo { animation: fadeIn 0.4s ease both; }
+  .splash__glow,
+  .splash__shine,
+  .splash__bar-fill { animation: none; }
+  .splash__bar-fill { transform: none; }
+  .splash--exit { animation: fadeOut 0.3s ease both; }
+}
+
 /* Styles for interactive menu items (featuring section) */
 .interactive-item {
   position: relative;

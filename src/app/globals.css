@@ -74,6 +74,12 @@
     overflow-y: auto !important;
   }
 
+  /* Lock scrolling while the splash preloader is on screen */
+  html.splash-active,
+  html.splash-active body {
+    overflow: hidden !important;
+  }
+
   h1, h2, h3, h4 {
     color: white;
     font-family: var(--font-display), "Playfair Display", Georgia, serif;
