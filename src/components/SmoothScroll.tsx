@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { registerLenis } from "@/lib/scrollLock";
 
 export default function SmoothScroll() {
   useEffect(() => {
@@ -16,6 +17,8 @@ export default function SmoothScroll() {
       syncTouch: true,
       syncTouchLerp: 0.1,
     });
+
+    registerLenis(lenis);
 
     let rafId = 0;
     const raf = (time: number) => {
@@ -40,6 +43,7 @@ export default function SmoothScroll() {
       document.removeEventListener("click", handleAnchor);
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      registerLenis(null);
     };
   }, []);
 
