@@ -61,8 +61,8 @@ const Footer = () => (
       </div>
 
       <div>
-        <div className="text-white font-semibold text-normal2 mb-3">Explore</div>
-        <ul className="flex flex-col gap-2">
+        <div className="text-white font-semibold text-normal2 mb-3 text-center">Explore</div>
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 w-fit mx-auto [&>li:nth-child(even)]:text-right">
           {FOOTER_LINKS.map((l) => (
             <li key={l.href}>
               <Link
