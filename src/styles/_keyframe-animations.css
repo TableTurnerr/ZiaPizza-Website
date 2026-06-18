@@ -84,6 +84,40 @@
   .skeleton::after { animation: none; }
 }
 
+/* Scroll-triggered reveal (see components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transition-property: opacity, transform, filter;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 700ms;
+  transition-delay: 0ms;
+  will-change: opacity, transform;
+}
+
+.reveal--up { transform: translateY(42px); }
+.reveal--down { transform: translateY(-42px); }
+.reveal--left { transform: translateX(-56px); }
+.reveal--right { transform: translateX(56px); }
+.reveal--scale { transform: scale(0.92); }
+.reveal--blur { filter: blur(14px); }
+/* .reveal--fade uses opacity only */
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
 /* Styles for interactive menu items (featuring section) */
 .interactive-item {
   position: relative;
