@@ -4,34 +4,43 @@ import React from "react";
 import Link from "next/link";
 import { locations } from "@/data/locations";
 import BookTableButton from "@/components/BookTableButton";
+import Reveal from "@/components/Reveal";
 
 export default function ExperienceSelection() {
   return (
     <section
       id="Experience"
-      className="w-full flex items-center justify-center text-center flex-col px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]"
+      className="w-full flex items-center justify-center text-center flex-col px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px] overflow-hidden"
     >
-      <div className="flex items-center gap-2 mb-3">
-        <span className="w-2 h-2 rounded-full bg-accent" />
-        <span
-          className="text-accent text-[20px] sm:text-[22px]"
-          style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
-        >
-          Come trovare la tua Zia
-        </span>
-      </div>
-      <h2 className="text-white text-h3 sm:text-h2 w-full mb-3 italic">
-        How would you like to enjoy Zia Pizza?
-      </h2>
-      <p className="text-normal2 max-w-xl mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
-        Pick your nearest venue to dine in, book a table, or start an order for takeaway and delivery.
-      </p>
+      <Reveal className="w-full flex flex-col items-center">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="w-2 h-2 rounded-full bg-accent" />
+          <span
+            className="text-accent text-[20px] sm:text-[22px]"
+            style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+          >
+            Come trovare la tua Zia
+          </span>
+        </div>
+        <h2 className="text-white text-h3 sm:text-h2 w-full mb-3 italic">
+          How would you like to enjoy Zia Pizza?
+        </h2>
+        <p className="text-normal2 max-w-xl mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
+          Pick your nearest venue to dine in, book a table, or start an order for takeaway and delivery.
+        </p>
+      </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] w-full max-w-5xl">
         {locations.map((loc, index) => (
-          <div
+          <Reveal
+            as="div"
             key={loc.slug}
-            className="group relative bg-white/[0.03] border border-white/[0.08] rounded-[20px] p-6 sm:p-8 hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300 text-left overflow-hidden"
+            variant={index % 2 === 0 ? "left" : "right"}
+            delay={index * 110}
+            className="flex flex-col"
+          >
+          <div
+            className="group relative h-full bg-white/[0.03] border border-white/[0.08] rounded-[20px] p-6 sm:p-8 hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300 text-left overflow-hidden"
           >
             <div
               className="absolute top-4 right-5 text-[52px] font-black leading-none select-none pointer-events-none"
@@ -75,6 +84,7 @@ export default function ExperienceSelection() {
               </Link>
             </div>
           </div>
+          </Reveal>
         ))}
       </div>
     </section>

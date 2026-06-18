@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import Hero from "@/components/sections/Hero";
 import ExperienceSelection from "@/components/sections/ExperienceSelection";
 import Offers from "@/components/sections/Offers";
@@ -31,22 +32,34 @@ export default function HomePage() {
       <FeaturedProducts />
       <div className={SECTION_GAP} />
 
-      <MenuPreview />
+      <Reveal>
+        <MenuPreview />
+      </Reveal>
       <div className={SECTION_GAP} />
 
-      <Locations />
+      <Reveal>
+        <Locations />
+      </Reveal>
       <div className={SECTION_GAP} />
 
-      <Loyalty />
+      <Reveal variant="scale" duration={800}>
+        <Loyalty />
+      </Reveal>
       <div className={SECTION_GAP} />
 
-      <Reviews />
+      <Reveal>
+        <Reviews />
+      </Reveal>
       <div className={SECTION_GAP} />
 
-      <CrossBrand />
+      <Reveal variant="scale" duration={800}>
+        <CrossBrand />
+      </Reveal>
       <div className={SECTION_GAP} />
 
-      <FinalCTA />
+      <Reveal>
+        <FinalCTA />
+      </Reveal>
       <div className="h-[60px]" />
 
       <Footer />

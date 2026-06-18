@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { products } from "@/data/products";
+import Reveal from "@/components/Reveal";
 
 const FEATURED_SLUGS = ["garlic-dough-balls", "hot-honey-pepperoni", "loaded-fries", "tiramisu"];
 
@@ -21,26 +22,30 @@ export default function FeaturedProductsSection() {
       id="Featured"
       className="w-full px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]"
     >
-      <div className="flex items-center gap-2 mb-3 justify-center">
-        <span className="w-2 h-2 rounded-full bg-accent" />
-        <span
-          className="text-accent text-[20px] sm:text-[22px]"
-          style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
-        >
-          I Favoriti
-        </span>
-      </div>
-      <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
-        Customer Favourites
-      </h2>
-      <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
-        The dishes our regulars order on repeat.
-      </p>
+      <Reveal>
+        <div className="flex items-center gap-2 mb-3 justify-center">
+          <span className="w-2 h-2 rounded-full bg-accent" />
+          <span
+            className="text-accent text-[20px] sm:text-[22px]"
+            style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+          >
+            I Favoriti
+          </span>
+        </div>
+        <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
+          Customer Favourites
+        </h2>
+        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
+          The dishes our regulars order on repeat.
+        </p>
+      </Reveal>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-6xl mx-auto">
-        {featured.map((p) => (
-          <div
+        {featured.map((p, i) => (
+          <Reveal
+            as="div"
             key={p.slug}
+            delay={i * 90}
             className="group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden flex flex-col"
           >
             <div className="relative h-[160px] sm:h-[200px] overflow-hidden">
@@ -63,11 +68,11 @@ export default function FeaturedProductsSection() {
               </p>
               <div className="text-primary-light font-bold text-normal2 mt-1">{p.price}</div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 
-      <div className="flex justify-center mt-8">
+      <Reveal className="flex justify-center mt-8" delay={120}>
         <Link
           href="/order"
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-normal2 font-bold px-6 py-3 rounded-lg transition-colors"
@@ -77,7 +82,7 @@ export default function FeaturedProductsSection() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>
-      </div>
+      </Reveal>
     </section>
   );
 }
