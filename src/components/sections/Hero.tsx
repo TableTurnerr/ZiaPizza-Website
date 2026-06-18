@@ -128,7 +128,7 @@ export default function HeroSection() {
           Serving {locations.map((l) => l.city).join(" & ")} — and growing.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-start gap-[14px] mt-3">
+        <div className="hidden sm:flex flex-col sm:flex-row items-start gap-[14px] mt-3">
           <Link href="/order">
             <ThemeButton
               text="Order Now"
