@@ -17,9 +17,9 @@ export default function ExperienceSelection() {
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
             className="text-accent text-[20px] sm:text-[22px]"
-            style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+            style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
           >
-            Come trovare la tua Zia
+            Find Your Zia
           </span>
         </div>
         <h2 className="text-white text-h3 sm:text-h2 w-full mb-3 italic">

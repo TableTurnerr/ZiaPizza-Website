@@ -124,7 +124,7 @@ export default async function LocationPage({
                     <span className="text-accent text-normal4 font-semibold uppercase">{deal.day}</span>
                     {deal.price && <span className="text-white font-bold text-normal2">{deal.price}</span>}
                   </div>
-                  <h3 className="text-normal1 font-semibold text-white mb-1" style={{ fontFamily: "var(--font-geist-sans, sans-serif)", fontStyle: "normal" }}>{deal.name}</h3>
+                  <h3 className="text-normal1 font-semibold text-white mb-1" style={{ fontFamily: "var(--font-heading-family)", fontStyle: "normal" }}>{deal.name}</h3>
                   <p className="text-normal3" style={{ color: "var(--tt-color-text-gray)" }}>{deal.description}</p>
                 </div>
               ))}

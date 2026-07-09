@@ -39,7 +39,7 @@ export default function LocationsSection() {
         <span className="w-2 h-2 rounded-full bg-accent" />
         <span
           className="text-accent text-[20px] sm:text-[22px]"
-          style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+          style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
         >
           Dove Siamo
         </span>

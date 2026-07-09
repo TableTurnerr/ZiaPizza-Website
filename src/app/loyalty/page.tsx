@@ -19,7 +19,7 @@ const TIERS = [
 
 export default function LoyaltyPage() {
   return (
-    <div className="p-[10px] pb-[120px]">
+    <div className="p-[10px] pb-[80px] md:pb-[10px]">
       <Header />
       <div className="h-[65px] sm:h-[80px]" />
 

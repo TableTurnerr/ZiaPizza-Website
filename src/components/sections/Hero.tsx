@@ -83,7 +83,8 @@ export default function HeroSection() {
             className="text-[18px] sm:text-[20px]"
             style={{
               color: "var(--tt-color-text-orange)",
-              fontFamily: "var(--font-script), 'Dancing Script', cursive",
+              fontFamily: "var(--font-label-family)",
+              fontWeight: 500,
             }}
           >
             {site.hero.eyebrow}

@@ -30,13 +30,14 @@ export default function Hero() {
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
-            className="text-[18px] sm:text-[20px] font-script"
+            className="text-[18px] sm:text-[20px]"
             style={{
               color: "var(--tt-color-text-orange)",
-              fontFamily: "var(--font-script), 'Dancing Script', cursive",
+              fontFamily: "var(--font-label-family)",
+              fontWeight: 500,
             }}
           >
-            Autentica Italiana &middot; Made Fresh Daily
+            Authentic Italian Pizza Made Fresh Daily
           </span>
         </div>
 

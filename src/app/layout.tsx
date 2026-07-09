@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Dancing_Script } from "next/font/google";
+import { Cormorant_Garamond, Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
@@ -7,28 +7,25 @@ import SmoothScroll from "@/components/SmoothScroll";
 import FloatingVideo from "@/components/FloatingVideo";
 import SplashScreen from "@/components/SplashScreen";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800", "900"],
+  weight: ["700"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const dancingScript = Dancing_Script({
-  variable: "--font-script",
+const montserrat = Montserrat({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -98,7 +95,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
+        className={`${cormorant.variable} ${montserrat.variable} ${manrope.variable} antialiased`}
         style={{ background: "var(--tt-bg-color)" }}
       >
         <SplashScreen />

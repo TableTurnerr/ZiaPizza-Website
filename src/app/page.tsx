@@ -17,7 +17,7 @@ const SECTION_GAP = "h-[80px] sm:h-[100px]";
 
 export default function HomePage() {
   return (
-    <div className="p-[10px] pt-[80px] pb-[100px]">
+    <div className="p-[10px] pt-[80px] pb-[80px] md:pb-[10px]">
       <Header />
 
       <Hero />

@@ -42,7 +42,7 @@ export default async function MenuPage({
         <div className="mb-[40px]">
           <div
             className="text-accent text-[20px] sm:text-[22px] mb-1"
-            style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+            style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
           >
             {location.name}
           </div>
@@ -145,7 +145,7 @@ export default async function MenuPage({
           <div className="relative">
             <div
               className="text-accent text-[18px] sm:text-[20px] mb-1"
-              style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+              style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
             >
               Buon appetito
             </div>

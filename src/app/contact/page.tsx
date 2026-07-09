@@ -30,7 +30,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="p-[10px] pb-[120px]">
+    <div className="p-[10px] pb-[80px] md:pb-[10px]">
       <Header />
       <div className="h-[65px] sm:h-[80px]" />
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <form onSubmit={submit} className="bg-white/5 border border-white/10 rounded-[16px] p-6 flex flex-col gap-4">
+          <form onSubmit={submit} className="bg-white/5 border border-white/10 rounded-[16px] p-6 sm:p-8 flex flex-col gap-4">
             {status === "sent" ? (
               <div className="py-10 text-center">
                 <div className="text-accent text-h5 mb-2">Thanks, we got it.</div>
@@ -57,22 +57,22 @@ export default function ContactPage() {
               <>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-normal4 tracking-wide uppercase" style={{ color: "var(--tt-color-text-gray)" }}>Name</span>
-                  <input required value={name} onChange={(e) => setName(e.target.value)} className="bg-white/5 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary" />
+                  <input required value={name} onChange={(e) => setName(e.target.value)} className="bg-black/20 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary" />
                 </label>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-normal4 tracking-wide uppercase" style={{ color: "var(--tt-color-text-gray)" }}>Email</span>
-                  <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-white/5 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary" />
+                  <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-black/20 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary" />
                 </label>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-normal4 tracking-wide uppercase" style={{ color: "var(--tt-color-text-gray)" }}>Subject</span>
-                  <input value={subject} onChange={(e) => setSubject(e.target.value)} className="bg-white/5 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary" />
+                  <input value={subject} onChange={(e) => setSubject(e.target.value)} className="bg-black/20 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary" />
                 </label>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-normal4 tracking-wide uppercase" style={{ color: "var(--tt-color-text-gray)" }}>Message</span>
-                  <textarea required rows={5} value={message} onChange={(e) => setMessage(e.target.value)} className="bg-white/5 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary resize-y" />
+                  <textarea required rows={5} value={message} onChange={(e) => setMessage(e.target.value)} className="bg-black/20 border border-white/15 rounded-lg px-3 py-2.5 text-white focus:outline-none focus:border-primary resize-y" />
                 </label>
                 {status === "error" && (
-                  <p className="text-primary text-normal4">Something went wrong. Please email us directly at info@ziapizza.com.</p>
+                  <p className="text-primary text-normal3">Something went wrong. Please email us directly at info@ziapizza.com.</p>
                 )}
                 <button
                   type="submit"
