@@ -1,0 +1,7 @@
+interface:
+  display_name: "Commit Changes"
+  short_description: "Create focused commits and version bumps"
+  default_prompt: "Use $commit-changes to commit the current repo changes with focused commits and a final version bump."
+
+policy:
+  allow_implicit_invocation: true
