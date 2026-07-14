@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
@@ -9,8 +10,34 @@ import {
   type LocationType,
 } from "@/data/locations";
 
+const BASE = "https://ziapizza.co.uk";
+
 export function generateStaticParams() {
   return locationTypes.map((t) => ({ type: t.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ type: string }>;
+}): Promise<Metadata> {
+  const { type } = await params;
+  const typeInfo = getLocationType(type);
+  if (!typeInfo) return {};
+  const url = `${BASE}/${type}`;
+  const isExpress = type === "zia-pizza-express";
+  const title = isExpress
+    ? "Zia Pizza Express | Fast Takeaway & Delivery in Westbury"
+    : "Zia Pizza Restaurants | Authentic Italian Dining in Salisbury";
+  const description = isExpress
+    ? "Zia Pizza Express Westbury — fast, authentic stone-baked pizza for takeaway and delivery. Order online via Just Eat, Uber Eats or Deliveroo."
+    : "Zia Pizza restaurants in Salisbury — dine-in Italian restaurant serving stone-baked pizzas, fresh pasta, and family deals. Book a table or order online.";
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+  };
 }
 
 export default async function LocationTypePage({

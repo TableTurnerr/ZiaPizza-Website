@@ -9,8 +9,9 @@ export default function LocationFinder() {
 
   const filtered = locations.filter(
     (l) =>
-      l.name.toLowerCase().includes(query.toLowerCase()) ||
-      l.address.toLowerCase().includes(query.toLowerCase())
+      !l.comingSoon &&
+      (l.name.toLowerCase().includes(query.toLowerCase()) ||
+      l.address.toLowerCase().includes(query.toLowerCase()))
   );
 
   return (

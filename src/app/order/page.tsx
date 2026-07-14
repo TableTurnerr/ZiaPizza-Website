@@ -75,7 +75,7 @@ export default function OrderPage() {
         {step === "pick" && (
           <div className="flex flex-col gap-3">
             <h2 className="text-h5 text-white mb-2">Pick a location</h2>
-            {locations.map((loc) => (
+            {locations.filter((loc) => !loc.comingSoon).map((loc) => (
               <button
                 key={loc.slug}
                 type="button"

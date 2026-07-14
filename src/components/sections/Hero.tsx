@@ -140,6 +140,30 @@ export default function HeroSection() {
             Book Table
           </BookTableButton>
         </div>
+
+        {/* Brand differentiators */}
+        <div className="flex items-center gap-4 mt-2 pt-4 border-t border-white/[0.08] w-full max-w-[440px]">
+          {[
+            { label: "Stone Baked", sub: "Perfect crust & flavour" },
+            { label: "Hand Stretched", sub: "Every pizza, every time" },
+            { label: "Fior di Latte", sub: "Premium mozzarella" },
+          ].map((item, i) => (
+            <div key={item.label} className="flex items-center gap-4">
+              <div>
+                <div
+                  className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white"
+                  style={{ fontFamily: "var(--font-heading, sans-serif)" }}
+                >
+                  {item.label}
+                </div>
+                <div className="text-[10px] leading-tight mt-[2px]" style={{ color: "var(--tt-color-text-gray)" }}>
+                  {item.sub}
+                </div>
+              </div>
+              {i < 2 && <div className="w-px h-7 bg-white/10 flex-shrink-0" />}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

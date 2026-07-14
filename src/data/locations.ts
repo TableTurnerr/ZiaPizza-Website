@@ -34,6 +34,10 @@ export interface Location {
   deliveroo?: string;
   mapEmbed: string;
   deals: Deal[];
+  comingSoon?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
 }
 
 export interface LocationTypeInfo {

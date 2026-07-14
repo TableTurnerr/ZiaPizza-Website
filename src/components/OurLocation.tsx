@@ -28,7 +28,7 @@ export default function OurLocation() {
 
         {/* Overlay cards - desktop only */}
         <div className="hidden md:flex absolute top-4 left-4 right-4 gap-3 z-10">
-          {locations.map((loc) => (
+          {locations.filter((loc) => !loc.comingSoon).map((loc) => (
             <div
               key={loc.slug}
               className="backdrop-blur-[14px] rounded-[16px] px-5 py-4 flex-1"
@@ -60,7 +60,7 @@ export default function OurLocation() {
 
       {/* Mobile location cards */}
       <div className="md:hidden mt-4 flex flex-col gap-3 px-[10px]">
-        {locations.map((loc) => (
+        {locations.filter((loc) => !loc.comingSoon).map((loc) => (
           <a
             key={loc.slug}
             href={`/${loc.type}/${loc.slug}`}
