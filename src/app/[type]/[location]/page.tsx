@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeButton from "@/components/ThemeBtn";
@@ -7,8 +8,42 @@ import PlatformButton from "@/components/PlatformButton";
 import { locations, getLocation, getLocationType } from "@/data/locations";
 import { getProductsByLocation, categories } from "@/data/products";
 
+const BASE = "https://ziapizza.co.uk";
+
 export function generateStaticParams() {
-  return locations.map((l) => ({ type: l.type, location: l.slug }));
+  return locations
+    .filter((l) => !l.comingSoon)
+    .map((l) => ({ type: l.type, location: l.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ type: string; location: string }>;
+}): Promise<Metadata> {
+  const { type, location: slug } = await params;
+  const loc = getLocation(slug);
+  if (!loc || loc.comingSoon) return { robots: { index: false } };
+  const url = `${BASE}/${type}/${slug}`;
+  const title = loc.seoTitle ?? `${loc.name} | Stone-Baked Italian Pizza in ${loc.city}`;
+  const description = loc.seoDescription ?? loc.description;
+  return {
+    title,
+    description,
+    keywords: loc.seoKeywords,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [{ url: loc.image.startsWith("/") ? `${BASE}${loc.image}` : loc.image, alt: loc.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export default async function LocationPage({
@@ -27,8 +62,47 @@ export default async function LocationPage({
     locationProducts.some((p) => p.category === cat.slug)
   );
 
+  const locationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: location.name,
+    url: `${BASE}/${type}/${locationSlug}`,
+    image: location.image.startsWith("/") ? `${BASE}${location.image}` : location.image,
+    telephone: location.phone,
+    email: location.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: location.address.split(",")[0]?.trim(),
+      addressLocality: location.city,
+      postalCode: location.postcode,
+      addressCountry: "GB",
+    },
+    servesCuisine: ["Italian", "Pizza", "Pasta"],
+    priceRange: "££",
+    menu: `${BASE}/${type}/${locationSlug}/menu`,
+    sameAs: [location.instagram, location.facebook].filter(Boolean),
+    openingHoursSpecification: location.openTime && location.closeTime ? [{
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: location.openTime,
+      closes: location.closeTime,
+    }] : undefined,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+      { "@type": "ListItem", position: 2, name: typeInfo.name, item: `${BASE}/${type}` },
+      { "@type": "ListItem", position: 3, name: location.name, item: `${BASE}/${type}/${locationSlug}` },
+    ],
+  };
+
   return (
     <div className="p-[10px]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(locationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
 
       <div className="h-[65px] sm:h-[80px]" />
@@ -124,7 +198,7 @@ export default async function LocationPage({
                     <span className="text-accent text-normal4 font-semibold uppercase">{deal.day}</span>
                     {deal.price && <span className="text-white font-bold text-normal2">{deal.price}</span>}
                   </div>
-                  <h3 className="text-normal1 font-semibold text-white mb-1" style={{ fontFamily: "var(--font-geist-sans, sans-serif)", fontStyle: "normal" }}>{deal.name}</h3>
+                  <h3 className="text-normal1 font-semibold text-white mb-1" style={{ fontFamily: "var(--font-heading, sans-serif)", fontStyle: "normal" }}>{deal.name}</h3>
                   <p className="text-normal3" style={{ color: "var(--tt-color-text-gray)" }}>{deal.description}</p>
                 </div>
               ))}

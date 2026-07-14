@@ -39,6 +39,39 @@ export default function ExperienceSelection() {
             delay={index * 110}
             className="flex flex-col"
           >
+          {loc.comingSoon ? (
+            <div className="relative h-full bg-white/[0.02] border border-white/[0.06] rounded-[20px] p-6 sm:p-8 text-left overflow-hidden opacity-70">
+              <div
+                className="absolute top-4 right-5 text-[52px] font-black leading-none select-none pointer-events-none"
+                style={{ color: "rgba(255,255,255,0.035)" }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div className="flex items-center gap-2 mb-2">
+                <div className="text-accent text-normal4 font-semibold tracking-wider uppercase">
+                  {loc.type === "zia-pizza" ? "Zia Pizza Restaurant" : "Zia Pizza Express"}
+                </div>
+                <span className="text-[11px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-accent/20 text-accent border border-accent/30">
+                  Coming Soon
+                </span>
+              </div>
+              <h3 className="text-h5 sm:text-h4 text-white font-semibold mb-2">{loc.name}</h3>
+              <p className="text-normal3 mb-1" style={{ color: "var(--tt-color-text-gray)" }}>
+                {loc.address}
+              </p>
+              <p className="text-normal4 text-white/50 mb-4">{loc.hours}</p>
+              <p className="text-normal3 mb-5 line-clamp-3" style={{ color: "var(--tt-color-text-gray)" }}>
+                {loc.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-white/5 border border-white/10 text-white/40 text-normal3 font-semibold px-4 py-2 rounded-lg cursor-not-allowed">
+                  Opening Soon
+                </span>
+              </div>
+            </div>
+          ) : (
           <div
             className="group relative h-full bg-white/[0.03] border border-white/[0.08] rounded-[20px] p-6 sm:p-8 hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300 text-left overflow-hidden"
           >
@@ -84,6 +117,7 @@ export default function ExperienceSelection() {
               </Link>
             </div>
           </div>
+          )}
           </Reveal>
         ))}
       </div>

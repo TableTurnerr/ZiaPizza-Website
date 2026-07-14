@@ -7,7 +7,8 @@ import BookTableButton from "@/components/BookTableButton";
 
 export default function LocationsSection() {
   const [postcode, setPostcode] = useState("");
-  const [filtered, setFiltered] = useState<Location[]>(locations);
+  const activeLocations = locations.filter((l) => !l.comingSoon);
+  const [filtered, setFiltered] = useState<Location[]>(activeLocations);
   const [message, setMessage] = useState<string | null>(null);
 
   const now = useMemo(() => new Date(), []);
@@ -16,16 +17,16 @@ export default function LocationsSection() {
     e.preventDefault();
     const trimmed = postcode.trim();
     if (!trimmed) {
-      setFiltered(locations);
+      setFiltered(activeLocations);
       setMessage(null);
       return;
     }
     const match = findLocationByPostcode(trimmed);
-    if (match) {
+    if (match && !match.comingSoon) {
       setFiltered([match]);
       setMessage(`Closest match: ${match.name}`);
     } else {
-      setFiltered(locations);
+      setFiltered(activeLocations);
       setMessage(`No location yet for "${trimmed}" — showing all locations.`);
     }
   }
