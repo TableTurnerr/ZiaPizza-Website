@@ -7,12 +7,12 @@ export default function CrossBrandSection() {
       id="CrossBrand"
       className="w-full px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]"
     >
-      <div className="relative max-w-5xl mx-auto rounded-[24px] overflow-hidden border border-white/10 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] p-8 sm:p-12 text-center">
+      <div className="relative max-w-5xl mx-auto rounded-[24px] overflow-hidden border border-white/10 bg-gradient-to-br from-[#0E1824] to-[#0E1824] p-8 sm:p-12 text-center">
         <div className="flex items-center gap-2 mb-3 justify-center">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
-            className="text-accent text-[20px] sm:text-[22px]"
-            style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+            className="text-accent text-[13px] font-semibold"
+            style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
           >
             La Famiglia
           </span>

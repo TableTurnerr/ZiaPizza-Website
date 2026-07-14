@@ -73,8 +73,8 @@ export default function HeroSection() {
           className={`absolute inset-0 w-full h-full object-cover object-[38%_center] transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/75 to-[#0D0D0D]/10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/30 via-transparent to-[#0D0D0D]/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0E1824] via-[#0E1824]/75 to-[#0E1824]/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0E1824]/30 via-transparent to-[#0E1824]/70" />
 
       <div className="relative z-10 pl-6 sm:pl-12 lg:pl-20 pr-4 py-20 flex flex-col items-start gap-4 max-w-[600px]">
         <div className="flex items-center gap-2">
@@ -82,15 +82,15 @@ export default function HeroSection() {
           <span
             className="text-[18px] sm:text-[20px]"
             style={{
-              color: "var(--tt-color-text-orange)",
-              fontFamily: "var(--font-script), 'Dancing Script', cursive",
+              color: "#BDA277",
+              fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em",
             }}
           >
             {site.hero.eyebrow}
           </span>
         </div>
 
-        <h1 className="text-white text-[40px] sm:text-h2 lg:text-h1 font-bold leading-[1.08] -mt-1">
+        <h1 className="text-white text-h1 sm:text-hero font-bold leading-[1.05] -mt-1">
           {site.hero.headline}
           <br />
           <span className="text-primary italic">{site.hero.headlineAccent}</span>

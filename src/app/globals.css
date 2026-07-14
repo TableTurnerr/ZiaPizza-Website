@@ -10,24 +10,26 @@
 }
 
 @theme {
-  --color-primary-dark: #C41217;
-  --color-primary: #E31E24;
-  --color-primary-light: #EE4B50;
-  --color-accent: #D4A853;
-  --color-accent-light: #E8C87A;
-  --color-black: #0D0D0D;
-  --color-grey: #4D4D4D;
+  --color-primary-dark: #CC1820;
+  --color-primary: #EE1D27;
+  --color-primary-light: #F24D55;
+  --color-accent: #BDA277;
+  --color-accent-light: #D5C49E;
+  --color-black: #0E1824;
+  --color-grey: #BDA277;
 
-  --text-h1: 68px;
-  --text-h2: 56px;
-  --text-h3: 48px;
-  --text-h4: 36px;
-  --text-h5: 22px;
+  /* Brand type scale — Section 07 (16px base) */
+  --text-hero: 4.5rem;   /* 72px — Cormorant Bold, hero statement */
+  --text-h1: 2.5rem;     /* 40px — Cormorant Bold, page titles    */
+  --text-h2: 1.5rem;     /* 24px — Montserrat SemiBold, sections  */
+  --text-h3: 1.125rem;   /* 18px — Montserrat SemiBold, sub-sections */
+  --text-h4: 1.25rem;    /* 20px — Montserrat SemiBold, card headings */
+  --text-h5: 1rem;       /* 16px — Montserrat Medium, small titles */
 
-  --text-normal1: 18px;
-  --text-normal2: 18px;
-  --text-normal3: 16px;
-  --text-normal4: 14px;
+  --text-normal1: 1.125rem; /* 18px */
+  --text-normal2: 1rem;     /* 16px — Body */
+  --text-normal3: 0.875rem; /* 14px — Small */
+  --text-normal4: 0.75rem;  /* 12px — Label */
 
   --leading-lh24: 24px;
 
@@ -40,7 +42,6 @@
   --font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
   --font-heading: var(--font-heading), "Montserrat", sans-serif;
   --font-body: var(--font-body), "Manrope", sans-serif;
-  --font-script: var(--font-script), "Dancing Script", cursive;
   --leading-normal: 1.2;
 }
 
@@ -71,7 +72,7 @@
 
   body {
     color: white;
-    line-height: 1.3;
+    line-height: 1.6;
     font-weight: 400;
     font-family: var(--font-body), "Manrope", sans-serif;
     overflow-y: auto !important;
@@ -83,20 +84,22 @@
     overflow: hidden !important;
   }
 
-  /* Primary Display — Cormorant Garamond Bold */
-  h1, h2 {
-    color: white;
+  /* Primary Display — Cormorant Garamond Bold (Hero & H1) */
+  h1 {
+    color: #FFFFFF;
     font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
     font-weight: 700;
     letter-spacing: -0.01em;
+    line-height: 1.15;
   }
 
-  /* Secondary Heading — Montserrat SemiBold */
-  h3, h4 {
-    color: white;
+  /* Secondary Heading — Montserrat SemiBold (H2, H3, H4) */
+  h2, h3, h4 {
+    color: #FFFFFF;
     font-family: var(--font-heading), "Montserrat", sans-serif;
     font-weight: 600;
     letter-spacing: -0.01em;
+    line-height: 1.25;
   }
 
   /* CTAs, buttons, feature labels — Montserrat */
@@ -109,8 +112,8 @@
   }
 
   ::selection {
-    background-color: #E31E24;
-    color: #fff;
+    background-color: #EE1D27;
+    color: #FFFFFF;
   }
 
   /* Custom scrollbar */
@@ -132,7 +135,7 @@
 
 /* Blog post typography */
 .prose-zia h2 {
-  color: #fff;
+  color: #FFFFFF;
   font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
   font-size: 30px;
   font-style: italic;
@@ -141,7 +144,7 @@
   letter-spacing: -0.01em;
 }
 .prose-zia h3 {
-  color: #fff;
+  color: #FFFFFF;
   font-family: var(--font-heading), "Montserrat", sans-serif;
   font-size: 22px;
   font-weight: 600;
@@ -163,20 +166,20 @@
   list-style: decimal;
 }
 .prose-zia a {
-  color: #D4A853;
+  color: #BDA277;
   text-decoration: underline;
 }
 .prose-zia a:hover {
-  color: #fff;
+  color: #FFFFFF;
 }
 .prose-zia strong {
-  color: #fff;
+  color: #FFFFFF;
   font-weight: 700;
 }
 .prose-zia blockquote {
-  border-left: 3px solid #D4A853;
+  border-left: 3px solid #BDA277;
   padding-left: 16px;
-  color: #fff;
+  color: #FFFFFF;
   margin: 20px 0;
   font-style: italic;
 }
@@ -193,8 +196,8 @@
 }
 .dish-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px -8px rgba(212, 168, 83, 0.25);
-  border-color: rgba(212, 168, 83, 0.4) !important;
+  box-shadow: 0 8px 20px -8px rgba(189, 162, 119, 0.25);
+  border-color: rgba(189, 162, 119, 0.4) !important;
 }
 
 /* lds-roller spinner (same as GrillShack) */
