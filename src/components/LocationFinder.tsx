@@ -17,8 +17,8 @@ export default function LocationFinder() {
   return (
     <div className="w-full px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]">
       <div
-        className="text-accent text-[20px] sm:text-[22px] text-center mb-2"
-        style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+        className="text-accent text-[13px] font-semibold text-center mb-2"
+        style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
       >
         Le Nostre Sedi
       </div>

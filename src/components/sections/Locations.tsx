@@ -39,8 +39,8 @@ export default function LocationsSection() {
       <div className="flex items-center gap-2 mb-3 justify-center">
         <span className="w-2 h-2 rounded-full bg-accent" />
         <span
-          className="text-accent text-[20px] sm:text-[22px]"
-          style={{ fontFamily: "var(--font-script), 'Dancing Script', cursive" }}
+          className="text-accent text-[13px] font-semibold"
+          style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
         >
           Dove Siamo
         </span>
@@ -84,11 +84,11 @@ export default function LocationsSection() {
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-h5 text-white font-semibold">{loc.name}</h3>
                 <span
-                  className={`text-normal4 font-bold px-2.5 py-0.5 rounded-full ${
-                    open
-                      ? "bg-green-500/15 text-green-400 border border-green-500/30"
-                      : "bg-red-500/15 text-red-400 border border-red-500/30"
-                  }`}
+                  className="text-normal4 font-bold px-2.5 py-0.5 rounded-full border"
+                  style={open
+                    ? { background: "rgba(189,162,119,0.12)", color: "#BDA277", borderColor: "rgba(189,162,119,0.4)" }
+                    : { background: "rgba(238,29,39,0.12)", color: "#EE1D27", borderColor: "rgba(238,29,39,0.4)" }
+                  }
                 >
                   {open ? "Open now" : "Closed"}
                 </span>

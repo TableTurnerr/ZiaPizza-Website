@@ -36,19 +36,28 @@ export default function MenuPage() {
   const allDeals = locations.filter((l) => !l.comingSoon).flatMap((l) => l.deals.map((d) => ({ ...d, loc: l.name })));
 
   return (
-    <div className="p-[10px] pb-[120px] bg-white">
+    <div className="p-[10px] pb-[120px]" style={{ background: "var(--tt-bg-color)" }}>
       <Header />
       <div className="h-[65px] sm:h-[80px]" />
 
       <div className="px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]">
-        <div className="text-normal4 mb-[20px] text-[#666]">
-          <Link href="/" className="hover:text-[#0D0D0D] transition-colors">Home</Link>
+        <div className="text-normal4 mb-[20px] text-white/40">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-[#0D0D0D] font-medium">Menu</span>
+          <span className="text-white/70 font-medium">Menu</span>
         </div>
 
-        <h1 className="text-h2 sm:text-h1 italic text-[#0D0D0D] mb-3">Our Menu</h1>
-        <p className="text-normal2 max-w-2xl mb-10 text-[#444]">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="w-2 h-2 rounded-full bg-accent" />
+          <span
+            className="text-accent text-[13px] font-semibold"
+            style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
+          >
+            Il Menu
+          </span>
+        </div>
+        <h1 className="text-h1 italic text-white mb-3">Our Menu</h1>
+        <p className="text-normal2 max-w-2xl mb-10 text-white/60">
           Short, deliberate, and all-Italian. Every pizza is stone-baked on a 48-hour slow-proofed base.
         </p>
 
@@ -57,25 +66,28 @@ export default function MenuPage() {
           {allDeals.slice(0, 6).map((d, i) => (
             <div
               key={`${d.name}-${i}`}
-              className="flex-shrink-0 w-[260px] border border-red-900/40 rounded-[14px] p-4"
-              style={{ background: "linear-gradient(135deg, #4a0c0e 0%, #1c0507 100%)" }}
+              className="flex-shrink-0 w-[260px] border border-[#EE1D27]/30 rounded-[14px] p-4"
+              style={{ background: "linear-gradient(135deg, #0E1824 0%, #1a2535 100%)" }}
             >
-              <div className="text-accent text-normal4 font-bold tracking-wider uppercase mb-1">{d.day}</div>
+              <div className="text-accent text-normal4 font-semibold tracking-[0.08em] uppercase mb-1">{d.day}</div>
               <div className="text-white font-semibold text-normal2 mb-1">{d.name}</div>
-              <div className="text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>{d.description}</div>
-              <div className="text-white/50 text-normal4 mt-2">At {d.loc}</div>
+              <div className="text-normal4 text-white/60">{d.description}</div>
+              <div className="text-white/40 text-normal4 mt-2">At {d.loc}</div>
             </div>
           ))}
         </div>
 
         {/* Category nav */}
-        <div className="sticky top-[68px] z-30 bg-white/95 backdrop-blur-md -mx-[10px] px-[10px] sm:-mx-[40px] sm:px-[40px] md:-mx-[70px] md:px-[70px] lg:-mx-[80px] lg:px-[80px] py-3 border-y border-black/[0.08] mb-10">
+        <div
+          className="sticky top-[68px] z-30 backdrop-blur-md -mx-[10px] px-[10px] sm:-mx-[40px] sm:px-[40px] md:-mx-[70px] md:px-[70px] lg:-mx-[80px] lg:px-[80px] py-3 border-y border-white/[0.08] mb-10"
+          style={{ background: "rgba(14,24,36,0.95)" }}
+        >
           <div className="flex gap-2 overflow-x-auto">
             {cats.map((c) => (
               <a
                 key={c.slug}
                 href={`#${c.slug}`}
-                className="flex-shrink-0 bg-black/[0.05] hover:bg-primary hover:text-white border border-black/10 text-[#0D0D0D] text-normal4 font-semibold px-4 py-2 rounded-full transition-colors"
+                className="flex-shrink-0 bg-white/[0.05] hover:bg-primary hover:text-white border border-white/10 text-white text-normal4 font-semibold px-4 py-2 rounded-full transition-colors"
               >
                 {c.name}
               </a>
@@ -88,27 +100,29 @@ export default function MenuPage() {
           if (items.length === 0) return null;
           return (
             <section key={cat.slug} id={cat.slug} className="mb-[60px] scroll-mt-[140px]">
-              <h2 className="text-h3 italic text-[#0D0D0D] mb-2">{cat.name}</h2>
-              <p className="text-normal3 max-w-2xl mb-6 text-[#555]">
+              {/* Gold rule separator per brand Section 08 */}
+              <div className="w-8 h-px mb-4" style={{ background: "#BDA277" }} />
+              <h2 className="text-h2 italic text-white mb-2">{cat.name}</h2>
+              <p className="text-normal3 max-w-2xl mb-6 text-white/60">
                 {cat.description}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {items.map((p) => (
-                  <div key={p.slug} className="bg-white border border-black/10 rounded-[14px] overflow-hidden flex flex-col shadow-sm">
+                  <div key={p.slug} className="bg-white/[0.04] border border-white/10 rounded-[14px] overflow-hidden flex flex-col">
                     <div className="relative h-[180px]">
                       <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0E1824]/80 to-transparent" />
                     </div>
                     <div className="p-4 flex-1 flex flex-col">
                       <div className="flex items-start justify-between gap-2 mb-1.5">
-                        <h3 className="text-normal2 font-bold text-[#0D0D0D]">{p.name}</h3>
-                        <span className="text-primary font-bold text-normal2 whitespace-nowrap">{p.price}</span>
+                        <h3 className="text-normal2 font-bold text-white">{p.name}</h3>
+                        <span className="text-accent font-bold text-normal2 whitespace-nowrap">{p.price}</span>
                       </div>
-                      <p className="text-normal4 flex-1 text-[#555] leading-relaxed">{p.description}</p>
+                      <p className="text-normal4 flex-1 text-white/60 leading-relaxed">{p.description}</p>
                       {p.tags.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mt-3">
                           {p.tags.map((t) => (
-                            <span key={t} className="bg-black/[0.05] text-[#444] text-[11px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-black/10">
+                            <span key={t} className="bg-white/[0.06] text-white/60 text-[11px] uppercase tracking-[0.08em] px-2 py-0.5 rounded-full border border-white/10">
                               {t}
                             </span>
                           ))}

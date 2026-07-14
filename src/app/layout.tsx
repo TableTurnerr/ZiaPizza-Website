@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat, Manrope, Dancing_Script } from "next/font/google";
+import { Cormorant_Garamond, Montserrat, Manrope } from "next/font/google";
 import "./globals.css";
 import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
@@ -26,13 +26,6 @@ const manrope = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const dancingScript = Dancing_Script({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -102,7 +95,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${cormorantGaramond.variable} ${montserrat.variable} ${manrope.variable} ${dancingScript.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${montserrat.variable} ${manrope.variable} antialiased`}
         style={{ background: "var(--tt-bg-color)" }}
       >
         <SplashScreen />
