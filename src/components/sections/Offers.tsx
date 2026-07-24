@@ -11,6 +11,7 @@ type OfferCardData = {
   name: string;
   description: string;
   price?: string;
+  image?: string;
 };
 
 function getHighlightedOffers(): OfferCardData[] {
@@ -52,10 +53,10 @@ export default function OffersSection() {
             Le Nostre Offerte
           </span>
         </div>
-        <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
+        <h2 className="text-h3 sm:text-h2 text-center mb-3 italic" style={{ color: "#1a1a1a" }}>
           Today&apos;s Offers
         </h2>
-        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
+        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "#6b6b6b" }}>
           Combo deals, family bundles and weekly specials across our locations.
         </p>
       </Reveal>
@@ -66,20 +67,38 @@ export default function OffersSection() {
             as="div"
             key={`${offer.locationSlug}-${offer.name}-${i}`}
             delay={i * 110}
-            className="relative bg-gradient-to-br from-primary-dark/30 to-white/[0.03] border border-primary/20 rounded-[16px] p-6 flex flex-col"
+            className="relative rounded-[16px] overflow-hidden flex flex-col border border-[#EE1D27]/30"
+            style={{ background: "linear-gradient(135deg, #0E1824 0%, #1a2535 100%)" }}
           >
-            <div className="text-accent text-normal4 font-bold tracking-wider uppercase mb-2">
-              {offer.day}
-            </div>
-            <h3 className="text-h5 font-semibold text-white mb-2">{offer.name}</h3>
-            <p className="text-normal3 flex-1" style={{ color: "var(--tt-color-text-gray)" }}>
-              {offer.description}
-            </p>
-            {offer.price && (
-              <div className="text-h4 font-bold text-primary-light mt-3">{offer.price}</div>
+            {offer.image && (
+              <div className="relative h-[180px] overflow-hidden">
+                <img
+                  src={offer.image}
+                  alt={offer.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                {offer.price && (
+                  <div className="absolute bottom-3 right-3 bg-primary text-white text-normal2 font-bold px-3 py-1 rounded-lg">
+                    {offer.price}
+                  </div>
+                )}
+              </div>
             )}
-            <div className="mt-4 text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>
-              Available at {offer.locationName}
+            <div className="p-6 flex flex-col flex-1">
+              <div className="text-accent text-normal4 font-bold tracking-wider uppercase mb-2">
+                {offer.day}
+              </div>
+              <h3 className="text-h5 font-semibold text-white mb-2">{offer.name}</h3>
+              <p className="text-normal3 flex-1" style={{ color: "var(--tt-color-text-gray)" }}>
+                {offer.description}
+              </p>
+              {!offer.image && offer.price && (
+                <div className="text-h4 font-bold text-primary-light mt-3">{offer.price}</div>
+              )}
+              <div className="mt-4 text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>
+                Available at {offer.locationName}
+              </div>
             </div>
           </Reveal>
         ))}

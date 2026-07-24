@@ -23,19 +23,25 @@ export default function MenuPreviewSection() {
           Il Nostro Menu
         </span>
       </div>
-      <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
+      <h2 className="text-[#1A1F2E] text-h3 sm:text-h2 text-center mb-2 italic">
         Our Menu
       </h2>
-      <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
-        Short, deliberate, and all-Italian. Browse the categories or open the full menu.
+      <div className="flex items-center justify-center gap-2 mb-3">
+        <span className="inline-flex items-center gap-1.5 bg-[#1A1F2E] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+          Zia Pizza Westbury
+        </span>
+      </div>
+      <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "#767570" }}>
+        Stone-baked and all-Italian. Salisbury menu coming soon.
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
         {cats.map((cat) => (
           <Link
             key={cat.slug}
-            href={`/menu#${cat.slug}`}
-            className="group relative h-[200px] sm:h-[240px] rounded-[16px] overflow-hidden border border-white/10 hover:border-accent/40 transition-colors"
+            href={`/zia-pizza-express/westbury/menu#${cat.slug}`}
+            className="group relative h-[200px] sm:h-[240px] rounded-[16px] overflow-hidden border border-[#E8E2D9] hover:border-accent transition-colors"
           >
             {cat.image && (
               <img
@@ -57,10 +63,10 @@ export default function MenuPreviewSection() {
 
       <div className="flex justify-center mt-8">
         <Link
-          href="/menu"
-          className="inline-flex items-center gap-2 border-2 border-white/15 hover:border-accent text-white text-normal2 font-bold px-6 py-3 rounded-lg transition-colors"
+          href="/zia-pizza-express/westbury/menu"
+          className="inline-flex items-center gap-2 border-2 border-[#BDA277] hover:border-accent text-[#1A1F2E] text-normal2 font-bold px-6 py-3 rounded-lg transition-colors"
         >
-          View Full Menu
+          View Westbury Menu
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

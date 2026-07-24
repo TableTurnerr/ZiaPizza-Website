@@ -56,7 +56,20 @@
       "Bash(xargs sed -i '' 's/fontFamily: \"var\\(--font-script\\), '\\\\''Dancing Script'\\\\'', cursive\"/fontFamily: \"var\\(--font-heading\\), '\\\\''Montserrat'\\\\'', sans-serif\", textTransform: \"uppercase\", letterSpacing: \"0.08em\"/g')",
       "Bash(xargs sed -i '' 's/className=\"text-\\\\[18px\\\\] sm:text-\\\\[20px\\\\] font-script\"/className=\"text-[12px] font-semibold uppercase tracking-[0.08em]\"/g')",
       "Bash(xargs sed -i '' 's/className=\"text-accent text-\\\\[20px\\\\] sm:text-\\\\[22px\\\\]\"/className=\"text-accent text-[13px] font-semibold\"/g')",
-      "Bash(xargs sed -i '' 's/className=\"text-accent text-\\\\[20px\\\\] sm:text-\\\\[22px\\\\] text-center mb-2\"/className=\"text-accent text-[13px] font-semibold text-center mb-2\"/g')"
+      "Bash(xargs sed -i '' 's/className=\"text-accent text-\\\\[20px\\\\] sm:text-\\\\[22px\\\\] text-center mb-2\"/className=\"text-accent text-[13px] font-semibold text-center mb-2\"/g')",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "WebFetch(domain:claude.ai)",
+      "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
+      "Bash(cp /Users/ashwinraj/Downloads/Margherita.JPG /Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/margherita.jpg)",
+      "Bash(cp /Users/ashwinraj/Downloads/Pepperoni.JPG /Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/pepperoni.jpg)",
+      "Bash(cp /Users/ashwinraj/Downloads/Hawaiian.JPG /Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/hawaiian.jpg)",
+      "Bash(cp '/Users/ashwinraj/Downloads/Hot and Spicy Mexicana.JPG' /Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/mexicana.jpg)",
+      "Bash(cp '/Users/ashwinraj/Downloads/Veggie Supreme.JPG' /Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/veggie-supreme.jpg)",
+      "Bash(cp \"/Users/ashwinraj/Downloads/Buratta Truffle .JPG\" \"/Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/burrata-truffle.jpg\" *)",
+      "Bash(grep -i -E \"\\\\.jpg$|\\\\.JPG$|\\\\.png$|\\\\.PNG$|\\\\.webp$\")",
+      "Bash(python3 \"/Users/ashwinraj/.claude/skills/ui-ux-pro-max/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"italian restaurant pizza premium hero section\" --design-system -p \"ZiaPizza\" --variance 6 --motion 5)",
+      "Bash(sort -k5 -rh)"
     ]
   }
 }

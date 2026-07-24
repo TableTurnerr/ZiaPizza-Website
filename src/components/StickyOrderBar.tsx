@@ -8,6 +8,7 @@ import { useBooking } from "./BookingProvider";
 export default function StickyOrderBar() {
   const pathname = usePathname();
   const { openBooking } = useBooking();
+  const isWestbury = pathname?.includes("/westbury");
   if (pathname?.startsWith("/admin")) return null;
   return (
     <div
@@ -24,13 +25,15 @@ export default function StickyOrderBar() {
       >
         Order Now
       </Link>
-      <button
-        type="button"
-        onClick={() => openBooking()}
-        className="flex-1 bg-white/10 hover:bg-white/20 text-white text-normal3 font-bold py-3 rounded-lg transition-colors"
-      >
-        Book Table
-      </button>
+      {!isWestbury && (
+        <button
+          type="button"
+          onClick={() => openBooking()}
+          className="flex-1 bg-white/10 hover:bg-white/20 text-white text-normal3 font-bold py-3 rounded-lg transition-colors"
+        >
+          Book Table
+        </button>
+      )}
     </div>
   );
 }

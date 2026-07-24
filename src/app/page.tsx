@@ -39,15 +39,15 @@ export default function HomePage() {
       <ExperienceSelection />
       <div className={SECTION_GAP} />
 
-      <Offers />
-      <div className={SECTION_GAP} />
-
-      <FeaturedProducts />
-      <div className={SECTION_GAP} />
-
-      <Reveal>
-        <MenuPreview />
-      </Reveal>
+      <div className="rounded-[20px] bg-[#F5EFE6] py-16 sm:py-20">
+        <Offers />
+        <div className={SECTION_GAP} />
+        <FeaturedProducts />
+        <div className={SECTION_GAP} />
+        <Reveal>
+          <MenuPreview />
+        </Reveal>
+      </div>
       <div className={SECTION_GAP} />
 
       <Reveal>
