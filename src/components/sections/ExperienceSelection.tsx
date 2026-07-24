@@ -103,12 +103,14 @@ export default function ExperienceSelection() {
               >
                 Order Now
               </a>
-              <BookTableButton
-                locationSlug={loc.slug}
-                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
-              >
-                Book Table
-              </BookTableButton>
+              {loc.type !== "zia-pizza-express" && (
+                <BookTableButton
+                  locationSlug={loc.slug}
+                  className="bg-white/5 hover:bg-white/10 border border-white/10 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
+                >
+                  Book Table
+                </BookTableButton>
+              )}
               <Link
                 href={`/${loc.type}/${loc.slug}`}
                 className="bg-transparent border border-white/10 hover:border-white/40 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"

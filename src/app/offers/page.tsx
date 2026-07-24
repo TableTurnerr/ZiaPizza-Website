@@ -59,20 +59,37 @@ export default function OffersPage() {
                 {loc.deals.map((d, i) => (
                   <div
                     key={`${d.name}-${i}`}
-                    className="border border-[#EE1D27]/30 rounded-[14px] p-5 flex flex-col"
+                    className="border border-[#EE1D27]/30 rounded-[14px] overflow-hidden flex flex-col"
                     style={{ background: "linear-gradient(135deg, #0E1824 0%, #1a2535 100%)" }}
                   >
-                    <div
-                      className="text-[13px] font-semibold uppercase mb-2"
-                      style={{ color: "#BDA277", letterSpacing: "0.08em", fontFamily: "var(--font-heading), 'Montserrat', sans-serif" }}
-                    >
-                      {d.day}
-                    </div>
-                    <h3 className="text-h3 font-semibold text-white mb-2">{d.name}</h3>
-                    <p className="text-normal3 flex-1 text-white/60">{d.description}</p>
-                    {d.price && (
-                      <div className="text-h3 font-bold text-accent mt-3">{d.price}</div>
+                    {d.image && (
+                      <div className="relative h-[200px] overflow-hidden">
+                        <img
+                          src={d.image}
+                          alt={d.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        {d.price && (
+                          <div className="absolute bottom-3 right-3 bg-primary text-white text-normal2 font-bold px-3 py-1 rounded-lg">
+                            {d.price}
+                          </div>
+                        )}
+                      </div>
                     )}
+                    <div className="p-5 flex flex-col flex-1">
+                      <div
+                        className="text-[13px] font-semibold uppercase mb-2"
+                        style={{ color: "#BDA277", letterSpacing: "0.08em", fontFamily: "var(--font-heading), 'Montserrat', sans-serif" }}
+                      >
+                        {d.day}
+                      </div>
+                      <h3 className="text-h3 font-semibold text-white mb-2">{d.name}</h3>
+                      <p className="text-normal3 flex-1 text-white/60">{d.description}</p>
+                      {!d.image && d.price && (
+                        <div className="text-h3 font-bold text-accent mt-3">{d.price}</div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

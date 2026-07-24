@@ -5,6 +5,7 @@ export interface Deal {
   name: string;
   description: string;
   price?: string;
+  image?: string;
 }
 
 export type LocationType = "zia-pizza" | "zia-pizza-express";

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { categories, products, Product, ProductCategory } from "@/data/products";
-import { locations } from "@/data/locations";
 
 export const metadata: Metadata = {
   title: "Pizza Menu | Stone-Baked Italian Pizzas, Pasta & More | Zia Pizza",
@@ -33,8 +32,6 @@ function groupByCategory() {
 export default function MenuPage() {
   const grouped = groupByCategory();
   const cats = orderedCategories();
-  const allDeals = locations.filter((l) => !l.comingSoon).flatMap((l) => l.deals.map((d) => ({ ...d, loc: l.name })));
-
   return (
     <div className="p-[10px] pb-[120px]" style={{ background: "var(--tt-bg-color)" }}>
       <Header />
@@ -60,22 +57,6 @@ export default function MenuPage() {
         <p className="text-normal2 max-w-2xl mb-10 text-white/60">
           Short, deliberate, and all-Italian. Every pizza is stone-baked on a 48-hour slow-proofed base.
         </p>
-
-        {/* Deals strip */}
-        <div className="flex gap-3 overflow-x-auto pb-4 mb-10 -mx-2 px-2">
-          {allDeals.slice(0, 6).map((d, i) => (
-            <div
-              key={`${d.name}-${i}`}
-              className="flex-shrink-0 w-[260px] border border-[#EE1D27]/30 rounded-[14px] p-4"
-              style={{ background: "linear-gradient(135deg, #0E1824 0%, #1a2535 100%)" }}
-            >
-              <div className="text-accent text-normal4 font-semibold tracking-[0.08em] uppercase mb-1">{d.day}</div>
-              <div className="text-white font-semibold text-normal2 mb-1">{d.name}</div>
-              <div className="text-normal4 text-white/60">{d.description}</div>
-              <div className="text-white/40 text-normal4 mt-2">At {d.loc}</div>
-            </div>
-          ))}
-        </div>
 
         {/* Category nav */}
         <div

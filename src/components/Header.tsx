@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useBooking } from "./BookingProvider";
 
 const NAV_LINKS: { label: string; href: string }[] = [
@@ -18,6 +18,8 @@ const NAV_LINKS: { label: string; href: string }[] = [
 export default function Header() {
   const router = useRouter();
   const { openBooking } = useBooking();
+  const pathname = usePathname();
+  const isWestbury = pathname?.includes("/westbury");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -72,13 +74,15 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => openBooking()}
-              className="hidden sm:inline-flex bg-transparent border border-white/15 hover:border-white/40 text-white text-[14.5px] font-bold px-4 py-[9px] rounded-lg transition-colors"
-            >
-              Book Table
-            </button>
+            {!isWestbury && (
+              <button
+                type="button"
+                onClick={() => openBooking()}
+                className="hidden sm:inline-flex bg-transparent border border-white/15 hover:border-white/40 text-white text-[14.5px] font-bold px-4 py-[9px] rounded-lg transition-colors"
+              >
+                Book Table
+              </button>
+            )}
             <Link
               href="/order"
               className="hidden sm:inline-flex bg-primary hover:bg-primary-dark text-white text-[14.5px] font-bold px-5 py-[9px] rounded-lg transition-colors leading-none whitespace-nowrap"
