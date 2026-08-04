@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   ],
 };
 
-const SECTION_GAP = "h-[80px] sm:h-[100px]";
+const SECTION_GAP = "h-[48px] sm:h-[64px]";
 
 export default function HomePage() {
   return (
-    <div className="p-[10px] pt-[80px] pb-[100px]">
+    <div className="p-[10px] pt-[80px] pb-[80px]">
       <Header />
 
       <Hero />
@@ -39,7 +39,7 @@ export default function HomePage() {
       <ExperienceSelection />
       <div className={SECTION_GAP} />
 
-      <div className="rounded-[20px] bg-[#F5EFE6] py-16 sm:py-20">
+      <div className="rounded-[20px] bg-[#F5EFE6] py-10 sm:py-14">
         <Offers />
         <div className={SECTION_GAP} />
         <FeaturedProducts />

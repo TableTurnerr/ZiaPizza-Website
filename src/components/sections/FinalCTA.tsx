@@ -8,7 +8,7 @@ export default function FinalCTASection() {
       id="FinalCTA"
       className="w-full px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]"
     >
-      <div className="w-full py-[60px] px-6 sm:px-10 bg-gradient-to-b from-primary-dark/30 to-primary-dark/60 rounded-[24px] text-center max-w-6xl mx-auto">
+      <div className="w-full py-[44px] px-6 sm:px-10 bg-gradient-to-b from-primary-dark/20 to-primary-dark/50 rounded-[24px] text-center max-w-6xl mx-auto">
         <h2 className="text-h3 sm:text-h2 text-white italic mb-4">
           Order now or book your table
         </h2>

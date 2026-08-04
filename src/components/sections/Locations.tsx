@@ -48,11 +48,11 @@ export default function LocationsSection() {
       <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
         Find Your Nearest Zia Pizza
       </h2>
-      <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "var(--tt-color-text-gray)" }}>
+      <p className="text-normal2 text-center max-w-xl mx-auto mb-6" style={{ color: "var(--tt-color-text-gray)" }}>
         Enter your postcode to jump straight to the nearest location.
       </p>
 
-      <form onSubmit={search} className="max-w-xl mx-auto flex flex-col sm:flex-row gap-2 mb-8">
+      <form onSubmit={search} className="max-w-xl mx-auto flex flex-col sm:flex-row gap-2 mb-6">
         <input
           type="text"
           value={postcode}

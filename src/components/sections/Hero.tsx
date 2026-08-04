@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import SmartImage from "@/components/SmartImage";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import BookTableButton from "@/components/BookTableButton";
 import { site } from "@/data/site";
 import { findLocationByPostcode, locations } from "@/data/locations";
 
@@ -42,8 +40,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#0E1824]/30 via-transparent to-[#0E1824]/70" />
 
       <div className="relative z-10 pl-6 sm:pl-12 lg:pl-20 pr-4 py-20 flex flex-col items-start gap-4 max-w-[600px]">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-accent" />
+        <div className="flex items-start gap-2">
+          <span className="w-2 h-2 rounded-full bg-accent mt-[3px] flex-shrink-0" />
           <span
             className="text-[13px]"
             style={{
@@ -70,7 +68,7 @@ export default function HeroSection() {
 
         {/* Unified pill postcode finder */}
         <form onSubmit={findMyZia} className="mt-2 w-full max-w-[480px]">
-          <div className="flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-1.5 gap-2 focus-within:border-primary/60 transition-colors duration-200">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-full p-1.5 gap-2 focus-within:border-primary/60 transition-colors duration-200">
             <div className="flex items-center gap-2 flex-1 pl-3">
               <svg className="w-4 h-4 flex-shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -86,7 +84,7 @@ export default function HeroSection() {
             </div>
             <button
               type="submit"
-              className="bg-primary hover:bg-primary-dark text-white text-[13px] font-bold px-5 py-2.5 rounded-full transition-colors whitespace-nowrap flex-shrink-0"
+              className="bg-primary hover:bg-primary-dark text-white text-[13px] font-bold px-5 py-3 sm:py-2.5 rounded-xl sm:rounded-full transition-colors whitespace-nowrap flex-shrink-0"
             >
               Find My Zia
             </button>
@@ -116,78 +114,6 @@ export default function HeroSection() {
           <span className="text-[12px]" style={{ color: "rgba(255,255,255,0.35)" }}>+ growing</span>
         </div>
 
-        {/* CTAs */}
-        <div className="hidden sm:flex flex-row items-center gap-3 mt-1">
-          <Link
-            href="/order"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-[14px] font-bold px-6 py-3 rounded-[10px] transition-colors duration-200"
-          >
-            Order Now
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-          <BookTableButton className="inline-flex items-center gap-2 border border-white/20 hover:border-white/50 bg-white/[0.06] hover:bg-white/[0.12] text-white text-[14px] font-bold px-6 py-3 rounded-[10px] transition-colors duration-200">
-            <svg className="w-4 h-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Book Table
-          </BookTableButton>
-        </div>
-
-        {/* Brand differentiators */}
-        <div className="flex items-stretch gap-0 mt-2 pt-5 border-t border-white/[0.08] w-full max-w-[520px]">
-          {[
-            {
-              label: "Stone Baked",
-              sub: "Perfect crust & flavour",
-              icon: (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-                </svg>
-              ),
-            },
-            {
-              label: "Hand Stretched",
-              sub: "Every pizza, every time",
-              icon: (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
-                </svg>
-              ),
-            },
-            {
-              label: "Fior di Latte",
-              sub: "Premium mozzarella",
-              icon: (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                </svg>
-              ),
-            },
-          ].map((item, i) => (
-            <div key={item.label} className="flex items-center gap-4 flex-1">
-              <div className="flex items-start gap-2.5 flex-1">
-                <div className="mt-[1px] flex-shrink-0" style={{ color: "#BDA277" }}>
-                  {item.icon}
-                </div>
-                <div>
-                  <div
-                    className="text-[12px] font-semibold tracking-[0.08em] uppercase text-white leading-tight whitespace-nowrap"
-                    style={{ fontFamily: "var(--font-heading, sans-serif)" }}
-                  >
-                    {item.label}
-                  </div>
-                  <div className="text-[11px] leading-snug mt-[3px]" style={{ color: "rgba(255,255,255,0.45)" }}>
-                    {item.sub}
-                  </div>
-                </div>
-              </div>
-              {i < 2 && <div className="w-px self-stretch bg-white/10 flex-shrink-0" />}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
