@@ -7,7 +7,7 @@ export default function CrossBrandSection() {
       id="CrossBrand"
       className="w-full px-[10px] sm:px-[40px] md:px-[70px] lg:px-[80px]"
     >
-      <div className="relative max-w-5xl mx-auto rounded-[24px] overflow-hidden border border-white/10 bg-gradient-to-br from-[#0E1824] to-[#0E1824] p-8 sm:p-12 text-center">
+      <div className="relative max-w-5xl mx-auto rounded-[24px] border border-white/[0.08] p-8 sm:p-10 text-center bg-white/[0.03]">
         <div className="flex items-center gap-2 mb-3 justify-center">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span

@@ -69,7 +69,10 @@
       "Bash(cp \"/Users/ashwinraj/Downloads/Buratta Truffle .JPG\" \"/Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/pizzas/burrata-truffle.jpg\" *)",
       "Bash(grep -i -E \"\\\\.jpg$|\\\\.JPG$|\\\\.png$|\\\\.PNG$|\\\\.webp$\")",
       "Bash(python3 \"/Users/ashwinraj/.claude/skills/ui-ux-pro-max/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"italian restaurant pizza premium hero section\" --design-system -p \"ZiaPizza\" --variance 6 --motion 5)",
-      "Bash(sort -k5 -rh)"
+      "Bash(sort -k5 -rh)",
+      "Bash(ls /private/tmp/claude-501/-Users-ashwinraj-StudioProjects-ZiaPizza-Website/ed000e9b-0592-48e3-a9dd-3e447bf7c50c/scratchpad/ 2>/dev/null; ls ~/Downloads/*.jpg ~/Downloads/*.png ~/Downloads/*.webp 2>/dev/null | tail -5)",
+      "Bash(xargs ls -t)",
+      "Bash(cp \"/Users/ashwinraj/Downloads/WhatsApp Image 2026-08-04 at 13.47.36.jpeg\" \"/Users/ashwinraj/StudioProjects/ZiaPizza-Website/public/products/desserts/tiramisu.jpg\")"
     ]
   }
 }

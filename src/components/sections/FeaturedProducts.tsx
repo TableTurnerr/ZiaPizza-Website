@@ -35,7 +35,7 @@ export default function FeaturedProductsSection() {
         <h2 className="text-[#1A1F2E] text-h3 sm:text-h2 text-center mb-3 italic">
           Customer Favourites
         </h2>
-        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "#767570" }}>
+        <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "#767570" }}>
           The dishes our regulars order on repeat.
         </p>
       </Reveal>

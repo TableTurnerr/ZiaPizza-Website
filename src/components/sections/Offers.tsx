@@ -56,19 +56,18 @@ export default function OffersSection() {
         <h2 className="text-h3 sm:text-h2 text-center mb-3 italic" style={{ color: "#1a1a1a" }}>
           Today&apos;s Offers
         </h2>
-        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "#6b6b6b" }}>
+        <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "#6b6b6b" }}>
           Combo deals, family bundles and weekly specials across our locations.
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+      <div className="flex md:grid md:grid-cols-3 gap-4 max-w-6xl mx-auto overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-[10px] px-[10px] md:mx-0 md:px-0 pb-2 md:pb-0">
         {offers.map((offer, i) => (
           <Reveal
             as="div"
             key={`${offer.locationSlug}-${offer.name}-${i}`}
             delay={i * 110}
-            className="relative rounded-[16px] overflow-hidden flex flex-col border border-[#EE1D27]/30"
-            style={{ background: "linear-gradient(135deg, #0E1824 0%, #1a2535 100%)" }}
+            className="relative rounded-[16px] overflow-hidden flex flex-col border border-white/[0.06] bg-[#0E1824] flex-shrink-0 w-[80vw] md:w-auto snap-start"
           >
             {offer.image && (
               <div className="relative h-[180px] overflow-hidden">

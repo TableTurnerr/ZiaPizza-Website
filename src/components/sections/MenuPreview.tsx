@@ -32,7 +32,7 @@ export default function MenuPreviewSection() {
           Zia Pizza Westbury
         </span>
       </div>
-      <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "#767570" }}>
+      <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "#767570" }}>
         Stone-baked and all-Italian. Salisbury menu coming soon.
       </p>
 
