@@ -11,11 +11,15 @@ const FOOTER_LINKS = [
   { label: "Order", href: "/order" },
   { label: "Locations", href: "/locations" },
   { label: "Offers", href: "/offers" },
+  { label: "Catering", href: "/catering" },
   { label: "Loyalty", href: "/loyalty" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
+
+const footerLinkClass =
+  "text-[var(--tt-color-text-gray)] transition-all duration-200 hover:text-white hover:[text-shadow:0_0_14px_rgba(227,30,36,0.65)]";
 
 const Footer = () => (
   <footer
@@ -29,7 +33,7 @@ const Footer = () => (
       <div className="md:col-span-2">
         <div className="flex items-center gap-3 mb-4">
           <Image
-            src="/logo/logo.png"
+            src="/logo/logo.webp"
             alt="Zia Pizza"
             width={56}
             height={56}
@@ -53,7 +57,7 @@ const Footer = () => (
               aria-label={`${loc.name} Instagram`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-normal4 text-white/80"
+              className="px-3 py-2 bg-white/5 hover:bg-primary/15 border border-white/10 hover:border-primary/40 rounded-lg text-normal4 text-white/80 hover:text-white transition-all duration-200 hover:shadow-[0_0_18px_rgba(227,30,36,0.18)]"
             >
               @{loc.city.toLowerCase()}
             </a>
@@ -68,8 +72,7 @@ const Footer = () => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-normal3 hover:text-white transition-colors"
-                style={{ color: "var(--tt-color-text-gray)" }}
+                className={`text-normal3 ${footerLinkClass}`}
               >
                 {l.label}
               </Link>
@@ -85,16 +88,14 @@ const Footer = () => (
             <li key={loc.slug}>
               <Link
                 href={`/${loc.type}/${loc.slug}`}
-                className="block text-normal3 hover:text-white transition-colors"
-                style={{ color: "var(--tt-color-text-gray)" }}
+                className={`group block text-normal3 ${footerLinkClass}`}
               >
                 <span className="block text-white font-semibold">{loc.name}</span>
-                <span className="block text-normal4">{loc.address}</span>
+                <span className="block text-normal4 transition-colors duration-200 group-hover:text-white">{loc.address}</span>
               </Link>
               <a
                 href={`tel:${loc.phone.replace(/\s/g, "")}`}
-                className="block text-normal4 mt-0.5 hover:text-primary transition-colors"
-                style={{ color: "var(--tt-color-text-gray)" }}
+                className={`block text-normal4 mt-0.5 ${footerLinkClass}`}
               >
                 {loc.phone}
               </a>
@@ -122,7 +123,7 @@ const Footer = () => (
         <a
           target="_blank"
           href="http://tableturnerr.com"
-          className="hover:text-white hover:underline transition-colors"
+          className="transition-all duration-200 hover:text-white hover:underline hover:[text-shadow:0_0_14px_rgba(227,30,36,0.65)]"
           rel="noopener noreferrer"
         >
           TableTurnerr.com

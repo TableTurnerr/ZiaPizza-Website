@@ -115,7 +115,7 @@ export default function BlogForm({ initial, mode }: Props) {
             value={post.content}
             onChange={(e) => set("content", e.target.value)}
             rows={22}
-            className={`${inputCls} font-mono text-[13px]`}
+            className={`${inputCls} text-[13px]`}
             spellCheck={false}
           />
         </Field>

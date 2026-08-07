@@ -115,7 +115,7 @@ export default async function ProductPage({
             )}
             <h1
               className="text-h3 sm:text-h2 mb-3 leading-tight font-bold"
-              style={{ fontFamily: "var(--default-font-family)", letterSpacing: "-0.02em" }}
+              style={{ fontFamily: "var(--default-font-family)", letterSpacing: 0 }}
             >
               {product.name}
             </h1>
