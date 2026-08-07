@@ -49,7 +49,7 @@ export const categories: CategoryInfo[] = [
     slug: "desserts",
     name: "Desserts",
     description: "Finish your meal on a sweet note with our gelato and Italian treats.",
-    image: "/products/desserts/tiramisu.jpg",
+    image: "/products/desserts/tiramisu.webp",
   },
   {
     slug: "drinks",

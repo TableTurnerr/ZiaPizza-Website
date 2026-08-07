@@ -33,7 +33,7 @@ const Footer = () => (
       <div className="md:col-span-2">
         <div className="flex items-center gap-3 mb-4">
           <Image
-            src="/logo/logo.png"
+            src="/logo/logo.webp"
             alt="Zia Pizza"
             width={56}
             height={56}

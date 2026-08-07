@@ -29,7 +29,7 @@ export default function HeroSection() {
       className="min-h-[640px] lg:min-h-[720px] w-full relative flex items-center rounded-[20px] overflow-hidden"
     >
       <SmartImage
-        src="/products/pizzas/hot-honey-pepperoni.jpg"
+        src="/products/pizzas/hot-honey-pepperoni.webp"
         alt="Zia Pizza - stone baked hot honey pepperoni pizza"
         fill
         priority
