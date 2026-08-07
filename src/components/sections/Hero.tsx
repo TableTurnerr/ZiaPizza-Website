@@ -1,11 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import SmartImage from "@/components/SmartImage";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import ThemeButton from "@/components/ThemeBtn";
-import BookTableButton from "@/components/BookTableButton";
 import { site } from "@/data/site";
 import { findLocationByPostcode, locations } from "@/data/locations";
 
@@ -13,23 +10,6 @@ export default function HeroSection() {
   const router = useRouter();
   const [postcode, setPostcode] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [videoReady, setVideoReady] = useState(false);
-  const [videoSrc, setVideoSrc] = useState<string | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
-    const start = () => setVideoSrc("/hero-video.mp4");
-    if (document.readyState === "complete") {
-      start();
-    } else {
-      window.addEventListener("load", start, { once: true });
-      return () => window.removeEventListener("load", start);
-    }
-  }, []);
-
   function findMyZia(e: React.FormEvent) {
     e.preventDefault();
     const match = findLocationByPostcode(postcode.trim());
@@ -49,49 +29,31 @@ export default function HeroSection() {
       className="min-h-[640px] lg:min-h-[720px] w-full relative flex items-center rounded-[20px] overflow-hidden"
     >
       <SmartImage
-        src={site.hero.image}
-        alt="Zia Pizza - stone baked pizza"
+        src="/products/pizzas/hot-honey-pepperoni.jpg"
+        alt="Zia Pizza - stone baked hot honey pepperoni pizza"
         fill
         priority
         sizes="100vw"
-        className={`object-cover object-[38%_center] transition-opacity duration-700 ${videoReady ? "opacity-0" : "opacity-100"}`}
+        className="object-cover object-center"
       />
-      {videoSrc && (
-        <video
-          ref={videoRef}
-          src={videoSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          onCanPlay={() => {
-            videoRef.current?.play().catch(() => {});
-            setVideoReady(true);
-          }}
-          aria-hidden="true"
-          className={`absolute inset-0 w-full h-full object-cover object-[38%_center] transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
-        />
-      )}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/75 to-[#0D0D0D]/10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/30 via-transparent to-[#0D0D0D]/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0E1824] via-[#0E1824]/75 to-[#0E1824]/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0E1824]/30 via-transparent to-[#0E1824]/70" />
 
       <div className="relative z-10 pl-6 sm:pl-12 lg:pl-20 pr-4 py-20 flex flex-col items-start gap-4 max-w-[600px]">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-accent" />
+        <div className="flex items-start gap-2">
+          <span className="w-2 h-2 rounded-full bg-accent mt-[3px] flex-shrink-0" />
           <span
-            className="text-[18px] sm:text-[20px]"
+            className="text-[13px]"
             style={{
-              color: "var(--tt-color-text-orange)",
-              fontFamily: "var(--font-label-family)",
-              fontWeight: 500,
+              color: "#BDA277",
+              fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em",
             }}
           >
             {site.hero.eyebrow}
           </span>
         </div>
 
-        <h1 className="text-white text-[40px] sm:text-h2 lg:text-h1 font-bold leading-[1.08] -mt-1">
+        <h1 className="text-white text-h1 sm:text-hero font-bold leading-[1.05] -mt-1">
           {site.hero.headline}
           <br />
           <span className="text-primary italic">{site.hero.headlineAccent}</span>
@@ -104,43 +66,54 @@ export default function HeroSection() {
           {site.hero.subtext}
         </p>
 
-        <form
-          onSubmit={findMyZia}
-          className="mt-2 w-full max-w-[440px] flex flex-col sm:flex-row gap-2"
-        >
-          <input
-            type="text"
-            value={postcode}
-            onChange={(e) => setPostcode(e.target.value)}
-            placeholder="Enter your postcode (e.g. SP1 2NE)"
-            className="flex-1 bg-white/10 border border-white/15 rounded-lg px-4 py-3 text-white text-normal3 placeholder-white/40 focus:outline-none focus:border-primary"
-          />
-          <button
-            type="submit"
-            className="bg-primary hover:bg-primary-dark text-white text-normal3 font-bold px-5 py-3 rounded-lg transition-colors whitespace-nowrap"
-          >
-            Find My Zia
-          </button>
+        {/* Unified pill postcode finder */}
+        <form onSubmit={findMyZia} className="mt-2 w-full max-w-[480px]">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-full p-1.5 gap-2 focus-within:border-primary/60 transition-colors duration-200">
+            <div className="flex items-center gap-2 flex-1 pl-3">
+              <svg className="w-4 h-4 flex-shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <input
+                type="text"
+                value={postcode}
+                onChange={(e) => setPostcode(e.target.value)}
+                placeholder="Enter your postcode (e.g. SP1 2NE)"
+                className="flex-1 bg-transparent text-white text-normal3 placeholder-white/40 focus:outline-none py-1.5 min-w-0"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-primary hover:bg-primary-dark text-white text-[13px] font-bold px-5 py-3 sm:py-2.5 rounded-xl sm:rounded-full transition-colors whitespace-nowrap flex-shrink-0"
+            >
+              Find My Zia
+            </button>
+          </div>
+          {error && (
+            <p className="flex items-start gap-2 text-normal4 text-primary mt-2.5 pl-1">
+              <svg className="w-3.5 h-3.5 flex-shrink-0 mt-[2px]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              {error}
+            </p>
+          )}
         </form>
-        {error && (
-          <p className="text-normal4 text-primary max-w-[440px]">{error}</p>
-        )}
-        <p className="text-normal4 max-w-[440px]" style={{ color: "var(--tt-color-text-gray)" }}>
-          Serving {locations.map((l) => l.city).join(" & ")} — and growing.
-        </p>
 
-        <div className="hidden sm:flex flex-col sm:flex-row items-start gap-[14px] mt-3">
-          <Link href="/order">
-            <ThemeButton
-              text="Order Now"
-              textClassname="pr-[8px] pl-[14px] text-white"
-              className="bg-primary-dark border-2 hover:bg-primary-dark/90 border-primary-dark hover:border-primary-dark/90 transition-colors"
-            />
-          </Link>
-          <BookTableButton className="inline-flex items-center justify-center border-2 border-white/15 hover:border-primary bg-transparent hover:bg-primary text-white text-normal2 font-bold px-6 py-[11px] rounded-[9px] transition-colors min-w-[157px] min-h-[41px]">
-            Book Table
-          </BookTableButton>
+        {/* Location chips */}
+        <div className="flex flex-wrap items-center gap-2">
+          {locations.map((loc) => (
+            <span
+              key={loc.slug}
+              className="flex items-center gap-1.5 bg-white/[0.07] border border-white/10 rounded-full px-3 py-1 text-[12px] font-medium"
+              style={{ color: "rgba(255,255,255,0.65)" }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+              {loc.city}
+            </span>
+          ))}
+          <span className="text-[12px]" style={{ color: "rgba(255,255,255,0.35)" }}>+ growing</span>
         </div>
+
       </div>
     </section>
   );

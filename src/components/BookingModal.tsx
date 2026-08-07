@@ -4,12 +4,10 @@ import React, { useState, useEffect } from "react";
 import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 
 const BOOKING_URLS: Record<string, string> = {
-  westbury: "https://www.eposhybrid.uk/index.php/online-table-booking/SUdQS1lF",
   salisbury: "https://www.eposhybrid.uk/index.php/online-table-booking/RENMV0lX",
 };
 
 const LOCATION_LABELS: Record<string, string> = {
-  westbury: "Westbury",
   salisbury: "Salisbury",
 };
 
@@ -22,7 +20,7 @@ type BookingModalProps = {
 export default function BookingModal({ open, onClose, defaultLocationSlug }: BookingModalProps) {
   const defaultSlug = defaultLocationSlug && BOOKING_URLS[defaultLocationSlug]
     ? defaultLocationSlug
-    : "westbury";
+    : "salisbury";
   const [locationSlug, setLocationSlug] = useState(defaultSlug);
 
   useEffect(() => {
@@ -68,22 +66,7 @@ export default function BookingModal({ open, onClose, defaultLocationSlug }: Boo
           </h3>
 
           <div className="flex items-center gap-3">
-            {/* Location tabs */}
-            <div className="flex items-center gap-1 bg-white/5 rounded-lg p-1">
-              {Object.keys(BOOKING_URLS).map((slug) => (
-                <button
-                  key={slug}
-                  onClick={() => setLocationSlug(slug)}
-                  className={`px-3 py-1 rounded-md text-[13px] font-medium transition-colors ${
-                    locationSlug === slug
-                      ? "bg-primary text-white"
-                      : "text-white/50 hover:text-white"
-                  }`}
-                >
-                  {LOCATION_LABELS[slug]}
-                </button>
-              ))}
-            </div>
+            <span className="text-white/50 text-[13px]">Zia Pizza Salisbury</span>
 
             <button
               onClick={onClose}

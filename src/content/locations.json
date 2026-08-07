@@ -28,7 +28,10 @@
       { "day": "Tuesday", "name": "Half Price Pizza", "description": "Buy one pizza and get the second pizza at half price. Dine-in, takeaway, delivery (web & phone).", "price": "50% OFF 2nd Pizza" },
       { "day": "Thursday", "name": "Half Price Pasta", "description": "Buy one pasta and get the second pasta at half price.", "price": "50% OFF 2nd Pasta" },
       { "day": "Daily", "name": "Double the Drinks", "description": "2 cocktails for £13.95, 5 PM–Close. Available daily.", "price": "£13.95" }
-    ]
+    ],
+    "seoTitle": "Best Pizza in Salisbury | Stone-Baked Italian Restaurant | Zia Pizza",
+    "seoDescription": "Zia Pizza Salisbury — authentic stone-baked Italian pizza, fresh pasta, and family dining on Silver Street. Dine-in, takeaway, or delivery. Book a table today.",
+    "seoKeywords": ["best pizza in Salisbury", "Italian restaurant Salisbury", "pizza delivery Salisbury", "takeaway pizza Salisbury", "artisan pizza Salisbury", "stone baked pizza Salisbury", "family restaurants Salisbury"]
   },
   {
     "slug": "westbury",
@@ -38,11 +41,11 @@
     "postcode": "BA13 3SD",
     "postcodePrefixes": ["BA13", "BA14", "BA11", "BA12"],
     "address": "15 Palomino Pl, Westbury BA13 3SD",
-    "phone": "+44 1373 865271",
+    "phone": "01373 865271",
     "email": "westbury@ziapizza.com",
-    "hours": "12:30 PM - 10:30 PM (Mon-Sun)",
-    "openTime": "12:30",
-    "closeTime": "22:30",
+    "hours": "Mon: Closed · Tue–Thu: 3:30pm–10pm · Fri–Sat: 12pm–10pm · Sun: 3:30pm–10pm",
+    "openTime": "15:30",
+    "closeTime": "22:00",
     "description": "Welcome to Zia Pizza Westbury, where authentic Italian flavour meets local charm. Crafted from fresh ingredients, hand-stretched dough, and time-honoured Italian recipes.",
     "image": "/photos/JOE00574.webp",
     "gallery": ["/photos/JOE00574.webp", "/photos/JOE01020.webp", "/photos/JOE01024.webp", "/photos/JOE01044.webp"],
@@ -55,7 +58,39 @@
     "deliveroo": "https://deliveroo.co.uk/menu/Bath/westbury-leigh/zia-pizza-westbury-15-palomino-pl",
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.5!2d-2.1813!3d51.2601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDE1JzM2LjQiTiAywrAxMCc1Mi43Ilc!5e0!3m2!1sen!2suk!4v1",
     "deals": [
-      { "day": "Tuesday", "name": "BOGO Pizza", "description": "Buy 1, Get 1 Free (equal or lesser value). Dine-in, takeaway, delivery (web & phone).", "price": "50% OFF" }
-    ]
+      { "day": "Direct Order", "name": "Solo Deal", "description": "Classic Pizza, Classic Fries and any can. Available on direct orders only.", "price": "£15.95", "image": "/products/deals/solo-deal.png" },
+      { "day": "Direct Order", "name": "Pizza Night", "description": "Two Classic Pizzas, Garlic Dough Balls and two cans. Available on direct orders only.", "price": "£26.95", "image": "/products/deals/pizza-night.png" },
+      { "day": "Direct Order", "name": "Pizza & Sides", "description": "Two Classic Pizzas and any two selected sides. Available on direct orders only.", "price": "£29.95", "image": "" },
+      { "day": "Direct Order", "name": "Family Feast", "description": "Two Pizzas, six Wings, Fries and one large bottle. Available on direct orders only.", "price": "£38.95", "image": "/products/deals/family-feast.png" },
+      { "day": "Direct Order", "name": "Big Night In", "description": "Three Pizzas, Loaded Fries, six Wings and a bottle. Available on direct orders only.", "price": "£49.95", "image": "/products/deals/big-night-in.png" },
+      { "day": "Direct Order", "name": "Party Feast", "description": "Four Pizzas, twelve Wings, two Loaded Fries and two bottles. Available on direct orders only.", "price": "£72.95", "image": "/products/deals/party-feast.png" }
+    ],
+    "seoTitle": "Best Pizza in Westbury | Fast Takeaway & Delivery | Zia Pizza Express",
+    "seoDescription": "Zia Pizza Express Westbury — fresh hand-stretched pizza made with authentic Italian ingredients. Fast takeaway, delivery via Just Eat, Uber Eats & Deliveroo. Order online now.",
+    "seoKeywords": ["best pizza in Westbury", "pizza delivery Westbury", "Westbury pizza takeaway", "Italian restaurant Westbury", "fresh pizza Westbury", "stone baked pizza Westbury", "pizza near Westbury"]
+  },
+  {
+    "slug": "southport",
+    "name": "Zia Pizza Southport",
+    "type": "zia-pizza",
+    "city": "Southport",
+    "postcode": "PR8",
+    "postcodePrefixes": ["PR8", "PR9"],
+    "address": "Southport, Merseyside",
+    "phone": "",
+    "email": "southport@ziapizza.com",
+    "hours": "Coming Soon",
+    "openTime": "12:00",
+    "closeTime": "22:00",
+    "description": "Zia Pizza is coming to Southport. Authentic stone-baked Italian pizza, handmade pasta, and warm Italian hospitality — arriving soon in Merseyside.",
+    "image": "/photos/JOE00551.webp",
+    "gallery": [],
+    "features": ["Dine-in", "Takeaway & delivery", "Group bookings", "Stone-baked pizza"],
+    "instagram": "https://instagram.com/ziapizza",
+    "facebook": "https://facebook.com/ziapizza",
+    "orderUrl": "#",
+    "mapEmbed": "",
+    "deals": [],
+    "comingSoon": true
   }
 ]

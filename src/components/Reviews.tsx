@@ -75,8 +75,8 @@ export default function Reviews() {
       <div className="flex items-center justify-center gap-2 mb-3">
         <span className="w-2 h-2 rounded-full bg-accent" />
         <span
-          className="text-accent text-[20px] sm:text-[22px]"
-          style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+          className="text-accent text-[13px] font-semibold"
+          style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
         >
           Recensioni
         </span>

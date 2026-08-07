@@ -10,7 +10,7 @@ const baseBtn =
 
 export default function AppStoreButtons({ className = "" }: Props) {
   return (
-    <div className={`flex flex-wrap gap-3 ${className}`}>
+    <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
       <a
         href={site.loyalty.appStoreUrl}
         aria-label="Download on the App Store"

@@ -152,7 +152,7 @@
   align-items: center;
   justify-content: center;
   gap: 34px;
-  background: var(--tt-bg-color, #0d0d0d);
+  background: var(--tt-bg-color, #0E1824);
   overflow: hidden;
   will-change: opacity, transform;
 }
@@ -165,8 +165,8 @@
   border-radius: 50%;
   background: radial-gradient(
     closest-side,
-    rgba(227, 30, 36, 0.3),
-    rgba(227, 30, 36, 0) 70%
+    rgba(238, 29, 39, 0.3),
+    rgba(238, 29, 39, 0) 70%
   );
   filter: blur(18px);
   animation: splashGlow 2.4s ease-in-out infinite;
@@ -178,7 +178,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 120% at 50% 45%, transparent 52%, rgba(0, 0, 0, 0.6));
+  background: radial-gradient(120% 120% at 50% 45%, transparent 52%, rgba(14, 24, 36, 0.7));
   pointer-events: none;
 }
 
@@ -234,8 +234,8 @@
   transform-origin: left center;
   background: linear-gradient(
     90deg,
-    var(--color-primary, #e31e24),
-    var(--color-accent, #d4a853)
+    var(--color-primary, #EE1D27),
+    var(--color-accent, #BDA277)
   );
   animation: splashBar 1.9s cubic-bezier(0.65, 0.05, 0.36, 1) both;
 }

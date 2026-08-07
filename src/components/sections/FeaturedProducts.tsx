@@ -26,16 +26,16 @@ export default function FeaturedProductsSection() {
         <div className="flex items-center gap-2 mb-3 justify-center">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
-            className="text-accent text-[20px] sm:text-[22px]"
-            style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+            className="text-accent text-[13px] font-semibold"
+            style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
           >
             I Favoriti
           </span>
         </div>
-        <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
+        <h2 className="text-[#1A1F2E] text-h3 sm:text-h2 text-center mb-3 italic">
           Customer Favourites
         </h2>
-        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
+        <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "#767570" }}>
           The dishes our regulars order on repeat.
         </p>
       </Reveal>
@@ -46,7 +46,7 @@ export default function FeaturedProductsSection() {
             as="div"
             key={p.slug}
             delay={i * 90}
-            className="group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden flex flex-col"
+            className="group bg-white border border-[#E8E2D9] rounded-[16px] overflow-hidden flex flex-col shadow-sm"
           >
             <div className="relative h-[160px] sm:h-[200px] overflow-hidden">
               <img
@@ -62,8 +62,8 @@ export default function FeaturedProductsSection() {
               )}
             </div>
             <div className="p-4 flex flex-col gap-1 flex-1">
-              <h3 className="text-normal2 font-semibold text-white">{p.name}</h3>
-              <p className="text-normal4 line-clamp-2 flex-1" style={{ color: "var(--tt-color-text-gray)" }}>
+              <h3 className="text-normal2 font-semibold text-[#1A1F2E]">{p.name}</h3>
+              <p className="text-normal4 line-clamp-2 flex-1" style={{ color: "#767570" }}>
                 {p.description}
               </p>
               <div className="text-primary-light font-bold text-normal2 mt-1">{p.price}</div>

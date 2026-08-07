@@ -122,7 +122,7 @@ export default function SiteForm({ initial }: { initial: SiteRecord }) {
       {error && <p className="text-primary text-normal3">{error}</p>}
       {saved && <p className="text-green-400 text-normal3">Saved.</p>}
 
-      <div className="sticky bottom-0 bg-[#0D0D0D]/95 backdrop-blur-md border-t border-white/10 py-3 -mx-5 sm:-mx-8 px-5 sm:px-8">
+      <div className="sticky bottom-0 bg-[#0E1824]/95 backdrop-blur-md border-t border-white/10 py-3 -mx-5 sm:-mx-8 px-5 sm:px-8">
         <button type="submit" disabled={saving} className="bg-primary hover:bg-primary-dark disabled:opacity-60 text-white text-normal2 font-bold px-5 py-2.5 rounded-lg">
           {saving ? "Saving..." : "Save changes"}
         </button>

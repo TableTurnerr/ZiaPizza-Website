@@ -16,16 +16,16 @@ export default function ExperienceSelection() {
         <div className="flex items-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
-            className="text-accent text-[20px] sm:text-[22px]"
-            style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+            className="text-accent text-[13px] font-semibold"
+            style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
           >
-            Find Your Zia
+            Come trovare la tua Zia
           </span>
         </div>
         <h2 className="text-white text-h3 sm:text-h2 w-full mb-3 italic">
           How would you like to enjoy Zia Pizza?
         </h2>
-        <p className="text-normal2 max-w-xl mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
+        <p className="text-normal2 max-w-xl mb-8" style={{ color: "var(--tt-color-text-gray)" }}>
           Pick your nearest venue to dine in, book a table, or start an order for takeaway and delivery.
         </p>
       </Reveal>
@@ -39,16 +39,35 @@ export default function ExperienceSelection() {
             delay={index * 110}
             className="flex flex-col"
           >
-          <div
-            className="group relative h-full bg-white/[0.03] border border-white/[0.08] rounded-[20px] p-6 sm:p-8 hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300 text-left overflow-hidden"
-          >
-            <div
-              className="absolute top-4 right-5 text-[52px] font-black leading-none select-none pointer-events-none"
-              style={{ color: "rgba(255,255,255,0.035)" }}
-            >
-              {String(index + 1).padStart(2, "0")}
-            </div>
+          {loc.comingSoon ? (
+            <div className="relative h-full bg-white/[0.02] border border-white/[0.06] rounded-[20px] p-5 sm:p-6 text-left overflow-hidden opacity-70">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="text-accent text-normal4 font-semibold tracking-wider uppercase">
+                  {loc.type === "zia-pizza" ? "Zia Pizza Restaurant" : "Zia Pizza Express"}
+                </div>
+                <span className="text-[11px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-accent/20 text-accent border border-accent/30">
+                  Coming Soon
+                </span>
+              </div>
+              <h3 className="text-h5 sm:text-h4 text-white font-semibold mb-2">{loc.name}</h3>
+              <p className="text-normal3 mb-1" style={{ color: "var(--tt-color-text-gray)" }}>
+                {loc.address}
+              </p>
+              <p className="text-normal4 text-white/50 mb-4">{loc.hours}</p>
+              <p className="text-normal3 mb-5 line-clamp-3" style={{ color: "var(--tt-color-text-gray)" }}>
+                {loc.description}
+              </p>
 
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-white/5 border border-white/10 text-white/40 text-normal3 font-semibold px-4 py-2 rounded-lg cursor-not-allowed">
+                  Opening Soon
+                </span>
+              </div>
+            </div>
+          ) : (
+          <div
+            className="group relative h-full bg-white/[0.03] border border-white/[0.08] rounded-[20px] p-5 sm:p-6 hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300 text-left overflow-hidden"
+          >
             <div className="text-accent text-normal4 font-semibold tracking-wider uppercase mb-2">
               {loc.type === "zia-pizza" ? "Zia Pizza Restaurant" : "Zia Pizza Express"}
             </div>
@@ -61,7 +80,7 @@ export default function ExperienceSelection() {
               {loc.description}
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <a
                 href={loc.orderUrl}
                 target="_blank"
@@ -70,20 +89,24 @@ export default function ExperienceSelection() {
               >
                 Order Now
               </a>
-              <BookTableButton
-                locationSlug={loc.slug}
-                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
-              >
-                Book Table
-              </BookTableButton>
+              {loc.type !== "zia-pizza-express" && (
+                <BookTableButton
+                  locationSlug={loc.slug}
+                  className="bg-white/5 hover:bg-white/10 border border-white/10 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
+                >
+                  Book Table
+                </BookTableButton>
+              )}
               <Link
                 href={`/${loc.type}/${loc.slug}`}
-                className="bg-transparent border border-white/10 hover:border-white/40 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
+                className="text-normal3 font-medium transition-colors"
+                style={{ color: "var(--tt-color-text-gray)" }}
               >
-                View Location
+                View →
               </Link>
             </div>
           </div>
+          )}
           </Reveal>
         ))}
       </div>

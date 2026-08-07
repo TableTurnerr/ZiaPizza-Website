@@ -5,6 +5,7 @@ export interface Deal {
   name: string;
   description: string;
   price?: string;
+  image?: string;
 }
 
 export type LocationType = "zia-pizza" | "zia-pizza-express";
@@ -34,6 +35,10 @@ export interface Location {
   deliveroo?: string;
   mapEmbed: string;
   deals: Deal[];
+  comingSoon?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
 }
 
 export interface LocationTypeInfo {

@@ -26,7 +26,8 @@ const Footer = () => (
     className="w-full px-[10px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px] pt-[40px]"
     style={{ background: "var(--tt-bg-color)" }}
   >
-    <div className="w-full h-px bg-white/[0.07] mb-[48px]" />
+    {/* Gold rule — brand Section 08 */}
+    <div className="w-full h-px mb-[48px]" style={{ background: "rgba(189,162,119,0.4)" }} />
 
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
       <div className="md:col-span-2">
@@ -104,8 +105,16 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="h-[40px]" />
-    <div className="w-full h-px bg-white/[0.07] mb-[16px]" />
+    {/* Brand line — "Real Ingredients. Real People. Real Pizza." */}
+    <div className="w-full h-px mb-[32px]" style={{ background: "rgba(189,162,119,0.2)" }} />
+    <p
+      className="text-center text-white/30 text-normal3 italic mb-[32px]"
+      style={{ fontFamily: "var(--font-display), 'Cormorant Garamond', Georgia, serif" }}
+    >
+      Real Ingredients. Real People. Real Pizza.
+    </p>
+    <div className="h-[8px]" />
+    <div className="w-full h-px mb-[16px]" style={{ background: "rgba(189,162,119,0.2)" }} />
     <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-normal4 max-w-7xl mx-auto" style={{ color: "var(--tt-color-text-gray)" }}>
       <p>© Zia Pizza {new Date().getFullYear()}. All rights reserved.</p>
       <p className="text-center">{site.footer.legal}</p>

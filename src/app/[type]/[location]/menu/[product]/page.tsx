@@ -1,14 +1,17 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeButton from "@/components/ThemeBtn";
 import { locations, getLocation, getLocationType } from "@/data/locations";
 import { products, getProduct, getCategory, getProductsByLocationAndCategory } from "@/data/products";
 
+const BASE = "https://ziapizza.co.uk";
+
 export function generateStaticParams() {
   const params: { type: string; location: string; product: string }[] = [];
-  for (const loc of locations) {
+  for (const loc of locations.filter((l) => !l.comingSoon)) {
     for (const prod of products) {
       if (prod.locationSlugs.includes(loc.slug)) {
         params.push({ type: loc.type, location: loc.slug, product: prod.slug });
@@ -16,6 +19,29 @@ export function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ type: string; location: string; product: string }>;
+}): Promise<Metadata> {
+  const { type, location: locationSlug, product: productSlug } = await params;
+  const loc = getLocation(locationSlug);
+  const prod = getProduct(productSlug);
+  if (!loc || !prod || loc.comingSoon) return { robots: { index: false } };
+  const url = `${BASE}/${type}/${locationSlug}/menu/${productSlug}`;
+  return {
+    title: `${prod.name} | ${loc.name} | Zia Pizza`,
+    description: prod.description || `Order ${prod.name} at ${loc.name} — ${prod.price}. Stone-baked Italian pizza in ${loc.city}.`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${prod.name} | ${loc.name}`,
+      description: prod.description,
+      url,
+      images: prod.image ? [{ url: prod.image.startsWith("/") ? `${BASE}${prod.image}` : prod.image, alt: prod.name }] : [],
+    },
+  };
 }
 
 export default async function ProductPage({

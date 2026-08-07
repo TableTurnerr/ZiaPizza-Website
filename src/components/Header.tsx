@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useBooking } from "./BookingProvider";
 
 const NAV_LINKS: { label: string; href: string }[] = [
@@ -19,6 +19,8 @@ const NAV_LINKS: { label: string; href: string }[] = [
 export default function Header() {
   const router = useRouter();
   const { openBooking } = useBooking();
+  const pathname = usePathname();
+  const isWestbury = pathname?.includes("/westbury");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -30,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/95 backdrop-blur-xl transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#0E1824]/95 backdrop-blur-xl transition-all duration-300 ${
         scrolled
           ? "border-b border-white/[0.06] shadow-lg shadow-black/40"
           : "border-b border-transparent"
@@ -73,13 +75,15 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => openBooking()}
-              className="hidden sm:inline-flex bg-transparent border border-white/15 hover:border-white/40 text-white text-[14.5px] font-bold px-4 py-[9px] rounded-lg transition-colors"
-            >
-              Book Table
-            </button>
+            {!isWestbury && (
+              <button
+                type="button"
+                onClick={() => openBooking()}
+                className="hidden sm:inline-flex bg-transparent border border-white/15 hover:border-white/40 text-white text-[14.5px] font-bold px-4 py-[9px] rounded-lg transition-colors"
+              >
+                Book Table
+              </button>
+            )}
             <Link
               href="/order"
               className="hidden sm:inline-flex bg-primary hover:bg-primary-dark text-white text-[14.5px] font-bold px-5 py-[9px] rounded-lg transition-colors leading-none whitespace-nowrap"
@@ -105,7 +109,7 @@ export default function Header() {
           mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
         style={{
-          background: "rgba(13, 13, 13, 0.97)",
+          background: "rgba(14, 24, 36, 0.97)",
           backdropFilter: "blur(16px)",
         }}
       >

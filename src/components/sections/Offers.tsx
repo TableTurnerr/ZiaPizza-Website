@@ -11,6 +11,7 @@ type OfferCardData = {
   name: string;
   description: string;
   price?: string;
+  image?: string;
 };
 
 function getHighlightedOffers(): OfferCardData[] {
@@ -46,40 +47,57 @@ export default function OffersSection() {
         <div className="flex items-center gap-2 mb-3 justify-center">
           <span className="w-2 h-2 rounded-full bg-accent" />
           <span
-            className="text-accent text-[20px] sm:text-[22px]"
-            style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+            className="text-accent text-[13px] font-semibold"
+            style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
           >
             Le Nostre Offerte
           </span>
         </div>
-        <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
+        <h2 className="text-h3 sm:text-h2 text-center mb-3 italic" style={{ color: "#1a1a1a" }}>
           Today&apos;s Offers
         </h2>
-        <p className="text-normal2 text-center max-w-xl mx-auto mb-[44px]" style={{ color: "var(--tt-color-text-gray)" }}>
+        <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "#6b6b6b" }}>
           Combo deals, family bundles and weekly specials across our locations.
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+      <div className="flex md:grid md:grid-cols-3 gap-4 max-w-6xl mx-auto overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-[10px] px-[10px] md:mx-0 md:px-0 pb-2 md:pb-0">
         {offers.map((offer, i) => (
           <Reveal
             as="div"
             key={`${offer.locationSlug}-${offer.name}-${i}`}
             delay={i * 110}
-            className="relative bg-gradient-to-br from-primary-dark/30 to-white/[0.03] border border-primary/20 rounded-[16px] p-6 flex flex-col"
+            className="relative rounded-[16px] overflow-hidden flex flex-col border border-white/[0.06] bg-[#0E1824] flex-shrink-0 w-[80vw] md:w-auto snap-start"
           >
-            <div className="text-accent text-normal4 font-bold tracking-wider uppercase mb-2">
-              {offer.day}
-            </div>
-            <h3 className="text-h5 font-semibold text-white mb-2">{offer.name}</h3>
-            <p className="text-normal3 flex-1" style={{ color: "var(--tt-color-text-gray)" }}>
-              {offer.description}
-            </p>
-            {offer.price && (
-              <div className="text-h4 font-bold text-primary-light mt-3">{offer.price}</div>
+            {offer.image && (
+              <div className="relative h-[180px] overflow-hidden">
+                <img
+                  src={offer.image}
+                  alt={offer.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                {offer.price && (
+                  <div className="absolute bottom-3 right-3 bg-primary text-white text-normal2 font-bold px-3 py-1 rounded-lg">
+                    {offer.price}
+                  </div>
+                )}
+              </div>
             )}
-            <div className="mt-4 text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>
-              Available at {offer.locationName}
+            <div className="p-6 flex flex-col flex-1">
+              <div className="text-accent text-normal4 font-bold tracking-wider uppercase mb-2">
+                {offer.day}
+              </div>
+              <h3 className="text-h5 font-semibold text-white mb-2">{offer.name}</h3>
+              <p className="text-normal3 flex-1" style={{ color: "var(--tt-color-text-gray)" }}>
+                {offer.description}
+              </p>
+              {!offer.image && offer.price && (
+                <div className="text-h4 font-bold text-primary-light mt-3">{offer.price}</div>
+              )}
+              <div className="mt-4 text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>
+                Available at {offer.locationName}
+              </div>
             </div>
           </Reveal>
         ))}

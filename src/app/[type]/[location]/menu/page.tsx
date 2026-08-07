@@ -1,12 +1,34 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { locations, getLocation, getLocationType } from "@/data/locations";
 import { getProductsByLocationAndCategory, categories } from "@/data/products";
 
+const BASE = "https://ziapizza.co.uk";
+
 export function generateStaticParams() {
-  return locations.map((l) => ({ type: l.type, location: l.slug }));
+  return locations
+    .filter((l) => !l.comingSoon)
+    .map((l) => ({ type: l.type, location: l.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ type: string; location: string }>;
+}): Promise<Metadata> {
+  const { type, location: slug } = await params;
+  const loc = getLocation(slug);
+  if (!loc || loc.comingSoon) return { robots: { index: false } };
+  const url = `${BASE}/${type}/${slug}/menu`;
+  return {
+    title: `Menu | ${loc.name} | Zia Pizza`,
+    description: `Browse the full menu at ${loc.name} — stone-baked pizzas, fresh pasta, starters, desserts and drinks.`,
+    alternates: { canonical: url },
+    openGraph: { title: `Menu | ${loc.name}`, url },
+  };
 }
 
 export default async function MenuPage({
@@ -42,7 +64,7 @@ export default async function MenuPage({
         <div className="mb-[40px]">
           <div
             className="text-accent text-[20px] sm:text-[22px] mb-1"
-            style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+            style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
           >
             {location.name}
           </div>
@@ -145,7 +167,7 @@ export default async function MenuPage({
           <div className="relative">
             <div
               className="text-accent text-[18px] sm:text-[20px] mb-1"
-              style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+              style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
             >
               Buon appetito
             </div>

@@ -7,7 +7,8 @@ import BookTableButton from "@/components/BookTableButton";
 
 export default function LocationsSection() {
   const [postcode, setPostcode] = useState("");
-  const [filtered, setFiltered] = useState<Location[]>(locations);
+  const activeLocations = locations.filter((l) => !l.comingSoon);
+  const [filtered, setFiltered] = useState<Location[]>(activeLocations);
   const [message, setMessage] = useState<string | null>(null);
 
   const now = useMemo(() => new Date(), []);
@@ -16,16 +17,16 @@ export default function LocationsSection() {
     e.preventDefault();
     const trimmed = postcode.trim();
     if (!trimmed) {
-      setFiltered(locations);
+      setFiltered(activeLocations);
       setMessage(null);
       return;
     }
     const match = findLocationByPostcode(trimmed);
-    if (match) {
+    if (match && !match.comingSoon) {
       setFiltered([match]);
       setMessage(`Closest match: ${match.name}`);
     } else {
-      setFiltered(locations);
+      setFiltered(activeLocations);
       setMessage(`No location yet for "${trimmed}" — showing all locations.`);
     }
   }
@@ -38,8 +39,8 @@ export default function LocationsSection() {
       <div className="flex items-center gap-2 mb-3 justify-center">
         <span className="w-2 h-2 rounded-full bg-accent" />
         <span
-          className="text-accent text-[20px] sm:text-[22px]"
-          style={{ fontFamily: "var(--font-label-family)", fontWeight: 500 }}
+          className="text-accent text-[13px] font-semibold"
+          style={{ fontFamily: "var(--font-heading), 'Montserrat', sans-serif", textTransform: "uppercase", letterSpacing: "0.08em" }}
         >
           Dove Siamo
         </span>
@@ -47,11 +48,11 @@ export default function LocationsSection() {
       <h2 className="text-white text-h3 sm:text-h2 text-center mb-3 italic">
         Find Your Nearest Zia Pizza
       </h2>
-      <p className="text-normal2 text-center max-w-xl mx-auto mb-8" style={{ color: "var(--tt-color-text-gray)" }}>
+      <p className="text-normal2 text-center max-w-xl mx-auto mb-6" style={{ color: "var(--tt-color-text-gray)" }}>
         Enter your postcode to jump straight to the nearest location.
       </p>
 
-      <form onSubmit={search} className="max-w-xl mx-auto flex flex-col sm:flex-row gap-2 mb-8">
+      <form onSubmit={search} className="max-w-xl mx-auto flex flex-col sm:flex-row gap-2 mb-6">
         <input
           type="text"
           value={postcode}
@@ -83,11 +84,11 @@ export default function LocationsSection() {
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-h5 text-white font-semibold">{loc.name}</h3>
                 <span
-                  className={`text-normal4 font-bold px-2.5 py-0.5 rounded-full ${
-                    open
-                      ? "bg-green-500/15 text-green-400 border border-green-500/30"
-                      : "bg-red-500/15 text-red-400 border border-red-500/30"
-                  }`}
+                  className="text-normal4 font-bold px-2.5 py-0.5 rounded-full border"
+                  style={open
+                    ? { background: "rgba(189,162,119,0.12)", color: "#BDA277", borderColor: "rgba(189,162,119,0.4)" }
+                    : { background: "rgba(238,29,39,0.12)", color: "#EE1D27", borderColor: "rgba(238,29,39,0.4)" }
+                  }
                 >
                   {open ? "Open now" : "Closed"}
                 </span>
@@ -110,12 +111,14 @@ export default function LocationsSection() {
                 >
                   Order Now
                 </a>
-                <BookTableButton
-                  locationSlug={loc.slug}
-                  className="bg-transparent hover:bg-white/10 border border-white/10 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
-                >
-                  Book Table
-                </BookTableButton>
+                {loc.type !== "zia-pizza-express" && (
+                  <BookTableButton
+                    locationSlug={loc.slug}
+                    className="bg-transparent hover:bg-white/10 border border-white/10 text-white text-normal3 font-semibold px-4 py-2 rounded-lg transition-colors"
+                  >
+                    Book Table
+                  </BookTableButton>
+                )}
               </div>
             </div>
           );
