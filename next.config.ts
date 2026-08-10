@@ -13,7 +13,10 @@ const nextConfig: NextConfig = {
       { pathname: "/products/**", search: "" },
       { pathname: "/photos/**", search: "" },
       { pathname: "/logo.webp", search: "" },
+      { pathname: "/logo/logo.webp", search: "" },
+      { pathname: "/opengraph-image", search: "" },
       { pathname: "/rewards-qr.webp", search: "" },
+      { pathname: "/uploads/**", search: "" },
     ],
   },
 };

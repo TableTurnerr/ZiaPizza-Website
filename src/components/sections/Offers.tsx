@@ -16,7 +16,7 @@ type OfferCardData = {
 };
 
 function getHighlightedOffers(): OfferCardData[] {
-  const all: OfferCardData[] = locations.flatMap((loc) =>
+  const all: OfferCardData[] = locations.filter((loc) => !loc.comingSoon).flatMap((loc) =>
     loc.deals.map((deal) => ({
       locationName: loc.name,
       locationSlug: loc.slug,

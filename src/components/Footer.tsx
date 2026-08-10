@@ -50,7 +50,7 @@ const Footer = () => (
           {site.footer.tagline}
         </p>
         <div className="flex gap-2 mt-5">
-          {locations.map((loc) => (
+          {locations.filter((loc) => !loc.comingSoon).map((loc) => (
             <a
               key={loc.slug}
               href={loc.instagram}
@@ -84,7 +84,7 @@ const Footer = () => (
       <div>
         <div className="text-white font-semibold text-normal2 mb-3">Our Locations</div>
         <ul className="flex flex-col gap-3">
-          {locations.map((loc) => (
+          {locations.filter((loc) => !loc.comingSoon).map((loc) => (
             <li key={loc.slug}>
               <Link
                 href={`/${loc.type}/${loc.slug}`}

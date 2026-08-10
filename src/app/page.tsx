@@ -13,24 +13,31 @@ import Loyalty from "@/components/sections/Loyalty";
 import Reviews from "@/components/sections/Reviews";
 import CrossBrand from "@/components/sections/CrossBrand";
 import FinalCTA from "@/components/sections/FinalCTA";
+import JsonLd from "@/components/JsonLd";
+import { createPageMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Zia Pizza | Authentic Stone-Baked Italian Pizza in Salisbury & Westbury",
+export const metadata: Metadata = createPageMetadata({
+  title: "Authentic Stone-Baked Italian Pizza in Salisbury & Westbury",
   description:
-    "Zia Pizza — the best Italian pizza restaurant in Salisbury and Westbury. Authentic hand-stretched, stone-baked pizzas, fresh pasta, and family dining. Dine-in, takeaway, or delivery.",
-  alternates: { canonical: "https://ziapizza.co.uk/" },
-  keywords: [
-    "best pizza Salisbury", "best pizza Westbury", "Italian restaurant Wiltshire",
-    "stone baked pizza", "pizza delivery Salisbury", "pizza delivery Westbury",
-    "authentic Italian pizza UK", "hand stretched pizza",
-  ],
-};
+    "Zia Pizza serves hand-stretched, stone-baked pizzas, pasta and more in Salisbury and Westbury for dine-in, takeaway and delivery.",
+  pathname: "/",
+});
 
 const SECTION_GAP = "h-[48px] sm:h-[64px]";
 
 export default function HomePage() {
   return (
     <div className="p-[10px] pt-[80px] pb-[80px]">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Zia Pizza",
+          legalName: "ZIA Hospitality Group Ltd",
+          url: SITE_URL,
+          logo: `${SITE_URL}/logo/logo.webp`,
+        }}
+      />
       <Header />
 
       <Hero />
