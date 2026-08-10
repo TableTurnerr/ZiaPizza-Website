@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import { products } from "@/data/products";
 
 const featured = products
@@ -32,9 +33,11 @@ export default function SignatureDishes() {
             className="dish-card group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden"
           >
             <div className="relative h-[140px] sm:h-[180px] overflow-hidden">
-              <img
+              <SmartImage
                 src={product.image}
                 alt={product.name}
+                fill
+                sizes="(max-width: 640px) 100vw, 25vw"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

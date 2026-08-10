@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import { locations } from "@/data/locations";
 
 export default function LocationFinder() {
@@ -49,9 +50,11 @@ export default function LocationFinder() {
             className="group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden hover:border-accent/40 transition-all duration-300"
           >
             <div className="relative h-48 overflow-hidden">
-              <img
+              <SmartImage
                 src={location.image}
                 alt={location.name}
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

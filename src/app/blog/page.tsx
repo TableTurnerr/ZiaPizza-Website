@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -49,7 +50,7 @@ export default function BlogPage() {
               >
                 {p.cover && (
                   <div className="relative w-full h-[220px] overflow-hidden">
-                    <img src={p.cover} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <SmartImage src={p.cover} alt={p.title} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   </div>
                 )}
