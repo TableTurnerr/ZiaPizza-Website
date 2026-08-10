@@ -8,7 +8,9 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  updatedAt: string;
   cover: string;
+  coverAlt: string;
   author: string;
   tags: string[];
   content: string;
@@ -28,7 +30,9 @@ function readPostFile(filename: string): BlogPost | null {
     title: (data.title as string) ?? slug,
     excerpt: (data.excerpt as string) ?? "",
     date: (data.date as string) ?? "",
+    updatedAt: (data.updatedAt as string) ?? (data.date as string) ?? "",
     cover: (data.cover as string) ?? "",
+    coverAlt: (data.coverAlt as string) ?? (data.title as string) ?? slug,
     author: (data.author as string) ?? "Zia Pizza",
     tags: (data.tags as string[]) ?? [],
     content,

@@ -7,7 +7,7 @@ import LocationsSection from "@/components/sections/Locations";
 import { locations } from "@/data/locations";
 
 export const metadata: Metadata = {
-  title: "Our Locations | Zia Pizza Salisbury & Westbury",
+  title: "Our Locations in Salisbury & Westbury",
   description: "Find your nearest Zia Pizza — full-service Italian restaurant in Salisbury (SP1) and fast-casual Express in Westbury (BA13). Dine-in, takeaway, and delivery.",
   alternates: { canonical: "https://ziapizza.co.uk/locations" },
 };

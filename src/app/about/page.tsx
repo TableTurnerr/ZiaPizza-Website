@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "About | Zia Pizza",
+  title: "About",
+  alternates: { canonical: "/about" },
   description: "The story behind Zia Pizza — a family recipe rooted in Naples, grown in Wiltshire, part of the ZIA Hospitality Group.",
 };
 

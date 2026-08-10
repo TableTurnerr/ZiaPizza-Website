@@ -12,6 +12,15 @@
     "hours": "12:30 PM - 10:30 PM (Mon-Sun)",
     "openTime": "12:30",
     "closeTime": "22:30",
+    "hoursByDay": {
+      "Monday": { "opens": "12:30", "closes": "22:30" },
+      "Tuesday": { "opens": "12:30", "closes": "22:30" },
+      "Wednesday": { "opens": "12:30", "closes": "22:30" },
+      "Thursday": { "opens": "12:30", "closes": "22:30" },
+      "Friday": { "opens": "12:30", "closes": "22:30" },
+      "Saturday": { "opens": "12:30", "closes": "22:30" },
+      "Sunday": { "opens": "12:30", "closes": "22:30" }
+    },
     "description": "At Zia Pizza Salisbury, every pizza is crafted with passion and precision. From classic Margherita to gourmet specialties, we use only the finest ingredients to ensure every bite is bursting with authentic Italian flavour.",
     "image": "/photos/JOE00551.webp",
     "gallery": ["/photos/JOE00551.webp", "/photos/JOE01050.webp", "/photos/JOE01015.webp", "/photos/JOE01090.webp"],
@@ -46,6 +55,15 @@
     "hours": "Mon: Closed · Tue–Thu: 3:30pm–10pm · Fri–Sat: 12pm–10pm · Sun: 3:30pm–10pm",
     "openTime": "15:30",
     "closeTime": "22:00",
+    "hoursByDay": {
+      "Monday": { "closed": true },
+      "Tuesday": { "opens": "15:30", "closes": "22:00" },
+      "Wednesday": { "opens": "15:30", "closes": "22:00" },
+      "Thursday": { "opens": "15:30", "closes": "22:00" },
+      "Friday": { "opens": "12:00", "closes": "22:00" },
+      "Saturday": { "opens": "12:00", "closes": "22:00" },
+      "Sunday": { "opens": "15:30", "closes": "22:00" }
+    },
     "description": "Welcome to Zia Pizza Westbury, where authentic Italian flavour meets local charm. Crafted from fresh ingredients, hand-stretched dough, and time-honoured Italian recipes.",
     "image": "/photos/JOE00574.webp",
     "gallery": ["/photos/JOE00574.webp", "/photos/JOE01020.webp", "/photos/JOE01024.webp", "/photos/JOE01044.webp"],

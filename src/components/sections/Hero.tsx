@@ -10,6 +10,7 @@ export default function HeroSection() {
   const router = useRouter();
   const [postcode, setPostcode] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const activeLocations = locations.filter((location) => !location.comingSoon);
   function findMyZia(e: React.FormEvent) {
     e.preventDefault();
     const match = findLocationByPostcode(postcode.trim());
@@ -101,7 +102,7 @@ export default function HeroSection() {
 
         {/* Location chips */}
         <div className="flex flex-wrap items-center gap-2">
-          {locations.map((loc) => (
+          {activeLocations.map((loc) => (
             <span
               key={loc.slug}
               className="flex items-center gap-1.5 bg-white/[0.07] border border-white/10 rounded-full px-3 py-1 text-[12px] font-medium"

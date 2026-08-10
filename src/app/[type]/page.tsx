@@ -34,9 +34,10 @@ export async function generateMetadata({
     ? "Zia Pizza Express Westbury — fast, authentic stone-baked pizza for takeaway and delivery. Order online via Just Eat, Uber Eats or Deliveroo."
     : "Zia Pizza restaurants in Salisbury — dine-in Italian restaurant serving stone-baked pizzas, fresh pasta, and family deals. Book a table or order online.";
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: url },
+    robots: { index: false, follow: true },
     openGraph: { title, description, url },
   };
 }

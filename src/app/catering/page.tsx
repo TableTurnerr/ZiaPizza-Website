@@ -7,7 +7,8 @@ import SmartImage from "@/components/SmartImage";
 import CateringQuoteForm from "@/components/CateringQuoteForm";
 
 export const metadata: Metadata = {
-  title: "Catering & Corporate Orders | Zia Pizza",
+  title: "Catering & Corporate Orders",
+  alternates: { canonical: "/catering" },
   description:
     "Freshly prepared food for businesses, meetings, events and group gatherings from Zia Pizza.",
 };
