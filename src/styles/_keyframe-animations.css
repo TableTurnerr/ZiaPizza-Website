@@ -79,6 +79,17 @@
   pointer-events: none;
 }
 
+/* Static fallback for content that has no image assigned. This is separate
+   from .skeleton so it never appears while a real image is loading. */
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #2b2b2b;
+  color: rgba(255, 255, 255, 0.42);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .skeleton,
   .skeleton::after { animation: none; }
