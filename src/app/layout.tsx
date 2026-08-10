@@ -4,7 +4,7 @@ import "./globals.css";
 import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
 import SmoothScroll from "@/components/SmoothScroll";
-import FloatingVideo from "@/components/FloatingVideo";
+// import FloatingVideo from "@/components/FloatingVideo";
 import SplashScreen from "@/components/SplashScreen";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -103,7 +103,7 @@ export default function RootLayout({
         <BookingProvider>
           {children}
           <StickyOrderBar />
-          <FloatingVideo />
+          {/* <FloatingVideo /> */}
         </BookingProvider>
       </body>
     </html>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmartImage from "@/components/SmartImage";
 import { locations } from "@/data/locations";
 
 export const metadata: Metadata = {
@@ -64,9 +65,11 @@ export default function OffersPage() {
                   >
                     {d.image && (
                       <div className="relative h-[200px] overflow-hidden">
-                        <img
+                        <SmartImage
                           src={d.image}
                           alt={d.name}
+                          fill
+                          sizes="(max-width: 640px) 100vw, 33vw"
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

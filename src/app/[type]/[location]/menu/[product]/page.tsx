@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmartImage from "@/components/SmartImage";
 import ThemeButton from "@/components/ThemeBtn";
 import { locations, getLocation, getLocationType } from "@/data/locations";
 import { products, getProduct, getCategory, getProductsByLocationAndCategory } from "@/data/products";
@@ -87,7 +88,7 @@ export default async function ProductPage({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] lg:gap-[50px] mb-[70px] items-stretch">
           {/* Image */}
           <div className="relative rounded-[24px] overflow-hidden h-72 sm:h-[420px] lg:h-[480px] border border-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
-            <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+            <SmartImage src={product.image} alt={product.name} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             {product.tags.length > 0 && (
               <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -192,9 +193,11 @@ export default async function ProductPage({
                   className="dish-card group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden"
                 >
                   <div className="relative h-[140px] sm:h-[180px] overflow-hidden">
-                    <img
+                    <SmartImage
                       src={item.image}
                       alt={item.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 25vw"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

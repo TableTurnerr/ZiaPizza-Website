@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmartImage from "@/components/SmartImage";
 import ThemeButton from "@/components/ThemeBtn";
 import PlatformButton from "@/components/PlatformButton";
 import { locations, getLocation, getLocationType } from "@/data/locations";
@@ -119,7 +120,7 @@ export default async function LocationPage({
 
         {/* Hero */}
         <div className="relative rounded-[24px] overflow-hidden mb-[50px] h-64 sm:h-80">
-          <img src={location.image} alt={location.name} className="w-full h-full object-cover brightness-[0.4]" />
+          <SmartImage src={location.image} alt={location.name} fill sizes="100vw" className="object-cover brightness-[0.4]" />
           <div className="absolute inset-0 flex items-end p-6 sm:p-10">
             <div>
               <span className="bg-primary-dark/80 text-white text-normal4 font-semibold px-3 py-1 rounded-full mb-3 inline-block">
@@ -228,7 +229,7 @@ export default async function LocationPage({
                     <Link key={product.slug} href={`/${type}/${locationSlug}/menu/${product.slug}`}
                       className="group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden hover:border-accent/40 transition-all">
                       <div className="relative h-32 overflow-hidden">
-                        <img src={product.image} alt={product.name}
+                        <SmartImage src={product.image} alt={product.name} fill sizes="(max-width: 640px) 50vw, 25vw"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       </div>
                       <div className="p-3">

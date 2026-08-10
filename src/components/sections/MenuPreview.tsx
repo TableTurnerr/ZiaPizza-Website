@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import { categories } from "@/data/products";
 
 const PREVIEW_CATEGORIES = ["pizzas", "starters", "pastas", "desserts"] as const;
@@ -44,9 +45,11 @@ export default function MenuPreviewSection() {
             className="group relative h-[200px] sm:h-[240px] rounded-[16px] overflow-hidden border border-[#E8E2D9] hover:border-accent transition-colors"
           >
             {cat.image && (
-              <img
+              <SmartImage
                 src={cat.image}
                 alt={cat.name}
+                fill
+                sizes="(max-width: 640px) 100vw, 25vw"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             )}

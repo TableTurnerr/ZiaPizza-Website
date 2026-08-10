@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
@@ -62,7 +63,7 @@ export default async function BlogPostPage({
 
         {post.cover && (
           <div className="relative w-full h-[280px] sm:h-[400px] rounded-[20px] overflow-hidden mb-8">
-            <img src={post.cover} alt={post.title} className="w-full h-full object-cover" />
+            <SmartImage src={post.cover} alt={post.title} fill sizes="(max-width: 640px) 100vw, 960px" className="object-cover" />
           </div>
         )}
 

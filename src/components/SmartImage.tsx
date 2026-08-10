@@ -11,6 +11,7 @@ export default function SmartImage({
   skeletonClassName = "",
   className = "",
   onLoad,
+  quality = 70,
   style,
   ...props
 }: SmartImageProps) {
@@ -36,6 +37,7 @@ export default function SmartImage({
       <Image
         {...props}
         ref={ref}
+        quality={quality}
         onLoad={(e) => {
           setLoaded(true);
           onLoad?.(e);

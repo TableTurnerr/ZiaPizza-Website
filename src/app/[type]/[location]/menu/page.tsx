@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmartImage from "@/components/SmartImage";
 import { locations, getLocation, getLocationType } from "@/data/locations";
 import { getProductsByLocationAndCategory, categories } from "@/data/products";
 
@@ -118,9 +119,11 @@ export default async function MenuPage({
                     className="dish-card group bg-white/5 border border-white/10 rounded-[16px] overflow-hidden flex"
                   >
                     <div className="relative w-28 sm:w-32 flex-shrink-0 overflow-hidden">
-                      <img
+                      <SmartImage
                         src={product.image}
                         alt={product.name}
+                        fill
+                        sizes="128px"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/30" />

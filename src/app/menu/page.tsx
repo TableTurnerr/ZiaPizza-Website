@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmartImage from "@/components/SmartImage";
 import { categories, products, Product, ProductCategory } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -91,7 +92,7 @@ export default function MenuPage() {
                 {items.map((p) => (
                   <div key={p.slug} className="bg-white/[0.04] border border-white/10 rounded-[14px] overflow-hidden flex flex-col">
                     <div className="relative h-[180px]">
-                      <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                      <SmartImage src={p.image} alt={p.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0E1824]/80 to-transparent" />
                     </div>
                     <div className="p-4 flex-1 flex flex-col">
