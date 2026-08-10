@@ -20,6 +20,10 @@ const CATEGORIES: ProductRecord["category"][] = [
   "dips",
 ];
 
+function defaultIndexable(product: ProductRecord) {
+  return !["drinks", "dips"].includes(product.category) && !/^(chicken-(wings|strips)-\d+|large-bottle-)/.test(product.slug);
+}
+
 export default function ProductForm({ initial, mode, locations }: Props) {
   const router = useRouter();
   const [p, setP] = useState<ProductRecord>(initial);
@@ -107,6 +111,25 @@ export default function ProductForm({ initial, mode, locations }: Props) {
           className={inputCls}
         />
       </Field>
+      <Field label="Long description (verified editorial copy)">
+        <textarea value={p.longDescription ?? ""} onChange={(e) => set("longDescription", e.target.value || undefined)} rows={4} className={inputCls} />
+      </Field>
+      <Row>
+        <Field label="Image alt text"><TextInput value={p.imageAlt ?? ""} onChange={(v) => set("imageAlt", v || undefined)} /></Field>
+        <Field label="Primary keyword"><TextInput value={p.primaryKeyword ?? ""} onChange={(v) => set("primaryKeyword", v || undefined)} /></Field>
+        <Field label="Last reviewed (YYYY-MM-DD)"><TextInput value={p.updatedAt ?? ""} onChange={(v) => set("updatedAt", v || undefined)} /></Field>
+      </Row>
+      <Field label="Ingredients / allergen information (only verified information)">
+        <textarea value={p.ingredientSummary ?? ""} onChange={(e) => set("ingredientSummary", e.target.value || undefined)} rows={3} className={inputCls} />
+      </Field>
+      <Row>
+        <Field label="Dietary information"><TextInput value={p.dietaryInfo ?? ""} onChange={(v) => set("dietaryInfo", v || undefined)} /></Field>
+        <Field label="Allergen information"><TextInput value={p.allergenInfo ?? ""} onChange={(v) => set("allergenInfo", v || undefined)} /></Field>
+      </Row>
+      <label className="flex items-center gap-2 text-normal3 text-white">
+        <input type="checkbox" checked={p.indexable ?? defaultIndexable(p)} onChange={(e) => set("indexable", e.target.checked)} />
+        Include this product page in search and the XML sitemap
+      </label>
       <ImagePicker value={p.image} onChange={(v) => set("image", v)} label="Image" />
       <Field label="Tags (comma separated — e.g. popular, spicy, vegetarian)">
         <TextInput

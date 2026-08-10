@@ -1,4 +1,5 @@
 import productsData from "@/content/products.json";
+import { productLongDescriptions } from "@/content/productLongDescriptions";
 
 export type ProductCategory =
   | "pizzas"
@@ -17,6 +18,16 @@ export interface Product {
   image: string;
   tags: string[];
   locationSlugs: string[];
+  /** Verified editorial fields; do not populate from inference. */
+  longDescription?: string;
+  ingredientSummary?: string;
+  allergenInfo?: string;
+  dietaryInfo?: string;
+  imageAlt?: string;
+  primaryKeyword?: string;
+  updatedAt?: string;
+  /** Override the default sitemap/indexing decision when editorially reviewed. */
+  indexable?: boolean;
 }
 
 export interface CategoryInfo {
@@ -65,7 +76,31 @@ export const categories: CategoryInfo[] = [
   },
 ];
 
-export const products: Product[] = productsData as Product[];
+export const products: Product[] = productsData.map((product) => {
+  const longDescription = productLongDescriptions[product.slug];
+
+  return longDescription ? { ...product, longDescription } : product;
+}) as Product[];
+
+const NON_INDEXABLE_PRODUCT_CATEGORIES: ProductCategory[] = ["drinks", "dips"];
+const SIZE_VARIANT_SLUG = /^(chicken-(wings|strips)-\d+|large-bottle-)/;
+
+/**
+ * Product routes remain useful to customers, but generic add-ons and size
+ * variants are deliberately kept out of the search index unless explicitly
+ * approved in the CMS data.
+ */
+export function isProductIndexable(product: Product): boolean {
+  if (typeof product.indexable === "boolean") return product.indexable;
+  return (
+    !NON_INDEXABLE_PRODUCT_CATEGORIES.includes(product.category) &&
+    !SIZE_VARIANT_SLUG.test(product.slug)
+  );
+}
+
+export function productPath(product: Pick<Product, "category" | "slug">): string {
+  return `/menu/${product.category}/${product.slug}`;
+}
 
 export function getProductsByLocation(locationSlug: string): Product[] {
   return products.filter((p) => p.locationSlugs.includes(locationSlug));
