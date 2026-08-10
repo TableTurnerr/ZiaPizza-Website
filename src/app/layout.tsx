@@ -1,33 +1,13 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat, Manrope } from "next/font/google";
+import "@fontsource-variable/cormorant-garamond/wght.css";
+import "@fontsource-variable/montserrat/wght.css";
+import "@fontsource-variable/manrope/wght.css";
 import "./globals.css";
 import BookingProvider from "@/components/BookingProvider";
 import StickyOrderBar from "@/components/StickyOrderBar";
 import SmoothScroll from "@/components/SmoothScroll";
 // import FloatingVideo from "@/components/FloatingVideo";
 import SplashScreen from "@/components/SplashScreen";
-
-const cormorantGaramond = Cormorant_Garamond({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ziapizza.co.uk"),
@@ -95,7 +75,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${cormorantGaramond.variable} ${montserrat.variable} ${manrope.variable} antialiased`}
+        className="antialiased"
         style={{ background: "var(--tt-bg-color)" }}
       >
         <SplashScreen />
