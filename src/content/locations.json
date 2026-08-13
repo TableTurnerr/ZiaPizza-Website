@@ -9,17 +9,17 @@
     "address": "46 Silver St, Salisbury, SP1 2NE",
     "phone": "01722 433829",
     "email": "salisbury@ziapizza.com",
-    "hours": "12:30 PM - 10:30 PM (Mon-Sun)",
-    "openTime": "12:30",
-    "closeTime": "22:30",
+    "hours": "Mon–Sat: 12pm–10pm · Sun: 12pm–9pm",
+    "openTime": "12:00",
+    "closeTime": "22:00",
     "hoursByDay": {
-      "Monday": { "opens": "12:30", "closes": "22:30" },
-      "Tuesday": { "opens": "12:30", "closes": "22:30" },
-      "Wednesday": { "opens": "12:30", "closes": "22:30" },
-      "Thursday": { "opens": "12:30", "closes": "22:30" },
-      "Friday": { "opens": "12:30", "closes": "22:30" },
-      "Saturday": { "opens": "12:30", "closes": "22:30" },
-      "Sunday": { "opens": "12:30", "closes": "22:30" }
+      "Monday": { "opens": "12:00", "closes": "22:00" },
+      "Tuesday": { "opens": "12:00", "closes": "22:00" },
+      "Wednesday": { "opens": "12:00", "closes": "22:00" },
+      "Thursday": { "opens": "12:00", "closes": "22:00" },
+      "Friday": { "opens": "12:00", "closes": "22:00" },
+      "Saturday": { "opens": "12:00", "closes": "22:00" },
+      "Sunday": { "opens": "12:00", "closes": "21:00" }
     },
     "description": "At Zia Pizza Salisbury, every pizza is crafted with passion and precision. From classic Margherita to gourmet specialties, we use only the finest ingredients to ensure every bite is bursting with authentic Italian flavour.",
     "image": "/photos/JOE00551.webp",
@@ -33,9 +33,6 @@
     "deliveroo": "https://deliveroo.co.uk/menu/Salisbury/salisbury/zia-pizza-salisbury-46-silver-street",
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.5!2d-1.7946!3d51.0693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA0JzA5LjUiTiAxwrA0NycyMy4yIlc!5e0!3m2!1sen!2suk!4v1",
     "deals": [
-      { "day": "Daily", "name": "Kids Eat for £1", "description": "Kids dine for just £1 with a full-price adult main (under 12).", "price": "£1.00" },
-      { "day": "Tuesday", "name": "Half Price Pizza", "description": "Buy one pizza and get the second pizza at half price. Dine-in, takeaway, delivery (web & phone).", "price": "50% OFF 2nd Pizza" },
-      { "day": "Thursday", "name": "Half Price Pasta", "description": "Buy one pasta and get the second pasta at half price.", "price": "50% OFF 2nd Pasta" },
       { "day": "Daily", "name": "Double the Drinks", "description": "2 cocktails for £13.95, 5 PM–Close. Available daily.", "price": "£13.95" }
     ],
     "seoTitle": "Best Pizza in Salisbury | Stone-Baked Italian Restaurant | Zia Pizza",
