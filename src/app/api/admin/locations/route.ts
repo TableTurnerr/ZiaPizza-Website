@@ -29,6 +29,7 @@ export async function POST(request: Request) {
     hours: body.hours ?? "",
     openTime: body.openTime ?? "12:00",
     closeTime: body.closeTime ?? "22:00",
+    hoursByDay: body.hoursByDay,
     description: body.description ?? "",
     image: body.image ?? "",
     gallery: body.gallery ?? [],

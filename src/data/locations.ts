@@ -8,6 +8,17 @@ export interface Deal {
   image?: string;
 }
 
+export type DayOfWeek =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+export type DailyHours = { opens: string; closes: string; closed?: false } | { closed: true };
+
 export type LocationType = "zia-pizza" | "zia-pizza-express";
 
 export interface Location {
@@ -23,6 +34,7 @@ export interface Location {
   hours: string;
   openTime: string;
   closeTime: string;
+  hoursByDay?: Partial<Record<DayOfWeek, DailyHours>>;
   description: string;
   image: string;
   gallery: string[];
@@ -71,7 +83,7 @@ export const locationTypes: LocationTypeInfo[] = [
 export const locations: Location[] = locationsData as Location[];
 
 export function getLocationsByType(type: LocationType): Location[] {
-  return locations.filter((l) => l.type === type);
+  return locations.filter((location) => location.type === type && !location.comingSoon);
 }
 
 export function getLocation(slug: string): Location | undefined {
@@ -85,6 +97,7 @@ export function getLocationType(slug: string): LocationTypeInfo | undefined {
 export function findLocationByPostcode(postcode: string): Location | undefined {
   const normalised = postcode.replace(/\s+/g, "").toUpperCase();
   return locations.find((loc) =>
+    !loc.comingSoon &&
     loc.postcodePrefixes.some((prefix) =>
       normalised.startsWith(prefix.replace(/\s+/g, "").toUpperCase())
     )
@@ -92,8 +105,21 @@ export function findLocationByPostcode(postcode: string): Location | undefined {
 }
 
 export function isLocationOpen(loc: Location, now: Date = new Date()): boolean {
-  const [openH, openM] = loc.openTime.split(":").map(Number);
-  const [closeH, closeM] = loc.closeTime.split(":").map(Number);
+  const dayNames: DayOfWeek[] = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const today = loc.hoursByDay?.[dayNames[now.getDay()]];
+  if (today?.closed) return false;
+  const opens = today && "opens" in today ? today.opens : loc.openTime;
+  const closes = today && "closes" in today ? today.closes : loc.closeTime;
+  const [openH, openM] = opens.split(":").map(Number);
+  const [closeH, closeM] = closes.split(":").map(Number);
   const minutesNow = now.getHours() * 60 + now.getMinutes();
   const openMin = openH * 60 + openM;
   const closeMin = closeH * 60 + closeM;

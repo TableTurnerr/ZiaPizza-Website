@@ -3,7 +3,8 @@ import Image from "next/image";
 import { site } from "@/data/site";
 import AppStoreButtons from "@/components/AppStoreButtons";
 
-export default function LoyaltySection() {
+export default function LoyaltySection({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
+  const Heading = headingLevel;
   return (
     <section
       id="Loyalty"
@@ -20,7 +21,7 @@ export default function LoyaltySection() {
               Zia Rewards
             </span>
           </div>
-          <h2 className="text-white text-h3 sm:text-h2 italic mb-4">{site.loyalty.heading}</h2>
+          <Heading className="text-white text-h3 sm:text-h2 italic mb-4">{site.loyalty.heading}</Heading>
           <p className="text-normal2 mb-5" style={{ color: "var(--tt-color-text-gray)" }}>
             {site.loyalty.body}
           </p>
