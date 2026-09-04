@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const WHATSAPP_URL = `https://wa.me/441373865271?text=${encodeURIComponent(
+const WHATSAPP_URL = `https://wa.me/447721700155?text=${encodeURIComponent(
   "Hi Zia Pizza Westbury, I am interested in catering. My event date is [date], and I expect approximately [number] guests. Please send me your catering options."
 )}`;
 
@@ -92,7 +92,7 @@ function buildWhatsAppUrl(f: {
     ...(f.dietary ? [`Dietary Requirements: ${f.dietary}`] : []),
     ...(f.message ? [`Message: ${f.message}`] : []),
   ];
-  return `https://wa.me/441373865271?text=${encodeURIComponent(lines.join("\n"))}`;
+  return `https://wa.me/447721700155?text=${encodeURIComponent(lines.join("\n"))}`;
 }
 
 export default function CateringWestburyPage() {

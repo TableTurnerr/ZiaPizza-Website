@@ -181,7 +181,7 @@ export default async function LocationPage({
                   </ul>
                   <div className="flex flex-col sm:flex-row items-start gap-3">
                     <a
-                      href={`https://wa.me/441373865271?text=${encodeURIComponent("Hi Zia Pizza Westbury, I am interested in catering. My event date is [date], and I expect approximately [number] guests. Please send me your catering options.")}`}
+                      href={`https://wa.me/447721700155?text=${encodeURIComponent("Hi Zia Pizza Westbury, I am interested in catering. My event date is [date], and I expect approximately [number] guests. Please send me your catering options.")}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-normal2 px-6 py-3 rounded-xl transition-colors"
