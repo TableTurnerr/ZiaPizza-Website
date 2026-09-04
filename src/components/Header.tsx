@@ -6,10 +6,11 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useBooking } from "./BookingProvider";
 
-const NAV_LINKS: { label: string; href: string }[] = [
+const NAV_LINKS: { label: string; href: string; highlight?: boolean }[] = [
   { label: "Menu", href: "/menu" },
   { label: "Locations", href: "/locations" },
   { label: "Offers", href: "/offers" },
+  { label: "Catering", href: "/catering/westbury", highlight: true },
   { label: "Loyalty", href: "/loyalty" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -65,10 +66,11 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[14.5px] font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/[0.06]"
-                style={{ color: "var(--tt-color-text-gray)" }}
+                className={`text-[14.5px] font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/[0.06] inline-flex items-center gap-1.5 ${link.highlight ? "text-primary" : ""}`}
+                style={link.highlight ? undefined : { color: "var(--tt-color-text-gray)" }}
               >
                 {link.label}
+                {link.highlight && <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />}
               </Link>
             ))}
           </nav>
@@ -118,10 +120,11 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block w-full text-left px-4 py-3 rounded-lg text-[15px] font-medium transition-colors duration-200 hover:text-white hover:bg-white/[0.05]"
-              style={{ color: "var(--tt-color-text-gray)" }}
+              className={`flex items-center gap-2 w-full text-left px-4 py-3 rounded-lg text-[15px] font-medium transition-colors duration-200 hover:text-white hover:bg-white/[0.05] ${link.highlight ? "text-primary" : ""}`}
+              style={link.highlight ? undefined : { color: "var(--tt-color-text-gray)" }}
             >
               {link.label}
+              {link.highlight && <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />}
             </Link>
           ))}
         </div>
