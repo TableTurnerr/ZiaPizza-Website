@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -71,7 +73,43 @@ const whyUs = [
   { title: "Collection or scheduled delivery", body: "Pick up from us or have it delivered to your venue at a set time." },
 ];
 
+function buildWhatsAppUrl(f: {
+  name: string; mobile: string; email: string; eventDate: string;
+  guests: string; deliveryType: string; postcode: string;
+  budget: string; dietary: string; message: string;
+}) {
+  const lines = [
+    "Hi Zia Pizza Westbury, I'd like to enquire about catering.",
+    "",
+    `Name: ${f.name}`,
+    `Mobile: ${f.mobile}`,
+    `Email: ${f.email}`,
+    `Event Date: ${f.eventDate}`,
+    `Number of Guests: ${f.guests}`,
+    `Collection / Delivery: ${f.deliveryType === "delivery" ? "Delivery to venue" : "Collection from Westbury"}`,
+    `Event Postcode: ${f.postcode}`,
+    ...(f.budget ? [`Estimated Budget: ${f.budget}`] : []),
+    ...(f.dietary ? [`Dietary Requirements: ${f.dietary}`] : []),
+    ...(f.message ? [`Message: ${f.message}`] : []),
+  ];
+  return `https://wa.me/441373865271?text=${encodeURIComponent(lines.join("\n"))}`;
+}
+
 export default function CateringWestburyPage() {
+  const [form, setForm] = useState({
+    name: "", mobile: "", email: "", eventDate: "", guests: "",
+    deliveryType: "collection", postcode: "", budget: "", dietary: "", message: "",
+  });
+
+  function update(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    window.open(buildWhatsAppUrl(form), "_blank", "noopener,noreferrer");
+  }
+
   return (
     <div className="p-[10px]">
       <Header />
@@ -185,23 +223,95 @@ export default function CateringWestburyPage() {
           </div>
         </section>
 
-        {/* 06 CONTACT VIA WHATSAPP */}
-        <section className="max-w-2xl mx-auto text-center">
-          <span className="text-accent text-[13px] font-bold tracking-widest uppercase">Get in Touch</span>
-          <h2 className="text-h3 sm:text-h2 text-white mt-2 italic mb-4">Ready to Book?</h2>
-          <p className="text-normal2 mb-8" style={{ color: "var(--tt-color-text-gray)" }}>
-            Message us on WhatsApp with your event date, number of guests and any dietary requirements. We aim to respond within one working day.
-          </p>
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-[24px] p-8 sm:p-10">
-            <p className="text-normal3 italic mb-6 text-white/60 border-l-2 border-accent/40 pl-4 text-left">
-              "Hi Zia Pizza Westbury, I am interested in catering. My event date is [date], and I expect approximately [number] guests. Please send me your catering options."
-            </p>
-            <WhatsAppButton label="Open WhatsApp to Enquire" className="w-full sm:w-auto justify-center" />
-            <p className="text-normal4 mt-4" style={{ color: "var(--tt-color-text-gray)" }}>
-              Or call us on{" "}
-              <a href="tel:01373865271" className="text-accent hover:underline">01373 865271</a>
+        {/* 06 ENQUIRY FORM → WHATSAPP */}
+        <section id="enquiry" className="scroll-mt-24 max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-accent text-[13px] font-bold tracking-widest uppercase">Enquire</span>
+            <h2 className="text-h3 sm:text-h2 text-white mt-2 italic">Get a Catering Quote</h2>
+            <p className="text-normal2 mt-3" style={{ color: "var(--tt-color-text-gray)" }}>
+              Fill in your details and hit Send — it opens WhatsApp with everything pre-filled, ready to go.
             </p>
           </div>
+
+          <form onSubmit={submit} className="bg-white/[0.04] border border-white/[0.08] rounded-[24px] p-7 sm:p-10 space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-normal4 font-medium text-white/70 mb-1.5">Name *</label>
+                <input required name="name" value={form.name} onChange={update} placeholder="Your full name"
+                  className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+              </div>
+              <div>
+                <label className="block text-normal4 font-medium text-white/70 mb-1.5">Mobile number *</label>
+                <input required name="mobile" value={form.mobile} onChange={update} type="tel" placeholder="07700 000000"
+                  className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-normal4 font-medium text-white/70 mb-1.5">Email address *</label>
+              <input required name="email" value={form.email} onChange={update} type="email" placeholder="your@email.com"
+                className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-normal4 font-medium text-white/70 mb-1.5">Event date *</label>
+                <input required name="eventDate" value={form.eventDate} onChange={update} type="date"
+                  className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 focus:outline-none focus:border-primary/60 transition-colors" />
+              </div>
+              <div>
+                <label className="block text-normal4 font-medium text-white/70 mb-1.5">Number of guests *</label>
+                <input required name="guests" value={form.guests} onChange={update} type="number" min="10" placeholder="e.g. 30"
+                  className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-normal4 font-medium text-white/70 mb-1.5">Collection or delivery? *</label>
+                <select required name="deliveryType" value={form.deliveryType} onChange={update}
+                  className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 focus:outline-none focus:border-primary/60 transition-colors">
+                  <option value="collection">Collection from Westbury</option>
+                  <option value="delivery">Delivery to venue</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-normal4 font-medium text-white/70 mb-1.5">Event postcode *</label>
+                <input required name="postcode" value={form.postcode} onChange={update} placeholder="e.g. BA13 3SD"
+                  className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-normal4 font-medium text-white/70 mb-1.5">Estimated budget <span className="text-white/40">(optional)</span></label>
+              <input name="budget" value={form.budget} onChange={update} placeholder="e.g. £300"
+                className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+            </div>
+            <div>
+              <label className="block text-normal4 font-medium text-white/70 mb-1.5">Dietary requirements <span className="text-white/40">(optional)</span></label>
+              <input name="dietary" value={form.dietary} onChange={update} placeholder="e.g. 2 vegetarian, 1 gluten-free"
+                className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors" />
+            </div>
+            <div>
+              <label className="block text-normal4 font-medium text-white/70 mb-1.5">Additional message <span className="text-white/40">(optional)</span></label>
+              <textarea name="message" value={form.message} onChange={update} rows={3} placeholder="Anything else we should know?"
+                className="w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 text-white text-normal3 placeholder-white/30 focus:outline-none focus:border-primary/60 transition-colors resize-none" />
+            </div>
+
+            <button type="submit"
+              className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-normal2 py-4 rounded-xl transition-colors">
+              <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.847L0 24l6.335-1.56A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.366l-.36-.214-3.726.917.979-3.63-.235-.373A9.818 9.818 0 1112 21.818z"/>
+              </svg>
+              Send via WhatsApp
+            </button>
+
+            <p className="text-center text-normal4" style={{ color: "var(--tt-color-text-gray)" }}>
+              Opens WhatsApp with your details pre-filled — just hit Send.
+            </p>
+          </form>
+
+          <p className="text-center text-normal4 mt-5" style={{ color: "var(--tt-color-text-gray)" }}>
+            Prefer to call?{" "}
+            <a href="tel:01373865271" className="text-accent hover:underline">01373 865271</a>
+          </p>
         </section>
 
         {/* 07 TRUST */}
