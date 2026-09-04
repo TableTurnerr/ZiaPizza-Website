@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import { products } from "@/data/products";
 import Reveal from "@/components/Reveal";
 
@@ -49,9 +50,11 @@ export default function FeaturedProductsSection() {
             className="group bg-white border border-[#E8E2D9] rounded-[16px] overflow-hidden flex flex-col shadow-sm"
           >
             <div className="relative h-[160px] sm:h-[200px] overflow-hidden">
-              <img
+              <SmartImage
                 src={p.image}
                 alt={p.name}
+                fill
+                sizes="(max-width: 640px) 50vw, 25vw"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

@@ -47,6 +47,7 @@ export type LocationRecord = {
   hours: string;
   openTime: string;
   closeTime: string;
+  hoursByDay?: Partial<Record<"Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday", { opens: string; closes: string; closed?: false } | { closed: true }>>;
   description: string;
   image: string;
   gallery: string[];
@@ -58,7 +59,7 @@ export type LocationRecord = {
   uberEats?: string;
   deliveroo?: string;
   mapEmbed: string;
-  deals: { day: string; name: string; description: string; price?: string }[];
+  deals: { day: string; name: string; description: string; price?: string; image?: string }[];
 };
 
 export function getLocations(): LocationRecord[] {
@@ -92,6 +93,14 @@ export type ProductRecord = {
   image: string;
   tags: string[];
   locationSlugs: string[];
+  longDescription?: string;
+  ingredientSummary?: string;
+  allergenInfo?: string;
+  dietaryInfo?: string;
+  imageAlt?: string;
+  primaryKeyword?: string;
+  updatedAt?: string;
+  indexable?: boolean;
 };
 
 export function getProducts(): ProductRecord[] {
@@ -138,7 +147,9 @@ export type BlogRecord = {
   title: string;
   excerpt: string;
   date: string;
+  updatedAt?: string;
   cover: string;
+  coverAlt?: string;
   author: string;
   tags: string[];
   content: string;
@@ -166,7 +177,9 @@ function readBlogFile(filepath: string): BlogRecord {
     title: (data.title as string) ?? fileSlug,
     excerpt: (data.excerpt as string) ?? "",
     date: (data.date as string) ?? "",
+    updatedAt: (data.updatedAt as string) ?? undefined,
     cover: (data.cover as string) ?? "",
+    coverAlt: (data.coverAlt as string) ?? undefined,
     author: (data.author as string) ?? "",
     tags: (data.tags as string[]) ?? [],
     content,
@@ -188,7 +201,9 @@ export function upsertBlog(record: BlogRecord) {
     slug: record.slug,
     excerpt: record.excerpt,
     date: record.date,
+    ...(record.updatedAt ? { updatedAt: record.updatedAt } : {}),
     cover: record.cover,
+    ...(record.coverAlt ? { coverAlt: record.coverAlt } : {}),
     author: record.author,
     tags: record.tags,
   };

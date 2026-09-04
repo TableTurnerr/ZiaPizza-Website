@@ -25,6 +25,14 @@ export async function POST(request: Request) {
     image: body.image ?? "",
     tags: body.tags ?? [],
     locationSlugs: body.locationSlugs ?? [],
+    longDescription: body.longDescription || undefined,
+    ingredientSummary: body.ingredientSummary || undefined,
+    allergenInfo: body.allergenInfo || undefined,
+    dietaryInfo: body.dietaryInfo || undefined,
+    imageAlt: body.imageAlt || undefined,
+    primaryKeyword: body.primaryKeyword || undefined,
+    updatedAt: body.updatedAt || undefined,
+    indexable: body.indexable,
   };
   upsertProduct(record);
   return NextResponse.json({ ok: true, slug: record.slug });

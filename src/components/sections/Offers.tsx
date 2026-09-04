@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
 import { locations } from "@/data/locations";
 import Reveal from "@/components/Reveal";
 
@@ -15,7 +16,7 @@ type OfferCardData = {
 };
 
 function getHighlightedOffers(): OfferCardData[] {
-  const all: OfferCardData[] = locations.flatMap((loc) =>
+  const all: OfferCardData[] = locations.filter((loc) => !loc.comingSoon).flatMap((loc) =>
     loc.deals.map((deal) => ({
       locationName: loc.name,
       locationSlug: loc.slug,
@@ -71,9 +72,11 @@ export default function OffersSection() {
           >
             {offer.image && (
               <div className="relative h-[180px] overflow-hidden">
-                <img
+                <SmartImage
                   src={offer.image}
                   alt={offer.name}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 33vw"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

@@ -7,7 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import { locations } from "@/data/locations";
 
 export const metadata: Metadata = {
-  title: "Contact Zia Pizza | Get In Touch",
+  title: "Contact | Get In Touch",
   description:
     "Reach out to Zia Pizza Salisbury or Westbury — reservations, feedback, or general enquiries.",
   alternates: { canonical: "https://ziapizza.co.uk/contact" },

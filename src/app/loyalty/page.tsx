@@ -7,7 +7,8 @@ import LoyaltySection from "@/components/sections/Loyalty";
 import AppStoreButtons from "@/components/AppStoreButtons";
 
 export const metadata: Metadata = {
-  title: "Loyalty & Rewards | Zia Pizza",
+  title: "Loyalty & Rewards",
+  alternates: { canonical: "/loyalty" },
   description: "Earn points on every order and redeem them for free sides, pizzas and exclusive perks.",
 };
 
@@ -19,7 +20,7 @@ const TIERS = [
 
 export default function LoyaltyPage() {
   return (
-    <div className="p-[10px] pb-[120px]">
+    <div className="p-[10px] pb-[80px] md:pb-[10px]">
       <Header />
       <div className="h-[65px] sm:h-[80px]" />
 
@@ -31,7 +32,7 @@ export default function LoyaltyPage() {
         </div>
       </div>
 
-      <LoyaltySection />
+      <LoyaltySection headingLevel="h1" />
 
       <div className="h-[80px]" />
 

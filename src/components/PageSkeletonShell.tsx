@@ -3,7 +3,7 @@ import Skeleton from "./Skeleton";
 
 export default function PageSkeletonShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="p-[10px] pb-[120px]">
+    <div className="p-[10px] pb-[80px] md:pb-[10px]">
       <div
         className="fixed top-[10px] left-[10px] right-[10px] h-[55px] sm:h-[70px] z-[40] flex items-center justify-between px-[16px] sm:px-[24px]"
         style={{ background: "rgba(13,13,13,0.6)", backdropFilter: "blur(10px)", borderRadius: 14 }}
