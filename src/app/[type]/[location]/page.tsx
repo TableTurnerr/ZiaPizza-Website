@@ -124,6 +124,57 @@ export default async function LocationPage({
               {location.uberEats && <PlatformButton platform="uberEats" href={location.uberEats} />}
               {location.deliveroo && <PlatformButton platform="deliveroo" href={location.deliveroo} />}
             </div>
+
+            {locationSlug === "westbury" && (
+              <div className="mt-6 relative rounded-[20px] overflow-hidden border border-white/10 bg-[#0E1824]">
+                <img
+                  src="/photos/JOE01044.webp"
+                  alt="Catering for groups"
+                  className="absolute inset-0 w-full h-full object-cover opacity-20"
+                />
+                <div className="relative z-10 p-6 sm:p-8">
+                  <span className="inline-block text-accent text-[12px] font-bold tracking-widest uppercase mb-3">
+                    Catering
+                  </span>
+                  <h3 className="text-h4 text-white mb-2">
+                    Planning a Party, Office Lunch or Special Event?
+                  </h3>
+                  <p className="text-normal3 mb-4" style={{ color: "var(--tt-color-text-gray)" }}>
+                    Fresh stone-baked pizzas, pasta, sides and desserts prepared for groups of 10 or more.
+                  </p>
+                  <ul className="flex flex-col gap-1.5 mb-6">
+                    {["Groups of 10+", "Collection or scheduled delivery", "Vegetarian and dietary options"].map((b) => (
+                      <li key={b} className="flex items-center gap-2 text-normal3 text-white/80">
+                        <svg className="w-4 h-4 flex-shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row items-start gap-3">
+                    <a
+                      href={`https://wa.me/447721700155?text=${encodeURIComponent("Hi Zia Pizza Westbury, I am interested in catering. My event date is [date], and I expect approximately [number] guests. Please send me your catering options.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-normal2 px-6 py-3 rounded-xl transition-colors"
+                    >
+                      <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.847L0 24l6.335-1.56A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.366l-.36-.214-3.726.917.979-3.63-.235-.373A9.818 9.818 0 1112 21.818z"/>
+                      </svg>
+                      WhatsApp to Enquire
+                    </a>
+                    <a
+                      href="tel:01373865271"
+                      className="text-normal3 text-accent hover:underline self-center"
+                    >
+                      Call 01373 865271
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <aside className="bg-white/5 border border-white/10 rounded-[16px] p-6">
