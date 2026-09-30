@@ -5,10 +5,12 @@ import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 
 const BOOKING_URLS: Record<string, string> = {
   salisbury: "https://www.eposhybrid.uk/index.php/online-table-booking/RENMV0lX",
+  southport: "https://www.eposhybrid.uk/index.php/online-table-booking/R0ZOVFNW",
 };
 
 const LOCATION_LABELS: Record<string, string> = {
   salisbury: "Salisbury",
+  southport: "Southport",
 };
 
 type BookingModalProps = {
